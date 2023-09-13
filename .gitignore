@@ -34,3 +34,8 @@ dist/
 # hugo
 **/.hugo_build.lock
 docSite/public/
+
+#
+*.tar.gz
+yarn.lock
+package-lock.json
