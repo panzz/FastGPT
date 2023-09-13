@@ -94,13 +94,13 @@ function initLogger() {
 async function initRootUser() {
   try {
     const rootUser = await User.findOne({
-      username: 'root'
+      username: 'test'
     });
     const psw = process.env.DEFAULT_ROOT_PSW || '123456';
 
     if (rootUser) {
       await User.findOneAndUpdate(
-        { username: 'root' },
+        { username: 'test' },
         {
           password: createHashPassword(psw),
           balance: 999999 * PRICE_SCALE
@@ -108,14 +108,14 @@ async function initRootUser() {
       );
     } else {
       await User.create({
-        username: 'root',
+        username: 'test',
         password: createHashPassword(psw),
         balance: 999999 * PRICE_SCALE
       });
     }
 
     console.log(`root user init:`, {
-      username: 'root',
+      username: 'test',
       password: psw
     });
   } catch (error) {
