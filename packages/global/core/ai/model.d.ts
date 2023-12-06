@@ -1,7 +1,7 @@
 export type LLMModelItemType = {
   model: string;
   name: string;
-  location: string;
+  location?: string;
   maxContext: number;
   maxResponse: number;
   price: number;
@@ -22,7 +22,7 @@ export type FunctionModelItemType = LLMModelItemType & {
 export type VectorModelItemType = {
   model: string;
   name: string;
-  location: string;
+  location?: string;
   defaultToken: number;
   price: number;
   maxToken: number;

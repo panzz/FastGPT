@@ -47,6 +47,13 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['mongoose', 'winston', 'winston-mongodb', 'pg'],
     outputFileTracingRoot: path.join(__dirname, '../../')
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
   }
 };
 

@@ -1,0 +1,59 @@
+package: nodejs.tar.gz
+
+---
+profiles:
+  - dev
+  - tst
+
+variables:
+  APP_VAR_ENV: "dev"
+  BASE_PATH: "/gait"
+  NEXT_PUBLIC_STRAPI_URL: "https://devportal.earth.xpaas.lenovo.com/strapi"
+  NEXT_PUBLIC_PAPI_URL: "http://devshare-dev.earth.xpaas.lenovo.com"
+
+---
+
+profiles:
+  - prod
+  - pre
+
+variables:
+  # 再次覆盖（dev 为覆盖， tst 为新增）
+  APP_VAR_ENV: "prod"
+  BASE_PATH: "/gait"
+  NEXT_PUBLIC_STRAPI_URL: "https://developers.lenovo.com/strapi"
+  NEXT_PUBLIC_PAPI_URL: "http://devshare-prod.earth.xpaas.lenovo.com"
+
+---
+## Defaults
+stages:
+
+  pass-prepare:
+    - export npm_config_sharp_libvips_local_prebuilds=data/sharp/vendor/
+    - echo 'npm_config_sharp_libvips_local_prebuilds:${npm_config_sharp_libvips_local_prebuilds}'
+    - cd client && echo "export PATH=$PWD/.npm-global/bin:$PATH" > .npm-global/.profile
+    - cd client && cat .npm-global/.profile  && sh .npm-global/.profile
+    - cd client && npm config set prefix "$PWD/.npm-global" && npm config get prefix
+    - cd client && npm cache clean --force
+    - npm cache clean --force
+    - npm config set registry http://maven.xpaas.lenovo.com/nexus/repository/npm/
+    - npm install --ignore-scripts --legacy-peer-deps
+
+  prepare:
+    - npm install -g pnpm
+    - pnpm i --registry=https://maven.xpaas.lenovo.com/nexus/repository/npm/
+    - cd client && npm cache clean --force
+    - yarn config set registry http://maven.xpaas.lenovo.com/nexus/repository/npm/
+    - cd client && yarn && npm install --ignore-scripts --legacy-peer-deps
+
+  build-dev:
+    - cd client && npm run build
+  build:
+    - cd client && npm run build
+
+  tar:
+    - cd client && tar -czvf nodejs.tar.gz --exclude '*.sh' --exclude '*.tar*' --exclude .cache --exclude .tmp --exclude .git * .npmrc .next
+    - mv client/nodejs.tar.gz nodejs.tar.gz
+
+  clean-node-modules:
+    - cd client && npm cache clean --force

@@ -16,9 +16,9 @@
     "@chakra-ui/system": "^2.5.8",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fastgpt/global": "workspace:*",
-    "@fastgpt/service": "workspace:*",
-    "@fastgpt/web": "workspace:*",
+    "@fastgpt/global": "file:../../packages/global",
+    "@fastgpt/service": "file:../../packages/service",
+    "@fastgpt/web": "file:../../packages/web",
     "@mozilla/readability": "^0.4.4",
     "@node-rs/jieba": "^1.7.2",
     "@tanstack/react-query": "^4.24.10",
@@ -40,15 +40,16 @@
     "lodash": "^4.17.21",
     "mammoth": "^1.6.0",
     "mermaid": "^10.2.3",
+    "mongoose": "^7.0.2",
     "multer": "1.4.5-lts.1",
     "nanoid": "^4.0.1",
     "next": "13.5.2",
     "next-i18next": "^13.3.0",
     "nprogress": "^0.2.0",
     "papaparse": "^5.4.1",
-    "react": "18.1.0",
+    "react": "18.2.0",
     "react-day-picker": "^8.7.1",
-    "react-dom": "18.1.0",
+    "react-dom": "18.2.0",
     "react-hook-form": "^7.43.1",
     "react-i18next": "^12.3.1",
     "react-markdown": "^8.0.7",
@@ -82,7 +83,6 @@
     "typescript": "4.9.5"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.6.0"
+    "node": ">=18.0.0"
   }
 }
