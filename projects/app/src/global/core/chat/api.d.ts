@@ -1,4 +1,4 @@
-import type { AppTTSConfigType } from '@fastgpt/global/core/module/type.d';
+import type { AppTTSConfigType } from '/common/global/core/module/type.d';
 
 export type GetChatSpeechProps = {
   ttsConfig: AppTTSConfigType;

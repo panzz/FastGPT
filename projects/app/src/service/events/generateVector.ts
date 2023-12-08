@@ -1,9 +1,9 @@
 import { insertData2Dataset } from '@/service/core/dataset/data/controller';
-import { MongoDatasetTraining } from '@fastgpt/service/core/dataset/training/schema';
-import { TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { MongoDatasetTraining } from '/common/service/core/dataset/training/schema';
+import { TrainingModeEnum } from '/common/global/core/dataset/constant';
 import { sendOneInform } from '../support/user/inform/api';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { addLog } from '/common/service/common/mongo/controller';
+import { getErrText } from '/common/global/common/error/utils';
 import { authTeamBalance } from '@/service/support/permission/auth/bill';
 import { pushGenerateVectorBill } from '@/service/support/wallet/bill/push';
 

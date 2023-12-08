@@ -1,4 +1,4 @@
-import { GET } from '@fastgpt/service/common/api/plusRequest';
+import { GET } from '/common/service/common/api/plusRequest';
 
 export const authTeamBalance = async (teamId: string) => {
   if (global.systemEnv.pluginBaseUrl) {

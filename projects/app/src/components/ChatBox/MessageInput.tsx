@@ -11,7 +11,7 @@ import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
 import { useToast } from '@/web/common/hooks/useToast';
 import { customAlphabet } from 'nanoid';
-import { IMG_BLOCK_KEY } from '@fastgpt/global/core/chat/constants';
+import { IMG_BLOCK_KEY } from '/common/global/core/chat/constants';
 import { addDays } from 'date-fns';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
 

@@ -1,14 +1,14 @@
-import { DatasetSearchModeEnum, PgDatasetTableName } from '@fastgpt/global/core/dataset/constant';
+import { DatasetSearchModeEnum, PgDatasetTableName } from '/common/global/core/dataset/constant';
 import type {
   DatasetDataSchemaType,
   SearchDataResponseItemType
-} from '@fastgpt/global/core/dataset/type.d';
-import { PgClient } from '@fastgpt/service/common/pg';
+} from '/common/global/core/dataset/type.d';
+import { PgClient } from '/common/service/common/pg';
 import { getVectorsByText } from '@/service/core/ai/vector';
 import { delay } from '@/utils/tools';
-import { PgSearchRawType } from '@fastgpt/global/core/dataset/api';
-import { MongoDatasetCollection } from '@fastgpt/service/core/dataset/collection/schema';
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
+import { PgSearchRawType } from '/common/global/core/dataset/api';
+import { MongoDatasetCollection } from '/common/service/core/dataset/collection/schema';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
 import { jiebaSplit } from '../utils';
 import { reRankRecall } from '../../ai/rerank';
 

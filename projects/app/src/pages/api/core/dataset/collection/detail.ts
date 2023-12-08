@@ -2,10 +2,10 @@
     Get one dataset collection detail
 */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authDatasetCollection } from '@fastgpt/service/support/permission/auth/dataset';
-import { DatasetCollectionItemType } from '@fastgpt/global/core/dataset/type';
+import { authDatasetCollection } from '/common/service/support/permission/auth/dataset';
+import { DatasetCollectionItemType } from '/common/global/core/dataset/type';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

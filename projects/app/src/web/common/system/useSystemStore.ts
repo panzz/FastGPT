@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import axios from 'axios';
-import { OAuthEnum } from '@fastgpt/global/support/user/constant';
+import { OAuthEnum } from '/common/global/support/user/constant';
 
 type LoginStoreType = { provider: `${OAuthEnum}`; lastRoute: string; state: string };
 

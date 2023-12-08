@@ -3,7 +3,7 @@ import { ModalBody, Box, useTheme, Flex, Progress, Link, Image } from '@chakra-u
 import { getDatasetDataItemById } from '@/web/core/dataset/api';
 import { useLoading } from '@/web/common/hooks/useLoading';
 import { useToast } from '@/web/common/hooks/useToast';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import MyIcon from '@/components/Icon';
 import InputDataModal, {
   RawSourceText,
@@ -12,7 +12,7 @@ import InputDataModal, {
 import MyModal from '../MyModal';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import type { SearchDataResponseItemType } from '@fastgpt/global/core/dataset/type';
+import type { SearchDataResponseItemType } from '/common/global/core/dataset/type';
 import MyTooltip from '../MyTooltip';
 import NextLink from 'next/link';
 import { useSystemStore } from '@/web/common/system/useSystemStore';

@@ -2,8 +2,8 @@ import MyIcon from '@/components/Icon';
 import { useLoading } from '@/web/common/hooks/useLoading';
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { useToast } from '@/web/common/hooks/useToast';
-import { splitText2Chunks } from '@fastgpt/global/common/string/textSplitter';
-import { simpleText } from '@fastgpt/global/common/string/tools';
+import { splitText2Chunks } from '/common/global/common/string/textSplitter';
+import { simpleText } from '/common/global/common/string/tools';
 import {
   fileDownload,
   readCsvContent,
@@ -18,14 +18,14 @@ import { useTranslation } from 'next-i18next';
 import { customAlphabet } from 'nanoid';
 import dynamic from 'next/dynamic';
 import MyTooltip from '@/components/MyTooltip';
-import type { FetchResultItem } from '@fastgpt/global/common/plugin/types/pluginRes.d';
-import type { DatasetCollectionSchemaType } from '@fastgpt/global/core/dataset/type';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import type { FetchResultItem } from '/common/global/common/plugin/types/pluginRes.d';
+import type { DatasetCollectionSchemaType } from '/common/global/core/dataset/type';
+import { getErrText } from '/common/global/common/error/utils';
 import { useDatasetStore } from '@/web/core/dataset/store/dataset';
-import { getFileIcon } from '@fastgpt/global/common/file/icon';
-import { countPromptTokens } from '@fastgpt/global/common/string/tiktoken';
-import { DatasetCollectionTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import type { PushDatasetDataChunkProps } from '@fastgpt/global/core/dataset/api.d';
+import { getFileIcon } from '/common/global/common/file/icon';
+import { countPromptTokens } from '/common/global/common/string/tiktoken';
+import { DatasetCollectionTypeEnum } from '/common/global/core/dataset/constant';
+import type { PushDatasetDataChunkProps } from '/common/global/core/dataset/api.d';
 
 const UrlFetchModal = dynamic(() => import('./UrlFetchModal'));
 const CreateFileModal = dynamic(() => import('./CreateFileModal'));

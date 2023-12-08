@@ -1,14 +1,14 @@
 import { GET, POST, PUT } from '@/web/common/api/request';
-import { hashStr } from '@fastgpt/global/common/string/tools';
+import { hashStr } from '/common/global/common/string/tools';
 import type { ResLogin } from '@/global/support/api/userRes.d';
 import { UserAuthTypeEnum } from '@/constants/common';
 import { UserUpdateParams } from '@/types/user';
-import { UserType } from '@fastgpt/global/support/user/type.d';
+import { UserType } from '/common/global/support/user/type.d';
 import type {
   FastLoginProps,
   OauthLoginProps,
   PostLoginProps
-} from '@fastgpt/global/support/user/api.d';
+} from '/common/global/support/user/api.d';
 
 export const sendAuthCode = (data: {
   username: string;

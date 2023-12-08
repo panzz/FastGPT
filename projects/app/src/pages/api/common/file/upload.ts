@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
+import { authCert } from '/common/service/support/permission/auth/common';
 import { customAlphabet } from 'nanoid';
 import multer from 'multer';
 import path from 'path';
-import { uploadFile } from '@fastgpt/service/common/file/gridfs/controller';
-import { BucketNameEnum } from '@fastgpt/global/common/file/constants';
+import { uploadFile } from '/common/service/common/file/gridfs/controller';
+import { BucketNameEnum } from '/common/global/common/file/constants';
 
 const nanoid = customAlphabet('1234567890abcdef', 12);
 

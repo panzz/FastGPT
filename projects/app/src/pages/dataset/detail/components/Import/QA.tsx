@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Flex, Button, Textarea } from '@chakra-ui/react';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
 import MyTooltip from '@/components/MyTooltip';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import { Prompt_AgentQA } from '@/global/core/prompt/agent';

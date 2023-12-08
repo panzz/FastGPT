@@ -18,14 +18,14 @@ import { useRequest } from '@/web/common/hooks/useRequest';
 import { formatTimeToChatTime } from '@/utils/tools';
 import InputDataModal, { type InputDataType } from './InputDataModal';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useToast } from '@/web/common/hooks/useToast';
 import { customAlphabet } from 'nanoid';
 import MyTooltip from '@/components/MyTooltip';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next';
 import { SearchTestResponse } from '@/global/core/dataset/api';
-import { DatasetSearchModeEnum, DatasetSearchModeMap } from '@fastgpt/global/core/dataset/constant';
+import { DatasetSearchModeEnum, DatasetSearchModeMap } from '/common/global/core/dataset/constant';
 import dynamic from 'next/dynamic';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 12);
 

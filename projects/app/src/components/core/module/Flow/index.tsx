@@ -3,7 +3,7 @@ import ReactFlow, { Background, Controls, ReactFlowProvider } from 'reactflow';
 import { Box, Flex, IconButton, useDisclosure } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
 import { edgeOptions, connectionLineStyle } from '@/web/core/modules/constants/flowUi';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 
 import dynamic from 'next/dynamic';
 
@@ -12,7 +12,7 @@ import ModuleTemplateList, { type ModuleTemplateProps } from './ModuleTemplateLi
 import { useFlowProviderStore } from './FlowProvider';
 
 import 'reactflow/dist/style.css';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type.d';
 
 const NodeSimple = dynamic(() => import('./components/nodes/NodeSimple'));
 const nodeTypes = {

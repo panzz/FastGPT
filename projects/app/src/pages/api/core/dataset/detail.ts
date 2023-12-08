@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import { getQAModel, getVectorModel } from '@/service/core/ai/model';
-import type { DatasetItemType } from '@fastgpt/global/core/dataset/type.d';
-import { authDataset } from '@fastgpt/service/support/permission/auth/dataset';
+import type { DatasetItemType } from '/common/global/core/dataset/type.d';
+import { authDataset } from '/common/service/support/permission/auth/dataset';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

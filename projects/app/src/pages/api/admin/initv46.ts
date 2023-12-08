@@ -1,29 +1,29 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoBill } from '@fastgpt/service/support/wallet/bill/schema';
+import { MongoBill } from '/common/service/support/wallet/bill/schema';
 import {
   createDefaultTeam,
   getUserDefaultTeam
-} from '@fastgpt/service/support/user/team/controller';
-import { MongoUser } from '@fastgpt/service/support/user/schema';
-import { UserModelSchema } from '@fastgpt/global/support/user/type';
+} from '/common/service/support/user/team/controller';
+import { MongoUser } from '/common/service/support/user/schema';
+import { UserModelSchema } from '/common/global/support/user/type';
 import { delay } from '@/utils/tools';
-import { MongoDataset } from '@fastgpt/service/core/dataset/schema';
-import { PermissionTypeEnum } from '@fastgpt/global/support/permission/constant';
-import { MongoDatasetCollection } from '@fastgpt/service/core/dataset/collection/schema';
-import { MongoDatasetTraining } from '@fastgpt/service/core/dataset/training/schema';
-import { PgClient } from '@fastgpt/service/common/pg';
-import { PgDatasetTableName } from '@fastgpt/global/core/dataset/constant';
-import { MongoOutLink } from '@fastgpt/service/support/outLink/schema';
-import { MongoOpenApi } from '@fastgpt/service/support/openapi/schema';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import { MongoChatItem } from '@fastgpt/service/core/chat/chatItemSchema';
-import { MongoPlugin } from '@fastgpt/service/core/plugin/schema';
-import { POST } from '@fastgpt/service/common/api/plusRequest';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { getGFSCollection } from '@fastgpt/service/common/file/gridfs/controller';
+import { MongoDataset } from '/common/service/core/dataset/schema';
+import { PermissionTypeEnum } from '/common/global/support/permission/constant';
+import { MongoDatasetCollection } from '/common/service/core/dataset/collection/schema';
+import { MongoDatasetTraining } from '/common/service/core/dataset/training/schema';
+import { PgClient } from '/common/service/common/pg';
+import { PgDatasetTableName } from '/common/global/core/dataset/constant';
+import { MongoOutLink } from '/common/service/support/outLink/schema';
+import { MongoOpenApi } from '/common/service/support/openapi/schema';
+import { MongoApp } from '/common/service/core/app/schema';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import { MongoChatItem } from '/common/service/core/chat/chatItemSchema';
+import { MongoPlugin } from '/common/service/core/plugin/schema';
+import { POST } from '/common/service/common/api/plusRequest';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { getGFSCollection } from '/common/service/common/file/gridfs/controller';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

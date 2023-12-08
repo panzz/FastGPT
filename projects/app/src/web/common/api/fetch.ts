@@ -1,10 +1,10 @@
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
+import { getErrText } from '/common/global/common/error/utils';
 import { parseStreamChunk, SSEParseData } from '@/utils/sse';
-import type { ChatHistoryItemResType } from '@fastgpt/global/core/chat/api.d';
+import type { ChatHistoryItemResType } from '/common/global/core/chat/api.d';
 import { StartChatFnProps } from '@/components/ChatBox';
 import { getToken } from '@/web/support/user/auth';
-import { ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 
 type StreamFetchProps = {
   url?: string;

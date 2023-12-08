@@ -1,11 +1,11 @@
-import type { FeConfigsType, SystemEnvType } from '@fastgpt/global/common/system/types/index.d';
+import type { FeConfigsType, SystemEnvType } from '/common/global/common/system/types/index.d';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { readFileSync, readdirSync } from 'fs';
 import type { ConfigFileType, InitDateResponse } from '@/global/common/api/systemRes';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { getTikTokenEnc } from '@fastgpt/global/common/string/tiktoken';
-import { initHttpAgent } from '@fastgpt/service/common/middle/httpAgent';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { getTikTokenEnc } from '/common/global/common/string/tiktoken';
+import { initHttpAgent } from '/common/service/common/middle/httpAgent';
 import {
   defaultChatModels,
   defaultQAModels,
@@ -16,10 +16,10 @@ import {
   defaultAudioSpeechModels,
   defaultWhisperModel,
   defaultReRankModels
-} from '@fastgpt/global/core/ai/model';
+} from '/common/global/core/ai/model';
 import { SimpleModeTemplate_FastGPT_Universal } from '@/global/core/app/constants';
 import { getSimpleTemplatesFromPlus } from '@/service/core/app/utils';
-import { PluginTypeEnum } from '@fastgpt/global/core/plugin/constants';
+import { PluginTypeEnum } from '/common/global/core/plugin/constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await getInitConfig();

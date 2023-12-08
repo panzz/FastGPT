@@ -3,14 +3,14 @@
     @author: FastGpt Team
 */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import type { AppSimpleEditFormType } from '@fastgpt/global/core/app/type.d';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type';
-import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import type { FlowNodeInputItemType } from '@fastgpt/global/core/module/node/type.d';
-import { FormatForm2ModulesProps } from '@fastgpt/global/core/app/api';
+import { jsonRes } from '/common/service/common/response';
+import type { AppSimpleEditFormType } from '/common/global/core/app/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type';
+import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import type { FlowNodeInputItemType } from '/common/global/core/module/node/type.d';
+import { FormatForm2ModulesProps } from '/common/global/core/app/api';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

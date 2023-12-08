@@ -11,10 +11,10 @@ import {
   Td,
   TableContainer
 } from '@chakra-ui/react';
-import { BillItemType } from '@fastgpt/global/support/wallet/bill/type.d';
+import { BillItemType } from '/common/global/support/wallet/bill/type.d';
 import dayjs from 'dayjs';
-import { BillSourceMap } from '@fastgpt/global/support/wallet/bill/constants';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
+import { BillSourceMap } from '/common/global/support/wallet/bill/constants';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
 import MyModal from '@/components/MyModal';
 import { useTranslation } from 'next-i18next';
 

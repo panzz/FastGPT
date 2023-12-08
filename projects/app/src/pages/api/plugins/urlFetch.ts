@@ -3,10 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 import { Readability } from '@mozilla/readability';
-import { jsonRes } from '@fastgpt/service/common/response';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import type { FetchResultItem } from '@fastgpt/global/common/plugin/types/pluginRes.d';
-import { simpleText } from '@fastgpt/global/common/string/tools';
+import { jsonRes } from '/common/service/common/response';
+import { authCert } from '/common/service/support/permission/auth/common';
+import type { FetchResultItem } from '/common/global/common/plugin/types/pluginRes.d';
+import { simpleText } from '/common/global/common/string/tools';
 import { connectToDatabase } from '@/service/mongo';
 
 export type UrlFetchResponse = FetchResultItem[];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NodeProps } from 'reactflow';
 import NodeCard from '../modules/NodeCard';
-import { FlowModuleItemType } from '@fastgpt/global/core/module/type.d';
+import { FlowModuleItemType } from '/common/global/core/module/type.d';
 import Divider from '../modules/Divider';
 import Container from '../modules/Container';
 import RenderInput from '../render/RenderInput';
@@ -12,8 +12,8 @@ import RenderOutput from '../render/RenderOutput';
 import {
   FlowNodeInputTypeEnum,
   FlowNodeOutputTypeEnum
-} from '@fastgpt/global/core/module/node/constant';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
+} from '/common/global/core/module/node/constant';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
 import { customAlphabet } from 'nanoid';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
 import { onChangeNode } from '../../FlowProvider';

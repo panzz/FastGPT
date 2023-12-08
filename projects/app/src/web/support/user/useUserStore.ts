@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import type { UserUpdateParams } from '@/types/user';
-import type { UserType } from '@fastgpt/global/support/user/type.d';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
+import type { UserType } from '/common/global/support/user/type.d';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
 import { getTokenLogin, putUserInfo } from '@/web/support/user/api';
 
 type State = {

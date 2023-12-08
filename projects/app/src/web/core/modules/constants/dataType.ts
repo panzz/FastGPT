@@ -1,5 +1,5 @@
 import type { BoxProps } from '@chakra-ui/react';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
 
 export const FlowValueTypeStyle: Record<`${ModuleDataTypeEnum}`, BoxProps> = {
   [ModuleDataTypeEnum.string]: {

@@ -1,5 +1,5 @@
-import type { ModuleItemType } from '@fastgpt/global/core/module/type.d';
-import { AppSchema } from '@fastgpt/global/core/app/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type.d';
+import { AppSchema } from '/common/global/core/app/type.d';
 import React, {
   useMemo,
   useCallback,
@@ -10,12 +10,12 @@ import React, {
 } from 'react';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
 import MyIcon from '@/components/Icon';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 import { streamFetch } from '@/web/common/api/fetch';
 import MyTooltip from '@/components/MyTooltip';
 import { useUserStore } from '@/web/support/user/useUserStore';
 import ChatBox, { type ComponentRef, type StartChatFnProps } from '@/components/ChatBox';
-import { getGuideModule } from '@fastgpt/global/core/module/utils';
+import { getGuideModule } from '/common/global/core/module/utils';
 import { checkChatSupportSelectFileByModules } from '@/web/core/chat/utils';
 
 export type ChatTestComponentRef = {

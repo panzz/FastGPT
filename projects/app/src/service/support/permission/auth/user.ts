@@ -1,8 +1,8 @@
-import { AuthResponseType } from '@fastgpt/global/support/permission/type';
-import { parseHeaderCert } from '@fastgpt/service/support/permission/controller';
-import { AuthModeType } from '@fastgpt/service/support/permission/type';
-import { UserErrEnum } from '@fastgpt/global/common/error/code/user';
-import { UserType } from '@fastgpt/global/support/user/type';
+import { AuthResponseType } from '/common/global/support/permission/type';
+import { parseHeaderCert } from '/common/service/support/permission/controller';
+import { AuthModeType } from '/common/service/support/permission/type';
+import { UserErrEnum } from '/common/global/common/error/code/user';
+import { UserType } from '/common/global/support/user/type';
 import { getUserDetail } from '@/service/support/user/controller';
 
 export async function getUserAndAuthBalance({

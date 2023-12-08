@@ -12,7 +12,7 @@ import { clientInitData, feConfigs } from '@/web/common/system/staticData';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
-import type { FeConfigsType } from '@fastgpt/global/common/system/types/index.d';
+import type { FeConfigsType } from '/common/global/common/system/types/index.d';
 import { change2DefaultLng, setLngStore } from '@/web/common/utils/i18n';
 
 import 'nprogress/nprogress.css';

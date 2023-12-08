@@ -5,9 +5,9 @@ import MyIcon from '@/components/Icon';
 import Tag from '@/components/Tag';
 import Avatar from '@/components/Avatar';
 import ToolMenu from './ToolMenu';
-import type { ChatItemType } from '@fastgpt/global/core/chat/type';
+import type { ChatItemType } from '/common/global/core/chat/type';
 import { useRouter } from 'next/router';
-import { chatContentReplaceBlock } from '@fastgpt/global/core/chat/utils';
+import { chatContentReplaceBlock } from '/common/global/core/chat/utils';
 
 const ChatHeader = ({
   history,

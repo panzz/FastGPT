@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import type { AppUpdateParams } from '@fastgpt/global/core/app/api';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
+import { MongoApp } from '/common/service/core/app/schema';
+import type { AppUpdateParams } from '/common/global/core/app/api';
+import { authApp } from '/common/service/support/permission/auth/app';
 
 /* 获取我的模型 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {

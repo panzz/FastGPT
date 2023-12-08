@@ -1,6 +1,6 @@
 import { GET, POST, PUT, DELETE } from '@/web/common/api/request';
-import type { ParentTreePathItemType } from '@fastgpt/global/common/parentFolder/type.d';
-import type { DatasetItemType } from '@fastgpt/global/core/dataset/type.d';
+import type { ParentTreePathItemType } from '/common/global/common/parentFolder/type.d';
+import type { DatasetItemType } from '/common/global/core/dataset/type.d';
 import type {
   DatasetUpdateParams,
   GetDatasetCollectionsProps,
@@ -19,9 +19,9 @@ import type { PushDataResponse } from '@/global/core/api/datasetRes.d';
 import type {
   DatasetCollectionItemType,
   SearchDataResponseItemType
-} from '@fastgpt/global/core/dataset/type';
-import { DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import type { DatasetDataItemType } from '@fastgpt/global/core/dataset/type';
+} from '/common/global/core/dataset/type';
+import { DatasetTypeEnum } from '/common/global/core/dataset/constant';
+import type { DatasetDataItemType } from '/common/global/core/dataset/type';
 import type { DatasetCollectionsListItemType } from '@/global/core/dataset/type.d';
 import { PagingData } from '@/types';
 

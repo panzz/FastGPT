@@ -3,7 +3,7 @@ import { FormControl, Flex, Input, Button, FormErrorMessage, Box, Link } from '@
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { PageTypeEnum } from '@/constants/user';
-import { OAuthEnum } from '@fastgpt/global/support/user/constant';
+import { OAuthEnum } from '/common/global/support/user/constant';
 import { postLogin } from '@/web/support/user/api';
 import type { ResLogin } from '@/global/support/api/userRes';
 import { useToast } from '@/web/common/hooks/useToast';

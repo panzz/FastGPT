@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NodeProps } from 'reactflow';
 import NodeCard from '../modules/NodeCard';
-import { FlowModuleItemType } from '@fastgpt/global/core/module/type.d';
+import { FlowModuleItemType } from '/common/global/core/module/type.d';
 import { onChangeNode } from '../../FlowProvider';
 import dynamic from 'next/dynamic';
 import { Box, Button, Flex } from '@chakra-ui/react';
 import { QuestionOutlineIcon, SmallAddIcon } from '@chakra-ui/icons';
-import { FlowNodeOutputTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeOutputTypeEnum } from '/common/global/core/module/node/constant';
 import Container from '../modules/Container';
 import MyIcon from '@/components/Icon';
 import MyTooltip from '@/components/MyTooltip';

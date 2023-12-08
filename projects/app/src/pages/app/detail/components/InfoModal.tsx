@@ -11,11 +11,11 @@ import {
   Image
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
-import { AppSchema } from '@fastgpt/global/core/app/type.d';
+import { AppSchema } from '/common/global/core/app/type.d';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import Avatar from '@/components/Avatar';
 import MyModal from '@/components/MyModal';

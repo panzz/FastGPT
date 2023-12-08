@@ -1,8 +1,8 @@
 import { getFileViewUrl, postChunks2Dataset } from '@/web/core/dataset/api';
-import { TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { TrainingModeEnum } from '/common/global/core/dataset/constant';
 import { delay } from '@/utils/tools';
-import { strIsLink } from '@fastgpt/global/common/string/tools';
-import type { PushDatasetDataChunkProps } from '@fastgpt/global/core/dataset/api.d';
+import { strIsLink } from '/common/global/common/string/tools';
+import type { PushDatasetDataChunkProps } from '/common/global/core/dataset/api.d';
 
 export async function chunksUpload({
   collectionId,

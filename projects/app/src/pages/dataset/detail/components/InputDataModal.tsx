@@ -8,7 +8,7 @@ import {
   getDatasetCollectionById
 } from '@/web/core/dataset/api';
 import { useToast } from '@/web/common/hooks/useToast';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import MyIcon from '@/components/Icon';
 import MyModal from '@/components/MyModal';
 import MyTooltip from '@/components/MyTooltip';
@@ -18,12 +18,12 @@ import { useTranslation } from 'next-i18next';
 import { getFileAndOpen } from '@/web/core/dataset/utils';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
 import { useRequest } from '@/web/common/hooks/useRequest';
-import { countPromptTokens } from '@fastgpt/global/common/string/tiktoken';
+import { countPromptTokens } from '/common/global/common/string/tiktoken';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
-import { getDefaultIndex, getSourceNameIcon } from '@fastgpt/global/core/dataset/utils';
+import { getDefaultIndex, getSourceNameIcon } from '/common/global/core/dataset/utils';
 import { feConfigs, vectorModelList } from '@/web/common/system/staticData';
-import { DatasetDataIndexTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import { DatasetDataIndexItemType } from '@fastgpt/global/core/dataset/type';
+import { DatasetDataIndexTypeEnum } from '/common/global/core/dataset/constant';
+import { DatasetDataIndexItemType } from '/common/global/core/dataset/type';
 import SideTabs from '@/components/SideTabs';
 import { useLoading } from '@/web/common/hooks/useLoading';
 import DeleteIcon from '@/components/Icon/delete';

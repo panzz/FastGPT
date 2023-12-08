@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { MongoPlugin } from '@fastgpt/service/core/plugin/schema';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { FlowModuleTemplateType } from '@fastgpt/global/core/module/type';
-import { ModuleTemplateTypeEnum } from '@fastgpt/global/core/module/constants';
-import { GET } from '@fastgpt/service/common/api/plusRequest';
-import type { PluginTemplateType } from '@fastgpt/global/core/plugin/type.d';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { MongoPlugin } from '/common/service/core/plugin/schema';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { FlowModuleTemplateType } from '/common/global/core/module/type';
+import { ModuleTemplateTypeEnum } from '/common/global/core/module/constants';
+import { GET } from '/common/service/common/api/plusRequest';
+import type { PluginTemplateType } from '/common/global/core/plugin/type.d';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

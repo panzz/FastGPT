@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import { delay } from '@/utils/tools';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
-import { ModuleDataTypeEnum, ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { ModuleItemType } from '@fastgpt/global/core/module/type';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { MongoApp } from '/common/service/core/app/schema';
+import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
+import { ModuleDataTypeEnum, ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import { ModuleItemType } from '/common/global/core/module/type';
 
 let success = 0;
 /* pg 中的数据搬到 mongo dataset.datas 中，并做映射 */

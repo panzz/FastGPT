@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import ReactFlow, { Background, ReactFlowProvider, useNodesState } from 'reactflow';
-import { FlowModuleItemType, ModuleItemType } from '@fastgpt/global/core/module/type';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowModuleItemType, ModuleItemType } from '/common/global/core/module/type';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 import dynamic from 'next/dynamic';
-import { formatPluginToPreviewModule } from '@fastgpt/global/core/module/utils';
+import { formatPluginToPreviewModule } from '/common/global/core/module/utils';
 import MyModal from '@/components/MyModal';
 import { Box } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
-import { PluginItemSchema } from '@fastgpt/global/core/plugin/type';
+import { PluginItemSchema } from '/common/global/core/plugin/type';
 import { appModule2FlowNode } from '@/utils/adapt';
 
 const nodeTypes = {

@@ -5,12 +5,12 @@ import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import MySlider from '@/components/Slider';
 import MyTooltip from '@/components/MyTooltip';
 import MyModal from '@/components/MyModal';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
 import { useTranslation } from 'next-i18next';
 import { reRankModelList } from '@/web/common/system/staticData';
 
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { DatasetSearchModeMap } from '@fastgpt/global/core/dataset/constant';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import { DatasetSearchModeMap } from '/common/global/core/dataset/constant';
 import MyRadio from '@/components/common/MyRadio';
 
 type DatasetParamsProps = {

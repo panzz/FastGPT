@@ -12,7 +12,7 @@ import {
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { useForm } from 'react-hook-form';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
@@ -24,7 +24,7 @@ import MyModal from '@/components/MyModal';
 import { useTranslation } from 'next-i18next';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
 import MyIcon from '@/components/Icon';
-import { CreateOnePluginParams } from '@fastgpt/global/core/plugin/controller';
+import { CreateOnePluginParams } from '/common/global/core/plugin/controller';
 
 export type FormType = CreateOnePluginParams & {
   id?: string;

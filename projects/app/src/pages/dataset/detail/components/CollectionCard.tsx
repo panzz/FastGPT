@@ -36,8 +36,8 @@ import MyMenu from '@/components/MyMenu';
 import { useEditTitle } from '@/web/common/hooks/useEditTitle';
 import type { DatasetCollectionsListItemType } from '@/global/core/dataset/type.d';
 import EmptyTip from '@/components/EmptyTip';
-import { FolderAvatarSrc, DatasetCollectionTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import { getCollectionIcon } from '@fastgpt/global/core/dataset/utils';
+import { FolderAvatarSrc, DatasetCollectionTypeEnum } from '/common/global/core/dataset/constant';
+import { getCollectionIcon } from '/common/global/core/dataset/utils';
 import EditFolderModal, { useEditFolder } from '../../component/EditFolderModal';
 import { TabEnum } from '..';
 import ParentPath from '@/components/common/ParentPaths';
@@ -47,7 +47,7 @@ import SelectCollections from '@/web/core/dataset/components/SelectCollections';
 import { useToast } from '@/web/common/hooks/useToast';
 import MyTooltip from '@/components/MyTooltip';
 import { useUserStore } from '@/web/support/user/useUserStore';
-import { TeamMemberRoleEnum } from '@fastgpt/global/support/user/team/constant';
+import { TeamMemberRoleEnum } from '/common/global/support/user/team/constant';
 
 const FileImportModal = dynamic(() => import('./Import/ImportModal'), {});
 

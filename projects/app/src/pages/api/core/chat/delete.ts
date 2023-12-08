@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import { MongoChatItem } from '@fastgpt/service/core/chat/chatItemSchema';
-import { ChatSourceEnum } from '@fastgpt/global/core/chat/constants';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import { MongoChatItem } from '/common/service/core/chat/chatItemSchema';
+import { ChatSourceEnum } from '/common/global/core/chat/constants';
 
 type Props = {
   chatId?: string;

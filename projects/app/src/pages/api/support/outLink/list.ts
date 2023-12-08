@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoOutLink } from '@fastgpt/service/support/outLink/schema';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
+import { MongoOutLink } from '/common/service/support/outLink/schema';
+import { authApp } from '/common/service/support/permission/auth/app';
 
 /* get shareChat list by appId */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

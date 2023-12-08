@@ -2,20 +2,20 @@ import React, { useMemo } from 'react';
 import { Box, Flex, useTheme, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import MyIcon from '@/components/Icon';
 import Avatar from '@/components/Avatar';
-import type { FlowModuleItemType } from '@fastgpt/global/core/module/type.d';
+import type { FlowModuleItemType } from '/common/global/core/module/type.d';
 import MyTooltip from '@/components/MyTooltip';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next';
 import { useEditTitle } from '@/web/common/hooks/useEditTitle';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useFlowProviderStore, onChangeNode } from '../../FlowProvider';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
 import { getPreviewPluginModule } from '@/web/core/plugin/api';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
-import { LOGO_ICON } from '@fastgpt/global/core/chat/constants';
+import { LOGO_ICON } from '/common/global/core/chat/constants';
 
 type Props = FlowModuleItemType & {
   children?: React.ReactNode | React.ReactNode[] | string;

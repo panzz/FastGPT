@@ -3,12 +3,12 @@
     @author: FastGpt Team
 */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import type { AppSimpleEditFormType } from '@fastgpt/global/core/app/type.d';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type';
-import { FlowNodeInputTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { FormatForm2ModulesProps } from '@fastgpt/global/core/app/api';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { jsonRes } from '/common/service/common/response';
+import type { AppSimpleEditFormType } from '/common/global/core/app/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type';
+import { FlowNodeInputTypeEnum } from '/common/global/core/module/node/constant';
+import { FormatForm2ModulesProps } from '/common/global/core/app/api';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

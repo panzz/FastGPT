@@ -1,6 +1,6 @@
 import { ModelTypeEnum, getModelMap } from '@/service/core/ai/model';
-import { AuthUserTypeEnum } from '@fastgpt/global/support/permission/constant';
-import { BillSourceEnum } from '@fastgpt/global/support/wallet/bill/constants';
+import { AuthUserTypeEnum } from '/common/global/support/permission/constant';
+import { BillSourceEnum } from '/common/global/support/wallet/bill/constants';
 
 export function authType2BillSource({
   authType,

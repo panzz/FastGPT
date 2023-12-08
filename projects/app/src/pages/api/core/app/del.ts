@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { MongoOutLink } from '@fastgpt/service/support/outLink/schema';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import { MongoApp } from '/common/service/core/app/schema';
+import { MongoOutLink } from '/common/service/support/outLink/schema';
+import { authApp } from '/common/service/support/permission/auth/app';
 
 /* 获取我的模型 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {

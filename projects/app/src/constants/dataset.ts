@@ -1,8 +1,8 @@
-import { defaultQAModels, defaultVectorModels } from '@fastgpt/global/core/ai/model';
+import { defaultQAModels, defaultVectorModels } from '/common/global/core/ai/model';
 import type {
   DatasetCollectionItemType,
   DatasetItemType
-} from '@fastgpt/global/core/dataset/type.d';
+} from '/common/global/core/dataset/type.d';
 
 export const defaultDatasetDetail: DatasetItemType = {
   _id: '',

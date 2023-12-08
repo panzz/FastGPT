@@ -2,12 +2,12 @@
   get plugin preview modules 
  */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { getPluginPreviewModule } from '@fastgpt/service/core/plugin/controller';
-import { authPluginCanUse } from '@fastgpt/service/support/permission/auth/plugin';
-import { FlowModuleTemplateType } from '@fastgpt/global/core/module/type';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
+import { getPluginPreviewModule } from '/common/service/core/plugin/controller';
+import { authPluginCanUse } from '/common/service/support/permission/auth/plugin';
+import { FlowModuleTemplateType } from '/common/global/core/module/type';
+import { authCert } from '/common/service/support/permission/auth/common';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

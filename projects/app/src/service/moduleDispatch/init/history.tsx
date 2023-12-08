@@ -1,5 +1,5 @@
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import type { ChatItemType } from '/common/global/core/chat/type.d';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
 export type HistoryProps = ModuleDispatchProps<{
   maxContext: number;

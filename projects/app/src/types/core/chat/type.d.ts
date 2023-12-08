@@ -1,6 +1,6 @@
 import type { NextApiResponse } from 'next';
 import { RunningModuleItemType } from '@/types/app';
-import type { UserType } from '@fastgpt/global/support/user/type';
+import type { UserType } from '/common/global/support/user/type';
 
 // module dispatch props type
 export type ModuleDispatchProps<T> = {

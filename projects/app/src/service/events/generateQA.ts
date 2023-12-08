@@ -1,17 +1,17 @@
-import { MongoDatasetTraining } from '@fastgpt/service/core/dataset/training/schema';
+import { MongoDatasetTraining } from '/common/service/core/dataset/training/schema';
 import { pushQABill } from '@/service/support/wallet/bill/push';
-import { DatasetDataIndexTypeEnum, TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetDataIndexTypeEnum, TrainingModeEnum } from '/common/global/core/dataset/constant';
 import { sendOneInform } from '../support/user/inform/api';
-import { getAIApi } from '@fastgpt/service/core/ai/config';
-import type { ChatMessageItemType } from '@fastgpt/global/core/ai/type.d';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import { splitText2Chunks } from '@fastgpt/global/common/string/textSplitter';
-import { replaceVariable } from '@fastgpt/global/common/string/tools';
+import { getAIApi } from '/common/service/core/ai/config';
+import type { ChatMessageItemType } from '/common/global/core/ai/type.d';
+import { addLog } from '/common/service/common/mongo/controller';
+import { splitText2Chunks } from '/common/global/common/string/textSplitter';
+import { replaceVariable } from '/common/global/common/string/tools';
 import { Prompt_AgentQA } from '@/global/core/prompt/agent';
 import { pushDataToDatasetCollection } from '@/pages/api/core/dataset/data/pushData';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { authTeamBalance } from '../support/permission/auth/bill';
-import type { PushDatasetDataChunkProps } from '@fastgpt/global/core/dataset/api.d';
+import type { PushDatasetDataChunkProps } from '/common/global/core/dataset/api.d';
 
 const reduceQueue = (retry = false) => {
   global.qaQueueLen = global.qaQueueLen > 0 ? global.qaQueueLen - 1 : 0;

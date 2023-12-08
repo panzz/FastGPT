@@ -16,9 +16,6 @@
     "@chakra-ui/system": "^2.5.8",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fastgpt/global": "file:../../packages/global",
-    "@fastgpt/service": "file:../../packages/service",
-    "@fastgpt/web": "file:../../packages/web",
     "@mozilla/readability": "^0.4.4",
     "@node-rs/jieba": "^1.7.2",
     "@tanstack/react-query": "^4.24.10",
@@ -61,7 +58,17 @@
     "remark-math": "^5.1.1",
     "request-ip": "^3.3.0",
     "sass": "^1.58.3",
-    "zustand": "^4.3.5"
+    "zustand": "^4.3.5",
+    "timezones-list": "^3.0.2",
+    "encoding": "^0.1.13",
+    "openai": "^4.16.1",
+    "js-tiktoken": "^1.0.7",
+    "cookie": "^0.5.0",
+    "nextjs-cors": "^2.1.2",
+    "pg": "^8.10.0",
+    "tunnel": "^0.0.6",
+    "winston": "^3.10.0",
+    "winston-mongodb": "^5.1.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
@@ -80,7 +87,10 @@
     "@types/request-ip": "^0.0.37",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "@types/cookie": "^0.5.2",
+    "@types/pg": "^8.6.6",
+    "@types/tunnel": "^0.0.4"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -1,4 +1,4 @@
-import { getAIApi } from '@fastgpt/service/core/ai/config';
+import { getAIApi } from '/common/service/core/ai/config';
 
 export type GetVectorProps = {
   model: string;

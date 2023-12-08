@@ -6,9 +6,9 @@ import {
   ReRankModelItemType,
   VectorModelItemType,
   WhisperModelType
-} from '@fastgpt/global/core/ai/model.d';
+} from '/common/global/core/ai/model.d';
 import { TrackEventName } from '@/constants/common';
-import { AppSimpleEditConfigTemplateType } from '@fastgpt/global/core/app/type';
+import { AppSimpleEditConfigTemplateType } from '/common/global/core/app/type';
 
 export type PagingData<T> = {
   pageNum: number;

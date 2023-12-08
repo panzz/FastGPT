@@ -1,8 +1,8 @@
 import { authOutLinkLimit } from '@/service/support/outLink/auth';
-import { AuthLinkChatProps } from '@fastgpt/global/support/outLink/api.d';
-import { AuthUserTypeEnum } from '@fastgpt/global/support/permission/constant';
+import { AuthLinkChatProps } from '/common/global/support/outLink/api.d';
+import { AuthUserTypeEnum } from '/common/global/support/permission/constant';
 import { getUserAndAuthBalance } from './user';
-import { authOutLinkValid } from '@fastgpt/service/support/permission/auth/outLink';
+import { authOutLinkValid } from '/common/service/support/permission/auth/outLink';
 
 export async function authOutLinkChat({
   shareId,

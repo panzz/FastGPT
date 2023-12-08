@@ -11,11 +11,11 @@ import React, {
 import FileSelect, { FileItemType, Props as FileSelectProps } from './FileSelect';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { postDatasetCollection } from '@/web/core/dataset/api';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { splitText2Chunks } from '@fastgpt/global/common/string/textSplitter';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { splitText2Chunks } from '/common/global/common/string/textSplitter';
 import { useToast } from '@/web/common/hooks/useToast';
-import { getErrText } from '@fastgpt/global/common/error/utils';
-import { TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { getErrText } from '/common/global/common/error/utils';
+import { TrainingModeEnum } from '/common/global/core/dataset/constant';
 import { Box, Flex, Image, useTheme } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 import DeleteIcon, { hoverDeleteStyles } from '@/components/Icon/delete';

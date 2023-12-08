@@ -1,7 +1,7 @@
 import type { InitDateResponse } from '@/global/common/api/systemRes';
 import { getSystemInitData } from '@/web/common/system/api';
 import { delay } from '@/utils/tools';
-import type { FeConfigsType } from '@fastgpt/global/common/system/types/index.d';
+import type { FeConfigsType } from '/common/global/common/system/types/index.d';
 import {
   defaultChatModels,
   defaultQAModels,
@@ -11,8 +11,8 @@ import {
   defaultVectorModels,
   defaultAudioSpeechModels,
   defaultReRankModels
-} from '@fastgpt/global/core/ai/model';
-import { AppSimpleEditConfigTemplateType } from '@fastgpt/global/core/app/type';
+} from '/common/global/core/ai/model';
+import { AppSimpleEditConfigTemplateType } from '/common/global/core/app/type';
 
 export let feConfigs: FeConfigsType = {};
 export let priceMd = '';

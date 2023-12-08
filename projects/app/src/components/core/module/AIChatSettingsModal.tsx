@@ -19,11 +19,11 @@ import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import { Prompt_QuotePromptList, Prompt_QuoteTemplateList } from '@/global/core/prompt/AIChat';
 import { chatModelList, feConfigs } from '@/web/common/system/staticData';
 import MySlider from '@/components/Slider';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
 import dynamic from 'next/dynamic';
-import { PromptTemplateItem } from '@fastgpt/global/core/ai/type.d';
-import type { AIChatModuleProps } from '@fastgpt/global/core/module/node/type.d';
-import type { AppSimpleEditConfigTemplateType } from '@fastgpt/global/core/app/type.d';
+import { PromptTemplateItem } from '/common/global/core/ai/type.d';
+import type { AIChatModuleProps } from '/common/global/core/module/node/type.d';
+import type { AppSimpleEditConfigTemplateType } from '/common/global/core/app/type.d';
 import { SimpleModeTemplate_FastGPT_Universal } from '@/global/core/app/constants';
 
 const PromptTemplate = dynamic(() => import('@/components/PromptTemplate'));

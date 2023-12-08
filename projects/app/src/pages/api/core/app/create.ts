@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import type { CreateAppParams } from '@fastgpt/global/core/app/api.d';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { authUserNotVisitor } from '@fastgpt/service/support/permission/auth/user';
+import type { CreateAppParams } from '/common/global/core/app/api.d';
+import { AppTypeEnum } from '/common/global/core/app/constants';
+import { MongoApp } from '/common/service/core/app/schema';
+import { authUserNotVisitor } from '/common/service/support/permission/auth/user';
 import { SimpleModeTemplate_FastGPT_Universal } from '@/global/core/app/constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {

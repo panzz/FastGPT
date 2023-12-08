@@ -1,18 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import { delay } from '@/utils/tools';
-import { PgClient } from '@fastgpt/service/common/pg';
-import {
-  DatasetDataIndexTypeEnum,
-  PgDatasetTableName
-} from '@fastgpt/global/core/dataset/constant';
+import { PgClient } from '/common/service/common/pg';
+import { DatasetDataIndexTypeEnum, PgDatasetTableName } from '/common/global/core/dataset/constant';
 
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
-import { getUserDefaultTeam } from '@fastgpt/service/support/user/team/controller';
-import { MongoDataset } from '@fastgpt/service/core/dataset/schema';
-import { defaultQAModels } from '@fastgpt/global/core/ai/model';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
+import { getUserDefaultTeam } from '/common/service/support/user/team/controller';
+import { MongoDataset } from '/common/service/core/dataset/schema';
+import { defaultQAModels } from '/common/global/core/ai/model';
 
 let success = 0;
 /* pg 中的数据搬到 mongo dataset.datas 中，并做映射 */

@@ -1,5 +1,5 @@
-import { AppDetailType } from '@fastgpt/global/core/app/type.d';
-import type { OutLinkEditType } from '@fastgpt/global/support/outLink/type.d';
+import { AppDetailType } from '/common/global/core/app/type.d';
+import type { OutLinkEditType } from '/common/global/support/outLink/type.d';
 
 export const defaultApp: AppDetailType = {
   _id: '',
