@@ -1142,7 +1142,7 @@ function ChatController({
                 onClick={() => cancelAudio()}
               />
             </MyTooltip>
-            <Image src="/icon/speaking.gif" w={'23px'} alt={''} />
+            <Image src={`${process.env.BASE_PATH}/icon/speaking.gif`} w={'23px'} alt={''} />
           </Flex>
         ) : (
           <MyTooltip label={t('core.app.TTS')}>

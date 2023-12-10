@@ -37,7 +37,7 @@ const DatasetSchema = new Schema({
   },
   avatar: {
     type: String,
-    default: '/icon/logo.svg'
+    default: `${process.env.BASE_PATH}/icon/logo.svg`
   },
   name: {
     type: String,

@@ -130,7 +130,7 @@ const TTSSelect = ({
             <Flex mt={10} justifyContent={'end'}>
               {audioPlaying ? (
                 <Flex>
-                  <Image src="/icon/speaking.gif" w={'24px'} alt={''} />
+                  <Image src={`${process.env.BASE_PATH}/icon/speaking.gif`} w={'24px'} alt={''} />
                   <Button
                     ml={2}
                     variant={'gray'}

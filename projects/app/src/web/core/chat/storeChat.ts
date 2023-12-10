@@ -24,7 +24,7 @@ const defaultChatData: InitChatResponse = {
   appId: '',
   app: {
     name: 'Loading',
-    avatar: '/icon/logo.svg',
+    avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
     intro: '',
     canUse: false
   },

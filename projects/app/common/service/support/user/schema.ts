@@ -26,7 +26,7 @@ const UserSchema = new Schema({
   },
   avatar: {
     type: String,
-    default: '/icon/human.svg'
+    default: `${process.env.BASE_PATH}/icon/human.svg`
   },
   balance: {
     type: Number,

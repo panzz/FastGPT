@@ -140,7 +140,7 @@ function request(
 
   return instance
     .request({
-      baseURL: '/api',
+      baseURL: `${process.env.BASE_PATH}/api`,
       url,
       method,
       data: ['POST', 'PUT'].includes(method) ? data : null,

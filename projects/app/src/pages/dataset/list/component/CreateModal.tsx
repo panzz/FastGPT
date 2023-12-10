@@ -36,7 +36,7 @@ const CreateModal = ({ onClose, parentId }: { onClose: () => void; parentId?: st
   const { isPc } = useSystemStore();
   const { register, setValue, getValues, handleSubmit } = useForm<CreateDatasetParams>({
     defaultValues: {
-      avatar: '/icon/logo.svg',
+      avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
       name: '',
       tags: '',
       vectorModel: vectorModelList[0].model,

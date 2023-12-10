@@ -32,7 +32,7 @@ const defaultShareChatData: ShareChatType = {
   userAvatar: HUMAN_ICON,
   app: {
     name: '',
-    avatar: '/icon/logo.svg',
+    avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
     intro: ''
   },
   history: defaultHistory

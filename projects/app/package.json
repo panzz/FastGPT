@@ -21,16 +21,19 @@
     "@tanstack/react-query": "^4.24.10",
     "@types/nprogress": "^0.2.0",
     "axios": "^1.5.1",
+    "cookie": "^0.5.0",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.7",
     "downloadjs": "^1.4.7",
     "echarts": "^5.4.1",
     "echarts-gl": "^2.0.9",
+    "encoding": "^0.1.13",
     "formidable": "^2.1.1",
     "framer-motion": "^9.0.6",
     "hyperdown": "^2.4.29",
     "i18next": "^22.5.1",
     "immer": "^9.0.19",
+    "js-tiktoken": "^1.0.7",
     "jschardet": "^3.0.0",
     "jsdom": "^22.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -42,8 +45,11 @@
     "nanoid": "^4.0.1",
     "next": "13.5.2",
     "next-i18next": "^13.3.0",
+    "nextjs-cors": "^2.1.2",
     "nprogress": "^0.2.0",
+    "openai": "^4.16.1",
     "papaparse": "^5.4.1",
+    "pg": "^8.10.0",
     "react": "18.2.0",
     "react-day-picker": "^8.7.1",
     "react-dom": "18.2.0",
@@ -58,20 +64,15 @@
     "remark-math": "^5.1.1",
     "request-ip": "^3.3.0",
     "sass": "^1.58.3",
-    "zustand": "^4.3.5",
     "timezones-list": "^3.0.2",
-    "encoding": "^0.1.13",
-    "openai": "^4.16.1",
-    "js-tiktoken": "^1.0.7",
-    "cookie": "^0.5.0",
-    "nextjs-cors": "^2.1.2",
-    "pg": "^8.10.0",
     "tunnel": "^0.0.6",
     "winston": "^3.10.0",
-    "winston-mongodb": "^5.1.1"
+    "winston-mongodb": "^5.1.1",
+    "zustand": "^4.3.5"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
+    "@types/cookie": "^0.5.2",
     "@types/downloadjs": "^1.4.3",
     "@types/formidable": "^2.0.5",
     "@types/js-cookie": "^3.0.3",
@@ -81,21 +82,26 @@
     "@types/multer": "^1.4.10",
     "@types/node": "^20.8.5",
     "@types/papaparse": "^5.3.7",
+    "@types/pg": "^8.6.6",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@types/react-syntax-highlighter": "^15.5.6",
     "@types/request-ip": "^0.0.37",
+    "@types/tunnel": "^0.0.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "typescript": "4.9.5",
-    "@types/cookie": "^0.5.2",
-    "@types/pg": "^8.6.6",
-    "@types/tunnel": "^0.0.4"
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "workspaces": [
     "./packages/*"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

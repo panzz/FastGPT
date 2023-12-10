@@ -46,8 +46,8 @@ export const ChatSourceMap = {
   }
 };
 
-export const HUMAN_ICON = `/icon/human.svg`;
-export const LOGO_ICON = `/icon/logo.svg`;
+export const HUMAN_ICON = `${process.env.BASE_PATH}/icon/human.svg`;
+export const LOGO_ICON = `${process.env.BASE_PATH}/icon/logo.svg`;
 
 export const IMG_BLOCK_KEY = 'img-block';
 export const FILE_BLOCK_KEY = 'file-block';

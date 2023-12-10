@@ -29,7 +29,7 @@ const PluginSchema = new Schema({
   },
   avatar: {
     type: String,
-    default: '/icon/logo.svg'
+    default: `${process.env.BASE_PATH}/icon/logo.svg`
   },
   intro: {
     type: String,
