@@ -126,7 +126,7 @@ export function setDefaultData(res?: ConfigFileType) {
 
   global.priceMd = '';
 
-  console.log(res);
+  console.log('setDefaultData> res:%o', res);
 }
 
 export function getSystemVersion() {

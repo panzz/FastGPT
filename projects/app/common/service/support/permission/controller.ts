@@ -6,6 +6,7 @@ import type { AuthModeType, ReqHeaderAuthType } from './type.d';
 import { AuthUserTypeEnum } from '/common/global/support/permission/constant';
 import { authOpenApiKey } from '../openapi/auth';
 import { FileTokenQuery } from '/common/global/common/file/type';
+import { globalConfig } from '@/constants/config';
 
 /* create token */
 export function createJWT(user: { _id?: string; team?: { teamId?: string; tmbId: string } }) {
@@ -28,19 +29,35 @@ export function authJWT(token: string) {
     userId: string;
     teamId: string;
     tmbId: string;
+    email: string;
   }>((resolve, reject) => {
     const key = process.env.TOKEN_KEY as string;
 
     jwt.verify(token, key, function (err, decoded: any) {
-      if (err || !decoded?.userId) {
+      console.debug('authJWT> err:%o, decoded:%o', err, decoded);
+      if (err || (!decoded?.userId && !decoded?.uid)) {
         reject(ERROR_ENUM.unAuthorization);
         return;
       }
+      let email = '';
+      if (decoded?.tag?.length) {
+        const tag = decoded.tag.trim();
+        console.debug('authJWT> tag(%o):%o', decoded.uid, tag);
+        if (tag === 'le') {
+          email = `${decoded.uid}@lenovo.com`;
+        } else if (tag === 'mt') {
+          email = `${decoded.uid}@motorola.com`;
+        } else {
+          email = `${decoded.uid}@developerforum.lenovo.com`;
+        }
+        console.info('authJWT> email(%o):%o', decoded.uid, email);
+      }
 
       resolve({
-        userId: decoded.userId,
+        userId: decoded?.userId || '',
         teamId: decoded.teamId || '',
-        tmbId: decoded.tmbId
+        tmbId: decoded?.tmbId || '',
+        email: email || ''
       });
     });
   });
@@ -56,7 +73,8 @@ export async function parseHeaderCert({
   async function authCookieToken(cookie?: string, token?: string) {
     // 获取 cookie
     const cookies = Cookie.parse(cookie || '');
-    const cookieToken = cookies.token || token;
+    // const cookieToken = cookies.token || token;
+    const cookieToken = cookies[globalConfig.tokenName] || token;
 
     if (!cookieToken) {
       return Promise.reject(ERROR_ENUM.unAuthorization);
@@ -114,7 +132,7 @@ export async function parseHeaderCert({
   const { cookie, token, apikey, rootkey, authorization } = (req.headers ||
     {}) as ReqHeaderAuthType;
 
-  const { uid, teamId, tmbId, appId, openApiKey, authType } = await (async () => {
+  const { uid, teamId, tmbId, email, appId, openApiKey, authType } = await (async () => {
     if (authToken && (cookie || token)) {
       // user token(from fastgpt web)
       const res = await authCookieToken(cookie, token);
@@ -122,6 +140,7 @@ export async function parseHeaderCert({
         uid: res.userId,
         teamId: res.teamId,
         tmbId: res.tmbId,
+        email: res.email,
         appId: '',
         openApiKey: '',
         authType: AuthUserTypeEnum.token
@@ -175,7 +194,7 @@ export async function parseHeaderCert({
   })();
 
   // not rootUser and no uid, reject request
-  if (!rootkey && !uid && !teamId && !tmbId) {
+  if (!rootkey && !uid && !teamId && !tmbId && !email) {
     return Promise.reject(ERROR_ENUM.unAuthorization);
   }
 
@@ -183,6 +202,7 @@ export async function parseHeaderCert({
     userId: String(uid),
     teamId: String(teamId),
     tmbId: String(tmbId),
+    email: String(email),
     appId,
     authType,
     apikey: openApiKey

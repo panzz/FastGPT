@@ -87,8 +87,8 @@ function checkRes(data: ResponseDataType) {
 /**
  * 响应错误
  */
-function responseError(err: any) {
-  console.log('error->', '请求错误', err);
+function responseError(err: any, url: string) {
+  console.log('error->请求错误 %o:%o', url, err);
 
   if (!err) {
     return Promise.reject({ message: '未知错误' });
@@ -99,8 +99,13 @@ function responseError(err: any) {
   // 有报错响应
   if (err?.code in TOKEN_ERROR_CODE) {
     clearToken();
-    window.location.replace(
-      `/login?lastRoute=${encodeURIComponent(location.pathname + location.search)}`
+    // window.location.replace(
+    //   `/login?lastRoute=${encodeURIComponent(location.pathname + location.search)}`
+    // );
+    window.location.assign(
+      `${process.env.BASE_PATH}/signin/before?from=${encodeURIComponent(
+        location.pathname + location.search
+      )}`
     );
     return Promise.reject({ message: 'token过期，重新登录' });
   }
@@ -135,7 +140,7 @@ function request(
       delete data[key];
     }
   }
-
+  console.debug('request> url:%o', url);
   requestStart({ url, maxQuantity });
 
   return instance
@@ -149,7 +154,7 @@ function request(
       ...config // 用户自定义配置，可以覆盖前面的配置
     })
     .then((res) => checkRes(res.data))
-    .catch((err) => responseError(err))
+    .catch((err) => responseError(err, url))
     .finally(() => requestFinish({ url }));
 }
 

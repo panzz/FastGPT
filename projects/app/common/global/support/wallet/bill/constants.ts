@@ -1,5 +1,5 @@
 // ￥1 = 100000
-export const PRICE_SCALE = 100000;
+export const PRICE_SCALE = 1;
 
 export enum BillSourceEnum {
   fastgpt = 'fastgpt',

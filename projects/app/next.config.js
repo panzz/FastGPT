@@ -10,8 +10,8 @@ const resolve = (dir) => {
 fs.writeFileSync(resolve('./build/build.ts'), `export default '${new Date().toISOString()}'\n`);
 
 console.info(
-  'nextConfig> BASE_PATH(%o):%o, NEXT_PUBLIC_PAPI_URL:%O',
-  process.env.NODE_ENV === 'production',
+  'nextConfig> NODE_ENV:%o, BASE_PATH :%o, NEXT_PUBLIC_PAPI_URL:%O',
+  process.env.NODE_ENV,
   process.env.BASE_PATH,
   process.env.NEXT_PUBLIC_PAPI_URL
 );
@@ -22,16 +22,15 @@ const nextConfig = {
   output: 'standalone',
   reactStrictMode: process.env.NODE_ENV === 'development' ? false : true,
   compress: true,
-
   async rewrites() {
     return [
-      {
-        source: '/cms/:path*',
-        destination: `${process.env.NEXT_PUBLIC_STRAPI_URL}/:path*`,
-      },
+      // {
+      //   source: '/cms/:path*',
+      //   destination: `${process.env.NEXT_PUBLIC_STRAPI_URL}/:path*`,
+      // },
       {
         source: '/papi/:path*',
-        destination: `${process.env.NEXT_PUBLIC_PAPI_URL}/papi/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_PAPI_URL}/:path*`,
       },
     ];
   },

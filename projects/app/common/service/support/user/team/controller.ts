@@ -93,8 +93,9 @@ export async function createDefaultTeam({
     defaultTeam: true
   });
 
+  let teamId: any;
   if (!tmb) {
-    console.log('create default team', userId);
+    console.log('create default team(userId:%o)', userId);
 
     // create
     const { insertedId } = await Team.insertOne({
@@ -105,6 +106,8 @@ export async function createDefaultTeam({
       maxSize,
       createTime: new Date()
     });
+    teamId = insertedId;
+    console.log('create default team(teamId:%o)', teamId);
     await TeamMember.insertOne({
       teamId: insertedId,
       userId,
@@ -115,7 +118,8 @@ export async function createDefaultTeam({
       defaultTeam: true
     });
   } else {
-    console.log('default team exist', userId);
+    teamId = tmb.teamId;
+    console.log('default team exist(userId:%o, teamId:%o)', userId, teamId);
     await Team.updateOne(
       {
         _id: new Types.ObjectId(tmb.teamId)
@@ -128,4 +132,5 @@ export async function createDefaultTeam({
       }
     );
   }
+  return teamId;
 }

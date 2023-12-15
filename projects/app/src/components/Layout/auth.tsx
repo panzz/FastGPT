@@ -5,6 +5,8 @@ import { useUserStore } from '@/web/support/user/useUserStore';
 import { useQuery } from '@tanstack/react-query';
 
 const unAuthPage: { [key: string]: boolean } = {
+  '/signin/before': true,
+  '/signin/after': true,
   '/': true,
   '/login': true,
   '/login/provider': true,
@@ -37,6 +39,9 @@ const Auth = ({ children }: { children: JSX.Element }) => {
         router.replace(
           `/login?lastRoute=${encodeURIComponent(location.pathname + location.search)}`
         );
+        // router.replace(
+        //   `/signin/before?from=${encodeURIComponent(location.pathname + location.search)}`
+        // );
         toast();
       }
     }
