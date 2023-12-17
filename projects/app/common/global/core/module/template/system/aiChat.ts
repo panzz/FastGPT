@@ -22,7 +22,7 @@ export const AiChatModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.chatNode,
   templateType: ModuleTemplateTypeEnum.textAnswer,
   flowType: FlowNodeTypeEnum.chatNode,
-  avatar: '/imgs/module/AI.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/AI.png`,
   name: 'AI 对话',
   intro: 'AI 大模型对话',
   showStatus: true,

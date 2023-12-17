@@ -15,7 +15,7 @@ export const ClassifyQuestionModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.classifyQuestion,
   templateType: ModuleTemplateTypeEnum.functionCall,
   flowType: FlowNodeTypeEnum.classifyQuestion,
-  avatar: '/imgs/module/cq.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/cq.png`,
   name: '问题分类',
   intro: `根据用户的历史记录和当前问题判断该次提问的类型。可以添加多组问题类型，下面是一个模板例子：
 类型1: 打招呼

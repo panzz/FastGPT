@@ -70,7 +70,7 @@ export async function getInitConfig() {
     initGlobal();
 
     const filename =
-      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : '/app/data/config.json';
+      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : 'data/config.json'; // : '/app/data/config.json';
     const res = JSON.parse(readFileSync(filename, 'utf-8')) as ConfigFileType;
 
     setDefaultData(res);
@@ -126,7 +126,7 @@ export function setDefaultData(res?: ConfigFileType) {
 
   global.priceMd = '';
 
-  console.log('setDefaultData> res:%o', res);
+  // console.log('setDefaultData> res:%o', res);
 }
 
 export function getSystemVersion() {
@@ -134,7 +134,7 @@ export function getSystemVersion() {
     if (process.env.NODE_ENV === 'development') {
       global.systemVersion = process.env.npm_package_version || '0.0.0';
     } else {
-      const packageJson = JSON.parse(readFileSync('/app/package.json', 'utf-8'));
+      const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
 
       global.systemVersion = packageJson?.version;
     }
@@ -183,7 +183,7 @@ async function getSimpleModeTemplates() {
     const basePath =
       process.env.NODE_ENV === 'development'
         ? 'public/simpleTemplates'
-        : '/app/projects/app/public/simpleTemplates';
+        : 'public/simpleTemplates'; // : '/app/projects/app/public/simpleTemplates';
     // read data/simpleTemplates directory, get all json file
     const files = readdirSync(basePath);
     // filter json file
@@ -219,7 +219,7 @@ function getSystemPlugin() {
   const basePath =
     process.env.NODE_ENV === 'development'
       ? 'public/pluginTemplates'
-      : '/app/projects/app/public/pluginTemplates';
+      : 'public/pluginTemplates'; // : '/app/projects/app/public/pluginTemplates';
   // read data/pluginTemplates directory, get all json file
   const files = readdirSync(basePath);
   // filter json file

@@ -20,6 +20,45 @@
       "defaultSystemChatPrompt": ""
     },
     {
+      "model": "chatglm-6b",
+      "name": "ChatGLM-6B-2K",
+      "location": "ludp",
+      "price": 0.0015,
+      "maxContext": 16000,
+      "maxResponse": 4000,
+      "quoteMaxToken": 16000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "vision": false,
+      "defaultSystemChatPrompt": ""
+    },
+    {
+      "model": "Llama-2-13b-chat-hf",
+      "name": "LLaMa2-13B-4k",
+      "location": "ludp",
+      "price": 0.0015,
+      "maxContext": 16000,
+      "maxResponse": 4000,
+      "quoteMaxToken": 16000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "vision": false,
+      "defaultSystemChatPrompt": ""
+    },
+    {
+      "model": "Baichuan-13B-Chat",
+      "name": "BaiChuan-13B-4k",
+      "location": "ludp",
+      "price": 0.0015,
+      "maxContext": 16000,
+      "maxResponse": 4000,
+      "quoteMaxToken": 16000,
+      "maxTemperature": 1.2,
+      "censor": false,
+      "vision": false,
+      "defaultSystemChatPrompt": ""
+    },
+    {
       "model": "gpt-35-turbo-0301",
       "name": "AGPT35-4k",
       "location": "azure",
@@ -38,7 +77,7 @@
       "location": "azure",
       "maxContext": 16000,
       "maxResponse": 16000,
-      "price": 0,
+      "price": 0.003,
       "quoteMaxToken": 8000,
       "maxTemperature": 1.2,
       "censor": false,
@@ -51,7 +90,7 @@
       "location": "azure",
       "maxContext": 8000,
       "maxResponse": 8000,
-      "price": 0,
+      "price": 0.03,
       "quoteMaxToken": 4000,
       "maxTemperature": 1.2,
       "censor": false,
@@ -64,7 +103,7 @@
       "location": "azure",
       "maxContext": 128000,
       "maxResponse": 4000,
-      "price": 0,
+      "price": 0.06,
       "quoteMaxToken": 100000,
       "maxTemperature": 1.2,
       "censor": false,
@@ -79,7 +118,7 @@
       "location": "azure",
       "maxContext": 16000,
       "maxResponse": 16000,
-      "price": 0
+      "price": 0.003
     }
   ],
   "CQModels": [
@@ -89,7 +128,7 @@
       "location": "azure",
       "maxContext": 16000,
       "maxResponse": 4000,
-      "price": 0,
+      "price": 0.0015,
       "functionCall": true,
       "functionPrompt": ""
     },
@@ -98,7 +137,7 @@
       "name": "GPT4-8k",
       "maxContext": 8000,
       "maxResponse": 8000,
-      "price": 0,
+      "price": 0.03,
       "functionCall": true,
       "functionPrompt": ""
     }
@@ -110,7 +149,7 @@
       "location": "azure",
       "maxContext": 16000,
       "maxResponse": 4000,
-      "price": 0,
+      "price": 0.0015,
       "functionCall": true,
       "functionPrompt": ""
     }
@@ -122,7 +161,7 @@
       "location": "azure",
       "maxContext": 1600,
       "maxResponse": 4000,
-      "price": 0
+      "price": 0.0015
     }
   ],
   "VectorModels": [
@@ -130,7 +169,7 @@
       "model": "text-embedding-ada-002-0606",
       "name": "AGPT-Embedding-2",
       "location": "azure",
-      "price": 0.2,
+      "price": 0.0001,
       "defaultToken": 700,
       "maxToken": 3000
     }

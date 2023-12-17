@@ -49,7 +49,7 @@ const Ability = () => {
           <Box {...DescStyles} color={'rgba(255,255,255,0.9)'}>
             {t('home.AI Assistant Desc')}
           </Box>
-          <MyImage src="/imgs/home/ai_assiatant.png" alt={''} transform={'translateX(20px)'} />
+          <MyImage src={`${process.env.BASE_PATH}/imgs/home/ai_assiatant.png`} alt={''} transform={'translateX(20px)'} />
         </Box>
         <Box
           {...CardStyles}
@@ -62,7 +62,7 @@ const Ability = () => {
           <Box {...DescStyles} color={'rgba(255,255,255,0.9)'}>
             {t('home.Dateset Desc')}
           </Box>
-          <MyImage src="/imgs/home/dataset_import.png" w={'90%'} mx={'auto'} borderRadius={'lg'} />
+          <MyImage src={`${process.env.BASE_PATH}/imgs/home/dataset_import.png`} w={'90%'} mx={'auto'} borderRadius={'lg'} />
         </Box>
       </Grid>
       <Grid

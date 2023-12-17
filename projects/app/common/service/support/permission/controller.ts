@@ -34,7 +34,7 @@ export function authJWT(token: string) {
     const key = process.env.TOKEN_KEY as string;
 
     jwt.verify(token, key, function (err, decoded: any) {
-      console.debug('authJWT> err:%o, decoded:%o', err, decoded);
+      console.debug('authJWT> err:%o', err);
       if (err || (!decoded?.userId && !decoded?.uid)) {
         reject(ERROR_ENUM.unAuthorization);
         return;

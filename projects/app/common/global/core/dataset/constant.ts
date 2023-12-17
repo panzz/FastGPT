@@ -113,4 +113,4 @@ export const DatasetSearchModeMap = {
   }
 };
 
-export const FolderAvatarSrc = '/imgs/files/folder.svg';
+export const FolderAvatarSrc = `${process.env.BASE_PATH}/imgs/files/folder.svg`;

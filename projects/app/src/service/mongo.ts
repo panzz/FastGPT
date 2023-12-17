@@ -36,6 +36,7 @@ export async function initRootUser(username: string) {
     const rootUser = await MongoUser.findOne({
       username: username
     });
+    console.debug('initRootUser> rootUser:%o', rootUser);
     const psw = process.env.DEFAULT_ROOT_PSW || '123456';
 
     let rootId = rootUser?._id || '';
@@ -48,16 +49,19 @@ export async function initRootUser(username: string) {
           password: hashStr(psw)
         }
       );
-      const tmb = await getUserDefaultTeam({ userId: rootId });
+      const tmb = await getUserDefaultTeam({ tmb: rootId });
+      console.debug('initRootUser> tmb:%o', rootUser);
       teamId = String(tmb.teamId);
     } else {
       const { _id } = await MongoUser.create({
         username: username,
         password: hashStr(psw)
       });
+      console.debug('initRootUser> _id:%o', _id);
       rootId = _id;
       // init root team
       teamId = await createDefaultTeam({ userId: rootId, maxSize: 1, balance: 9 * PRICE_SCALE });
+      console.debug('initRootUser> teamId:%o', teamId);
     }
     const resData = {
       userId: rootId.toString(),
@@ -65,10 +69,10 @@ export async function initRootUser(username: string) {
       teamId: teamId.toString()
     };
 
-    console.log('root user init resData:%o', resData);
+    console.debug('initRootUser> resData:%o', resData);
     return resData;
   } catch (error) {
-    console.log('init root user error', error);
+    console.error('initRootUser> error:%o', error);
     exit(1);
   }
 }

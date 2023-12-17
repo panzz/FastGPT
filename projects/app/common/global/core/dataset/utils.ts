@@ -7,18 +7,18 @@ export function getCollectionIcon(
   name = ''
 ) {
   if (type === DatasetCollectionTypeEnum.folder) {
-    return '/imgs/files/folder.svg';
+    return `${process.env.BASE_PATH}/imgs/files/folder.svg`;
   }
   if (type === DatasetCollectionTypeEnum.link) {
-    return '/imgs/files/link.svg';
+    return `${process.env.BASE_PATH}/imgs/files/link.svg`;
   }
   if (type === DatasetCollectionTypeEnum.virtual) {
     if (name === '手动录入') {
-      return '/imgs/files/manual.svg';
+      return `${process.env.BASE_PATH}/imgs/files/manual.svg`;
     } else if (name === '手动标注') {
-      return '/imgs/files/mark.svg';
+      return `${process.env.BASE_PATH}/imgs/files/mark.svg`;
     }
-    return '/imgs/files/collection.svg';
+    return `${process.env.BASE_PATH}/imgs/files/collection.svg`;
   }
   return getFileIcon(name);
 }
@@ -30,7 +30,7 @@ export function getSourceNameIcon({
   sourceId?: string;
 }) {
   if (strIsLink(sourceId)) {
-    return '/imgs/files/link.svg';
+    return `${process.env.BASE_PATH}/imgs/files/link.svg`;
   }
   const fileIcon = getFileIcon(sourceName, '');
   if (fileIcon) {
@@ -38,11 +38,11 @@ export function getSourceNameIcon({
   }
 
   if (sourceName === '手动录入') {
-    return '/imgs/files/manual.svg';
+    return `${process.env.BASE_PATH}/imgs/files/manual.svg`;
   } else if (sourceName === '手动标注') {
-    return '/imgs/files/mark.svg';
+    return `${process.env.BASE_PATH}/imgs/files/mark.svg`;
   }
-  return '/imgs/files/collection.svg';
+  return `${process.env.BASE_PATH}/imgs/files/collection.svg`;
 }
 
 export function getDefaultIndex(props?: { q?: string; a?: string; dataId?: string }) {

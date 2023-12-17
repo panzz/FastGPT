@@ -8,7 +8,7 @@ export const AssignedAnswerModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.answerNode,
   templateType: ModuleTemplateTypeEnum.textAnswer,
   flowType: FlowNodeTypeEnum.answerNode,
-  avatar: '/imgs/module/reply.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/reply.png`,
   name: '指定回复',
   intro: '该模块可以直接回复一段指定的内容。常用于引导、提示',
   inputs: [
