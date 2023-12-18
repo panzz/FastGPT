@@ -17,7 +17,7 @@ type StreamResponseType = {
   [ModuleOutputKeyEnum.responseData]: ChatHistoryItemResType[];
 };
 export const streamFetch = ({
-  url = '/api/v1/chat/completions',
+  url = `${process.env.BASE_PATH}/api/v1/chat/completions`,
   data,
   onMessage,
   abortSignal

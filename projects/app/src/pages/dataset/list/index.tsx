@@ -98,7 +98,7 @@ const Kb = () => {
       setLoading(true);
       await getCheckExportLimit(dataset._id);
       const a = document.createElement('a');
-      a.href = `/api/core/dataset/exportAll?datasetId=${dataset._id}`;
+      a.href = `${process.env.BASE_PATH}/api/core/dataset/exportAll?datasetId=${dataset._id}`;
       a.download = `${dataset.name}.csv`;
       document.body.appendChild(a);
       a.click();
