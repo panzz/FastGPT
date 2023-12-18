@@ -67,7 +67,7 @@ const PayModal = ({ onClose }: { onClose: () => void }) => {
       isOpen={true}
       onClose={payId ? undefined : onClose}
       title={t('user.Pay')}
-      iconSrc="/imgs/modal/pay.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/pay.svg`}
       isCentered={!payId}
     >
       <ModalBody px={0} minH={payId ? 'auto' : '70vh'} display={'flex'} flexDirection={'column'}>

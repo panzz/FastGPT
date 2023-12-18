@@ -12,7 +12,7 @@ const Choice = () => {
     ...(feConfigs?.show_git
       ? [
           {
-            icon: '/imgs/home/icon_1.svg',
+            icon: `${process.env.BASE_PATH}/imgs/home/icon_1.svg`,
             title: t('home.Choice Open'),
             desc: t('home.Choice Open Desc', { title: feConfigs?.systemTitle }),
             tooltip: '前往 GitHub',
@@ -21,33 +21,33 @@ const Choice = () => {
         ]
       : [
           {
-            icon: '/imgs/home/icon_0.svg',
+            icon: `${process.env.BASE_PATH}/imgs/home/icon_0.svg`,
             title: t('home.Choice Fast'),
             desc: t('home.Choice Fast Desc', { title: feConfigs?.systemTitle })
           }
         ]),
     {
-      icon: '/imgs/home/icon_2.svg',
+      icon: `${process.env.BASE_PATH}/imgs/home/icon_2.svg`,
       title: t('home.Choice QA'),
       desc: t('home.Choice QA Desc')
     },
     {
-      icon: '/imgs/home/icon_3.svg',
+      icon: `${process.env.BASE_PATH}/imgs/home/icon_3.svg`,
       title: t('home.Choice Visual'),
       desc: t('home.Choice Visual Desc')
     },
     {
-      icon: '/imgs/home/icon_4.svg',
+      icon: `${process.env.BASE_PATH}/imgs/home/icon_4.svg`,
       title: t('home.Choice Extension'),
       desc: t('home.Choice Extension Desc')
     },
     {
-      icon: '/imgs/home/icon_5.svg',
+      icon: `${process.env.BASE_PATH}/imgs/home/icon_5.svg`,
       title: t('home.Choice Debug'),
       desc: t('home.Choice Debug Desc')
     },
     {
-      icon: '/imgs/home/icon_6.svg',
+      icon: `${process.env.BASE_PATH}/imgs/home/icon_6.svg`,
       title: t('home.Choice Models'),
       desc: t('home.Choice Models Desc')
     }

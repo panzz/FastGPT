@@ -39,7 +39,7 @@ const SelectAppModal = ({
     <MyModal
       isOpen
       title={`选择应用${max > 1 ? `(${selectedApps.length}/${max})` : ''}`}
-      iconSrc="/imgs/module/ai.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/ai.svg`}
       onClose={onClose}
       minW={'700px'}
       position={'relative'}

@@ -229,7 +229,7 @@ const FileSelect = ({
         return {
           id: nanoid(),
           filename: url,
-          icon: '/imgs/files/link.svg',
+          icon: `${process.env.BASE_PATH}/imgs/files/link.svg`,
           text: content,
           tokens: splitRes.tokens,
           type: DatasetCollectionTypeEnum.link,
@@ -273,7 +273,7 @@ const FileSelect = ({
         {
           id: nanoid(),
           filename,
-          icon: '/imgs/files/txt.svg',
+          icon: `${process.env.BASE_PATH}/imgs/files/txt.svg`,
           text: content,
           tokens: splitRes.tokens,
           type: DatasetCollectionTypeEnum.file,

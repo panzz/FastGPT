@@ -11,6 +11,7 @@ import {
 } from '/common/service/support/user/team/controller';
 import { exit } from 'process';
 import { Types } from '/common/service/common/mongo';
+import { getUserDetail } from '@/service/support/user/controller';
 
 /**
  * connect MongoDB and init data
@@ -24,12 +25,13 @@ export function connectToDatabase(): Promise<void> {
       initPg();
       // start queue
       startQueue();
-      return initRootUser('root');
+      return; // initRootUser('root');
     }
   });
 }
 
 export async function initRootUser(username: string) {
+  console.debug('initRootUser> username:%o', username);
   try {
     if (!username || !username.length) throw new Error('Error: username is empty!');
 
@@ -40,18 +42,22 @@ export async function initRootUser(username: string) {
     const psw = process.env.DEFAULT_ROOT_PSW || '123456';
 
     let rootId = rootUser?._id || '';
-    let teamId;
+    let userDetail;
     // init root user
     if (rootUser) {
-      await MongoUser.findOneAndUpdate(
-        { username: username },
-        {
-          password: hashStr(psw)
-        }
-      );
-      const tmb = await getUserDefaultTeam({ tmb: rootId });
-      console.debug('initRootUser> tmb:%o', rootUser);
-      teamId = String(tmb.teamId);
+      // await MongoUser.findOneAndUpdate(
+      //   { username: username },
+      //   {
+      //     password: hashStr(psw)
+      //   }
+      // );
+      // console.debug('initRootUser> rootId:%o', String(rootId));
+      // const tmb = await getUserDefaultTeam({ userId: rootId });
+      // console.debug('initRootUser> tmb:%o', tmb);
+      // teamId = String(tmb.teamId);
+      // console.debug('initRootUser> teamId:%o', String(teamId));
+      userDetail = await getUserDetail({ userId: rootId });
+      console.debug('initRootUser> userDetail:%o', userDetail);
     } else {
       const { _id } = await MongoUser.create({
         username: username,
@@ -60,17 +66,29 @@ export async function initRootUser(username: string) {
       console.debug('initRootUser> _id:%o', _id);
       rootId = _id;
       // init root team
-      teamId = await createDefaultTeam({ userId: rootId, maxSize: 1, balance: 9 * PRICE_SCALE });
-      console.debug('initRootUser> teamId:%o', teamId);
+      let teamId = await createDefaultTeam({
+        userId: rootId,
+        maxSize: 1,
+        balance: 9 * PRICE_SCALE
+      });
+      console.debug('initRootUser> 1 teamId:%o', teamId);
+      // const tmb = await getUserDefaultTeam({ userId: rootId });
+      // console.debug('initRootUser> 1 tmb:%o', tmb);
+      userDetail = await getUserDetail({ userId: rootId });
+      console.debug('initRootUser> userDetail:%o', userDetail);
     }
-    const resData = {
-      userId: rootId.toString(),
-      username: username,
-      teamId: teamId.toString()
-    };
+    // { _id?: string; team?: { teamId?: string; tmbId: string } }
+    // const resData = {
+    //   _id: String(rootId),
+    //   username: username,
+    //   team: {
+    //     teamId: String(teamId),
+    //     // tmbId:
+    //   }
+    // };
 
-    console.debug('initRootUser> resData:%o', resData);
-    return resData;
+    console.debug('initRootUser> userDetail:%o', userDetail);
+    return userDetail;
   } catch (error) {
     console.error('initRootUser> error:%o', error);
     exit(1);

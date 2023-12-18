@@ -73,8 +73,8 @@ export async function parseHeaderCert({
   async function authCookieToken(cookie?: string, token?: string) {
     // 获取 cookie
     const cookies = Cookie.parse(cookie || '');
-    // const cookieToken = cookies.token || token;
-    const cookieToken = cookies[globalConfig.tokenName] || token;
+    const cookieToken = cookies.token || token;
+    // const cookieToken = cookies[globalConfig.tokenName] || token;
 
     if (!cookieToken) {
       return Promise.reject(ERROR_ENUM.unAuthorization);

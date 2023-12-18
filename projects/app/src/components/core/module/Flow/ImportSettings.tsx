@@ -16,7 +16,7 @@ const ImportSettings = ({ onClose }: { onClose: () => void }) => {
       isOpen
       w={'600px'}
       onClose={onClose}
-      iconSrc="/imgs/modal/params.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/params.svg`}
       title={t('app.Import Configs')}
     >
       <ModalBody>

@@ -21,7 +21,7 @@ export const RunAppModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.runApp,
   templateType: ModuleTemplateTypeEnum.externalCall,
   flowType: FlowNodeTypeEnum.runApp,
-  avatar: '/imgs/module/app.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/app.png`,
   name: '应用调用',
   intro: '可以选择一个其他应用进行调用',
   showStatus: true,

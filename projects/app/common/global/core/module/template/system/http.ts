@@ -8,7 +8,7 @@ export const HttpModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.httpRequest,
   templateType: ModuleTemplateTypeEnum.externalCall,
   flowType: FlowNodeTypeEnum.httpRequest,
-  avatar: '/imgs/module/http.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/http.png`,
   name: 'HTTP模块',
   intro: '可以发出一个 HTTP POST 请求，实现更为复杂的操作（联网搜索、数据库查询等）',
   showStatus: true,

@@ -222,7 +222,7 @@ function ConfigForm({
         {/* simple mode select */}
         <Flex {...BoxStyles}>
           <Flex alignItems={'center'} flex={'1 0 0'}>
-            <Image alt={''} src={'/imgs/module/templates.png'} w={'18px'} />
+            <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/templates.png`} w={'18px'} />
             <Box mx={2}>{t('core.app.simple.mode template select')}</Box>
           </Flex>
           <MySelect
@@ -246,7 +246,11 @@ function ConfigForm({
         {selectSimpleTemplate?.systemForm?.userGuide?.welcomeText && (
           <Box {...BoxStyles} mt={2}>
             <Flex alignItems={'center'}>
-              <Image alt={''} src={'/imgs/module/userGuide.png'} w={'18px'} />
+              <Image
+                alt={''}
+                src={`${process.env.BASE_PATH}/imgs/module/userGuide.png`}
+                w={'18px'}
+              />
               <Box mx={2}>{t('core.app.Welcome Text')}</Box>
               <MyTooltip label={welcomeTextTip} forceShow>
                 <QuestionOutlineIcon />
@@ -279,7 +283,7 @@ function ConfigForm({
         {selectSimpleTemplate?.systemForm?.aiSettings && (
           <Box mt={5} {...BoxStyles}>
             <Flex alignItems={'center'}>
-              <Image alt={''} src={'/imgs/module/AI.png'} w={'18px'} />
+              <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/AI.png`} w={'18px'} />
               <Box ml={2} flex={1}>
                 {t('app.AI Settings')}
               </Box>
@@ -340,7 +344,7 @@ function ConfigForm({
           <Box mt={5} {...BoxStyles}>
             <Flex alignItems={'center'}>
               <Flex alignItems={'center'} flex={1}>
-                <Image alt={''} src={'/imgs/module/db.png'} w={'18px'} />
+                <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/db.png`} w={'18px'} />
                 <Box ml={2}>{t('core.dataset.Choose Dataset')}</Box>
               </Flex>
               {selectSimpleTemplate.systemForm.dataset.datasets && (

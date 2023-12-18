@@ -32,7 +32,7 @@ const OpenAIAccountModal = ({
     <MyModal
       isOpen
       onClose={onClose}
-      iconSrc="/imgs/modal/openai.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/openai.svg`}
       title={t('user.OpenAI Account Setting')}
     >
       <ModalBody>

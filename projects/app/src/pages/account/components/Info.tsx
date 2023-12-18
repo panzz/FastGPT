@@ -293,7 +293,7 @@ const UserInfo = () => {
                 userSelect={'none'}
                 onClick={onOpenOpenai}
               >
-                <Avatar src={'/imgs/openai.png'} w={'18px'} />
+                <Avatar src={`${process.env.BASE_PATH}/imgs/openai.png`} w={'18px'} />
                 <Box ml={2} flex={1}>
                   OpenAI/OneAPI 账号
                 </Box>

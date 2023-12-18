@@ -31,7 +31,7 @@ const DatasetSelectContainer = ({
 
   return (
     <MyModal
-      iconSrc="/imgs/module/db.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/db.png`}
       title={
         <Box fontWeight={'normal'}>
           <ParentPaths

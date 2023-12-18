@@ -40,7 +40,7 @@ const UpdatePswModal = ({ onClose }: { onClose: () => void }) => {
     <MyModal
       isOpen
       onClose={onClose}
-      iconSrc="/imgs/modal/password.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/password.svg`}
       title={t('user.Update Password')}
     >
       <ModalBody>

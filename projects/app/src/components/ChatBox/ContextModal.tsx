@@ -16,7 +16,7 @@ const ContextModal = ({
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/chatHistory.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/chatHistory.svg`}
       title={`完整对话记录(${context.length}条)`}
       h={['90vh', '80vh']}
       minW={['90vw', '600px']}

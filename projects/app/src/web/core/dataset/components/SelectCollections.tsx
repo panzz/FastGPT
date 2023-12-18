@@ -104,7 +104,7 @@ const SelectCollections = ({
       w={'100%'}
       h={['90vh', '80vh']}
       isCentered
-      iconSrc="/imgs/modal/move.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/move.svg`}
       title={
         <Box>
           <ParentPaths

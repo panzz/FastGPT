@@ -18,6 +18,8 @@ export const sendAuthCode = (data: {
 
 export const getTokenLogin = () =>
   GET<UserType>('/user/account/tokenLogin', {}, { maxQuantity: 1 });
+export const getDevforumTokenLogin = () =>
+  GET<UserType>('/user/account/devforumTokenLogin', {}, { maxQuantity: 1 });
 export const oauthLogin = (params: OauthLoginProps) =>
   POST<ResLogin>('/plusApi/support/user/account/login/oauth', params);
 export const postFastLogin = (params: FastLoginProps) =>

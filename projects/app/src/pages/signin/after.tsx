@@ -11,6 +11,8 @@ import { globalConfig } from '@/constants/config';
 import axios from 'axios';
 // import { useLogin } from '@/common/recoil/user';
 // import { useUserStore } from '@/store/user';
+// import { useUserStore } from '@/web/support/user/useUserStore';
+import { getDevforumTokenLogin } from '@/web/support/user/api';
 
 type Props = {
   // Add custom props here
@@ -131,8 +133,9 @@ const signinAfter = async (router: any) => {
       router.replace('/signin/before');
     }
     // res = await initUserInfo();
+    res = await getDevforumTokenLogin();
     // res = await reqCMSLogin();
-    // console.debug('signinAfter> initUserInfo res:%o', res);
+    console.debug('signinAfter> getDevforumTokenLogin res:%o', res);
     // if (!res) {
     //   console.error('signinAfter> reqCMSLogin failed, try to redo signin process. res:%o', res);
     //   router.replace('/signin/before');

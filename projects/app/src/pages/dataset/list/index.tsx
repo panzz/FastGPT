@@ -127,7 +127,12 @@ const Kb = () => {
           }))}
           FirstPathDom={
             <Flex flex={1} alignItems={'center'}>
-              <Image src={'/imgs/module/db.png'} alt={''} mr={2} h={'24px'} />
+              <Image
+                src={`${process.env.BASE_PATH}/imgs/module/db.png`}
+                alt={''}
+                mr={2}
+                h={'24px'}
+              />
               <Box className="textlg" letterSpacing={1} fontSize={'24px'} fontWeight={'bold'}>
                 {t('dataset.My Dataset')}
               </Box>
@@ -178,7 +183,12 @@ const Kb = () => {
               {
                 child: (
                   <Flex>
-                    <Image src={'/imgs/module/db.png'} alt={''} w={'20px'} mr={1} />
+                    <Image
+                      src={`${process.env.BASE_PATH}/imgs/module/db.png`}
+                      alt={''}
+                      w={'20px'}
+                      mr={1}
+                    />
                     {t('Dataset')}
                   </Flex>
                 ),

@@ -315,7 +315,12 @@ const CollectionCard = () => {
               {
                 child: (
                   <Flex>
-                    <Image src={'/imgs/files/collection.svg'} alt={''} w={'20px'} mr={2} />
+                    <Image
+                      src={`${process.env.BASE_PATH}/imgs/files/collection.svg`}
+                      alt={''}
+                      w={'20px'}
+                      mr={2}
+                    />
                     {t('dataset.Create Virtual File')}
                   </Flex>
                 ),
@@ -329,7 +334,12 @@ const CollectionCard = () => {
               {
                 child: (
                   <Flex>
-                    <Image src={'/imgs/files/file.svg'} alt={''} w={'20px'} mr={2} />
+                    <Image
+                      src={`${process.env.BASE_PATH}/imgs/files/file.svg`}
+                      alt={''}
+                      w={'20px'}
+                      mr={2}
+                    />
                     {t('dataset.File Input')}
                   </Flex>
                 ),

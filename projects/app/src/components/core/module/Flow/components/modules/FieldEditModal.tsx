@@ -88,7 +88,12 @@ const FieldEditModal = ({
   }, [getValues, mode, refresh]);
 
   return (
-    <MyModal isOpen={true} iconSrc="/imgs/module/extract.png" title={title} onClose={onClose}>
+    <MyModal
+      isOpen={true}
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/extract.png`}
+      title={title}
+      onClose={onClose}
+    >
       <ModalBody minH={'260px'} overflow={'visible'}>
         {/* input type select: target, input, textarea.... */}
         {mode === 'pluginInput' && (

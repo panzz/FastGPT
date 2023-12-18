@@ -10,7 +10,7 @@ export const HistoryModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.historyNode,
   templateType: ModuleTemplateTypeEnum.systemInput,
   flowType: FlowNodeTypeEnum.historyNode,
-  avatar: '/imgs/module/history.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/history.png`,
   name: '聊天记录',
   intro: '用户输入的内容。该模块通常作为应用的入口，用户在发送消息后会首先执行该模块。',
   inputs: [

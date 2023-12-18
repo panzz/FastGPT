@@ -42,7 +42,12 @@ const EditFolderModal = ({
   });
 
   return (
-    <MyModal isOpen onClose={onClose} iconSrc="/imgs/modal/folder.svg" title={typeMap.title}>
+    <MyModal
+      isOpen
+      onClose={onClose}
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/folder.svg`}
+      title={typeMap.title}
+    >
       <ModalBody>
         <Input
           ref={inputRef}

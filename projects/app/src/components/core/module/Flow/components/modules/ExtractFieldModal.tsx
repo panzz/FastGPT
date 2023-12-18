@@ -37,7 +37,7 @@ const ExtractFieldModal = ({
   return (
     <MyModal
       isOpen={true}
-      iconSrc="/imgs/module/extract.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/extract.png`}
       title={'提取字段配置'}
       onClose={onClose}
     >

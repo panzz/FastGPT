@@ -30,7 +30,7 @@ const MdImage = ({ src }: { src?: string }) => {
         src={src}
         alt={''}
         maxH={'150px'}
-        fallbackSrc={'/imgs/errImg.png'}
+        fallbackSrc={`${process.env.BASE_PATH}/imgs/errImg.png`}
         fallbackStrategy={'onError'}
         cursor={succeed ? 'pointer' : 'default'}
         loading="eager"
@@ -54,7 +54,7 @@ const MdImage = ({ src }: { src?: string }) => {
             alt={''}
             w={'100%'}
             maxH={'80vh'}
-            fallbackSrc={'/imgs/errImg.png'}
+            fallbackSrc={`${process.env.BASE_PATH}/imgs/errImg.png`}
             fallbackStrategy={'onError'}
             objectFit={'contain'}
           />

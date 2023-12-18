@@ -71,7 +71,7 @@ const AIChatSettingsModal = ({
   return (
     <MyModal
       isOpen
-      iconSrc="/imgs/module/AI.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/AI.png`}
       title={
         <>
           {t('app.AI Advanced Settings')}

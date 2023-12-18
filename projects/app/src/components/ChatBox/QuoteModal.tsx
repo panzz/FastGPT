@@ -68,7 +68,7 @@ const QuoteModal = ({
         h={['90vh', '80vh']}
         isCentered
         minW={['90vw', '600px']}
-        iconSrc="/imgs/modal/quote.svg"
+        iconSrc={`${process.env.BASE_PATH}/imgs/modal/quote.svg`}
         title={
           <Box>
             知识库引用({rawSearch.length}条)

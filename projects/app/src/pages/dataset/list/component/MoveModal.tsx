@@ -63,7 +63,7 @@ const MoveModal = ({
       isOpen={true}
       maxW={['90vw', '800px']}
       w={'800px'}
-      iconSrc="/imgs/modal/move.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/move.svg`}
       title={
         <>
           {!!parentId ? (

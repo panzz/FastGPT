@@ -279,7 +279,7 @@ function EditLinkModal({
   return (
     <MyModal
       isOpen={true}
-      iconSrc="/imgs/modal/shareLight.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/shareLight.svg`}
       title={isEdit ? t('outlink.Edit Link') : t('outlink.Create Link')}
     >
       <ModalBody>

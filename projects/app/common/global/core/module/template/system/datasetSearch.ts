@@ -18,7 +18,7 @@ export const DatasetSearchModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.datasetSearchNode,
   templateType: ModuleTemplateTypeEnum.dataset,
   flowType: FlowNodeTypeEnum.datasetSearchNode,
-  avatar: '/imgs/module/db.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/db.png`,
   name: '知识库搜索',
   intro: '去知识库中搜索对应的答案。可作为 AI 对话引用参考。',
   showStatus: true,

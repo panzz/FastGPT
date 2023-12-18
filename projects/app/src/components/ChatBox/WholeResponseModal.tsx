@@ -77,7 +77,7 @@ const WholeResponseModal = ({
       onClose={onClose}
       h={['90vh', '80vh']}
       w={['90vw', '500px']}
-      iconSrc="/imgs/modal/wholeRecord.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/wholeRecord.svg`}
       title={
         <Flex alignItems={'center'}>
           {t('chat.Complete Response')}

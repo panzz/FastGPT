@@ -29,7 +29,7 @@ const BillDetail = ({ bill, onClose }: { bill: BillItemType; onClose: () => void
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/bill.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/bill.svg`}
       title={t('user.Bill Detail')}
     >
       <ModalBody>

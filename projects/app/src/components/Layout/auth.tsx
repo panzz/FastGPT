@@ -5,6 +5,7 @@ import { useUserStore } from '@/web/support/user/useUserStore';
 import { useQuery } from '@tanstack/react-query';
 
 const unAuthPage: { [key: string]: boolean } = {
+  // '/user/account/tokenLogin': true,
   '/signin/before': true,
   '/signin/after': true,
   '/': true,

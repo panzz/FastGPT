@@ -30,7 +30,7 @@ const UrlFetchModal = ({
 
   return (
     <MyModal
-      iconSrc="/imgs/modal/network.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/network.svg`}
       title={
         <Box>
           <Box>{t('file.Fetch Url')}</Box>

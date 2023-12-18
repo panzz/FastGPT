@@ -6,7 +6,7 @@ export const EmptyModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.empty,
   templateType: ModuleTemplateTypeEnum.other,
   flowType: FlowNodeTypeEnum.empty,
-  avatar: '/imgs/module/cq.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/cq.png`,
   name: '该模块已被移除',
   intro: '',
   inputs: [],

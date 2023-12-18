@@ -7,7 +7,7 @@ export const UserGuideModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.userGuide,
   templateType: ModuleTemplateTypeEnum.userGuide,
   flowType: FlowNodeTypeEnum.userGuide,
-  avatar: '/imgs/module/userGuide.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/userGuide.png`,
   name: '用户引导',
   intro: userGuideTip,
   inputs: [

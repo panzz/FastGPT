@@ -74,7 +74,7 @@ const ImportData = ({
 
   return (
     <MyModal
-      iconSrc="/imgs/modal/import.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/import.svg`}
       title={<Box {...TitleStyle}>{t('dataset.data.File import')}</Box>}
       isOpen
       isCentered

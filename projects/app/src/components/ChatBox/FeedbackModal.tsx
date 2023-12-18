@@ -36,7 +36,7 @@ const FeedbackModal = ({
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/badAnswer.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/badAnswer.svg`}
       title={t('chat.Feedback Modal')}
     >
       <ModalBody>

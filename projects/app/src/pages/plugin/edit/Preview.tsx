@@ -47,7 +47,7 @@ const PreviewPlugin = ({
     <MyModal
       isOpen
       title={t('module.Preview Plugin')}
-      iconSrc="/imgs/modal/preview.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/preview.svg`}
       onClose={onClose}
       isCentered
     >

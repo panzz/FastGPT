@@ -17,7 +17,7 @@ export const MyImage = (props: ImageProps) => {
         display={'inline-block'}
         borderRadius={'md'}
         alt={''}
-        fallbackSrc={'/imgs/errImg.png'}
+        fallbackSrc={`${process.env.BASE_PATH}/imgs/errImg.png`}
         fallbackStrategy={'onError'}
         cursor={succeed ? 'pointer' : 'default'}
         objectFit={'contain'}

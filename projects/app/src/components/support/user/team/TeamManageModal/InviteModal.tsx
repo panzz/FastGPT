@@ -68,7 +68,7 @@ const InviteModal = ({
   return (
     <MyModal
       isOpen
-      iconSrc="/imgs/modal/team.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/team.svg`}
       title={
         <Box>
           <Box>{t('user.team.Invite Member')}</Box>

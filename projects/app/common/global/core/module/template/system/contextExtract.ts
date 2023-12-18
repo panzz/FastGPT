@@ -16,7 +16,7 @@ export const ContextExtractModule: FlowModuleTemplateType = {
   id: FlowNodeTypeEnum.contentExtract,
   templateType: ModuleTemplateTypeEnum.functionCall,
   flowType: FlowNodeTypeEnum.contentExtract,
-  avatar: '/imgs/module/extract.png',
+  avatar: `${process.env.BASE_PATH}/imgs/module/extract.png`,
   name: '文本内容提取',
   intro: '可从文本中提取指定的数据，例如：sql语句、搜索关键词、代码等',
   showStatus: true,

@@ -89,7 +89,7 @@ const CreateModal = ({ onClose, parentId }: { onClose: () => void; parentId?: st
 
   return (
     <MyModal
-      iconSrc="/imgs/module/db.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/db.png`}
       title={t('core.dataset.Create dataset')}
       isOpen
       onClose={onClose}

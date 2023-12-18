@@ -53,7 +53,7 @@ const UpdateInviteModal = () => {
   return (
     <MyModal
       isOpen={inviteList && inviteList.length > 0}
-      iconSrc="/imgs/modal/team.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/team.svg`}
       title={
         <Box>
           <Box>{t('user.team.Processing invitations')}</Box>

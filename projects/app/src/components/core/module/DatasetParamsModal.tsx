@@ -51,7 +51,7 @@ const DatasetParamsModal = ({
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/params.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/params.svg`}
       title={'搜索参数调整'}
       minW={['90vw', '500px']}
       h={['90vh', 'auto']}

@@ -99,7 +99,7 @@ const CreateModal = ({ onClose, onSuccess }: { onClose: () => void; onSuccess: (
 
   return (
     <MyModal
-      iconSrc="/imgs/module/ai.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/ai.svg`}
       title={t('core.app.create app')}
       isOpen
       onClose={onClose}

@@ -109,7 +109,12 @@ const VariableEdit = ({
   return (
     <Box>
       <Flex alignItems={'center'}>
-        <Image alt={''} src={'/imgs/module/variable.png'} objectFit={'contain'} w={'18px'} />
+        <Image
+          alt={''}
+          src={`${process.env.BASE_PATH}/imgs/module/variable.png`}
+          objectFit={'contain'}
+          w={'18px'}
+        />
         <Box ml={2} flex={1}>
           {t('core.module.Variable')}
           <MyTooltip label={variableTip} forceShow>
@@ -176,7 +181,7 @@ const VariableEdit = ({
         </Box>
       )}
       <MyModal
-        iconSrc="/imgs/module/variable.png"
+        iconSrc={`${process.env.BASE_PATH}/imgs/module/variable.png`}
         title={t('core.module.Variable Setting')}
         isOpen={isOpenEdit}
         onClose={onCloseEdit}
