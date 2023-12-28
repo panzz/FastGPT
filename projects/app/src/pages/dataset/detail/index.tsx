@@ -94,7 +94,7 @@ const Detail = ({ datasetId, currentTab }: { datasetId: string; currentTab: `${T
 
   return (
     <>
-      <Script src="/js/pdf.js" strategy="lazyOnload"></Script>
+      <Script src={`${process.env.BASE_PATH}/js/pdf.js`} strategy="lazyOnload"></Script>
       <PageContainer>
         <Flex flexDirection={['column', 'row']} h={'100%'} pt={[4, 0]}>
           {isPc ? (

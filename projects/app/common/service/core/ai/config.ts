@@ -8,7 +8,7 @@ export const baseUrl = process.env.ONEAPI_URL || openaiBaseUrl;
 export const systemAIChatKey = process.env.CHAT_API_KEY || process.env.OPENAI_API_KEY || '';
 
 export const getAIApi = (props?: UserModelSchema['openaiAccount'], timeout = 60000) => {
-  console.debug('getAIApi> props:%o', props);
+  // console.debug('getAIApi> props:%o', props);
   let openaiOption: any = {
     baseURL: props?.baseUrl || baseUrl,
     apiKey: props?.key || systemAIChatKey,
@@ -28,6 +28,6 @@ export const getAIApi = (props?: UserModelSchema['openaiAccount'], timeout = 600
     // delete openaiOption.apiKey;
   }
 
-  console.debug('getAIApi> openaiOption:%o', openaiOption);
+  // console.debug('getAIApi> openaiOption:%o', openaiOption);
   return new OpenAI(openaiOption);
 };
