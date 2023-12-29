@@ -71,7 +71,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
   } = useQuery(['getOpenApiKeys', appId], () => getOpenApiKeys({ appId }));
 
   useEffect(() => {
-    setBaseUrl(`${location.origin}/api`);
+    setBaseUrl(`${location.origin}${process.env.BASE_PATH}/api`);
   }, []);
 
   return (

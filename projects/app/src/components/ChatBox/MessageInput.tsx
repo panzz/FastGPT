@@ -85,7 +85,7 @@ const MessageInput = ({
             item.id === file.id
               ? {
                   ...item,
-                  src: `${location.origin}${src}`
+                  src: `${location.origin}${process.env.BASE_PATH}${src}`
                 }
               : item
           )

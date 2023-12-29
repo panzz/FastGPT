@@ -96,7 +96,7 @@ const Promotion = () => {
             variant={'base'}
             fontSize={'sm'}
             onClick={() => {
-              copyData(`${location.origin}/?hiId=${userInfo?._id}`);
+              copyData(`${location.origin}${process.env.BASE_PATH}/?hiId=${userInfo?._id}`);
             }}
           >
             {t('user.Copy invite url')}

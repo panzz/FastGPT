@@ -56,6 +56,6 @@ export async function getFileAndOpen(fileId: string) {
     return window.open(fileId, '_blank');
   }
   const url = await getFileViewUrl(fileId);
-  const asPath = `${location.origin}${url}`;
+  const asPath = `${location.origin}${process.env.BASE_PATH}${url}`;
   window.open(asPath, '_blank');
 }

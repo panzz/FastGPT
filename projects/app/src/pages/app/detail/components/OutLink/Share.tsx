@@ -151,7 +151,7 @@ const Share = ({ appId }: { appId: string }) => {
                       </MenuItem>
                       <MenuItem
                         onClick={() => {
-                          const url = `${location.origin}/chat/share?shareId=${item.shareId}`;
+                          const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${item.shareId}`;
                           copyData(url, '已复制分享链接，可直接分享使用');
                         }}
                         py={[2, 3]}
@@ -161,8 +161,8 @@ const Share = ({ appId }: { appId: string }) => {
                       </MenuItem>
                       <MenuItem
                         onClick={() => {
-                          const url = `${location.origin}/chat/share?shareId=${item.shareId}`;
-                          const src = `${location.origin}/js/iframe.js`;
+                          const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${item.shareId}`;
+                          const src = `${location.origin}${process.env.BASE_PATH}/js/iframe.js`;
                           const script = `<script src="${src}" id="fastgpt-iframe" data-src="${url}" data-color="#4e83fd"></script>`;
                           copyData(script, '已复制嵌入 Script，可在应用 HTML 底部嵌入', 3000);
                         }}
@@ -210,7 +210,7 @@ const Share = ({ appId }: { appId: string }) => {
           type={'share'}
           defaultData={editLinkData}
           onCreate={(id) => {
-            const url = `${location.origin}/chat/share?shareId=${id}`;
+            const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${id}`;
             copyData(url, '创建成功。已复制分享地址，可直接分享使用');
             refetchShareChatList();
             setEditLinkData(undefined);
