@@ -56,12 +56,12 @@ const defaultFeConfigs: FeConfigsType = {
   show_register: false,
   docUrl: 'https://doc.fastgpt.in',
   openAPIDocUrl: 'https://doc.fastgpt.in/docs/development/openapi',
-  systemTitle: 'FastGPT',
+  systemTitle: 'RAG-Tools',
   limit: {
     exportLimitMinutes: 0
   },
   scripts: [],
-  favicon: '/favicon.ico'
+  favicon: `${process.env.BASE_PATH}/favicon.ico`
 };
 
 export async function getInitConfig() {
