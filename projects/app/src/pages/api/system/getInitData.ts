@@ -131,14 +131,15 @@ export function setDefaultData(res?: ConfigFileType) {
 
 export function getSystemVersion() {
   try {
-    if (process.env.NODE_ENV === 'development') {
-      global.systemVersion = process.env.npm_package_version || '0.0.0';
-    } else {
-      const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+    // if (process.env.NODE_ENV === 'development') {
+    //   global.systemVersion = process.env.npm_package_version || '0.0.0';
+    // } else {
+    const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
 
-      global.systemVersion = packageJson?.version;
-    }
-    console.log(`System Version: ${global.systemVersion}`);
+    global.systemVersion = packageJson?.version;
+    global.feConfigs.systemTitle = packageJson?.name;
+    // }
+    console.log(`${global.feConfigs.systemTitle} Version: ${global.systemVersion}`);
   } catch (error) {
     console.log(error);
 
