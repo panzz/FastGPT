@@ -1,6 +1,6 @@
 {
   "name": "GenAI-Tools",
-  "version": "4.6.8",
+  "version": "4.6.9",
   "private": false,
   "scripts": {
     "dev": "next dev -p 8080",

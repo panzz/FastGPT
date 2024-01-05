@@ -12,11 +12,15 @@ import { simpleText } from '/common/global/common/string/tools';
 import { connectToDatabase } from '@/service/mongo';
 
 export type UrlFetchResponse = FetchResultItem[];
+// 将已经渲染过的页面，缓存在内存中
+const RENDER_CACHE = new Map();
+const ENABLE_RENDER_CACHE = false;
 
 const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
   let browser: any = null;
   let page: any = null;
   let isPupetFetch: boolean = false;
+  let hearder: any = {};
 
   try {
     await connectToDatabase();
@@ -38,7 +42,7 @@ const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
     if (isPupetFetch) {
       // 启动浏览器 , true不启用，false启用
       const puptOpt = {
-        //使用无头模式，默认为有头(true为无界面模式)
+        //使用无头模式，默认为有头( 'new'为无界面模式, false为有界面模式)
         headless: false,
         //设置打开页面在浏览器中的宽高
         defaultViewport: {
@@ -46,19 +50,9 @@ const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
           height: 800
         },
         timeout: 0
-        // devtools: true
+        // devtools: true,
       };
       browser = await puppeteer.launch(puptOpt);
-      // 创建一个新页面
-      page = await browser.newPage();
-      // await page.setViewport({width: 1080, height: 1024});
-      // const hearder = {
-      //   'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
-      //   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36',
-      //   'Cookie': 'developerForumToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJsaXBhbjUiLCJ0YWciOiJsZSIsImdyb3VwcyI6WyJhZG1pbiIsIkNJTyJdLCJ1c2VyTmFtZSI6IlBldGVycGFuIFBhbjUgTGkgfCDmnY7mlIAiLCJzdWIiOnsiSVRjb2RlIjoibGlwYW41IiwiaXRjb2RlIjoibGlwYW41In0sImlhdCI6MTcwNDM2MTAyMywiZXhwIjoxNzA0OTY1ODIzfQ.kwNlstuYGfnYIQ7oJL1z3FBIZHQRlDo0SsihebJBn5c;',
-      //   'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsZW5vdm8iLCJzdWIiOiJsaXBhbjUiLCJpZCI6NTEsInR5cGUiOiJzaXRlLXVzZXIiLCJleHAiOjE3MzU4OTcwMjMsImlhdCI6MTcwNDM2MTAyM30.TkrQZtRlSrWa08tXlOSOs_85BoqZDzc6LCF7R8eNsKKoT12k8l48BlRKTOpq8GBAo7sJ-XsljZCatWcDiJBl8A'
-      // }
-      let hearder: any = {};
       if (headerList && headerList.length) {
         headerList.forEach((h: any) => {
           let hlist = h.split(':');
@@ -67,7 +61,6 @@ const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
           }
         });
       }
-      await page.setExtraHTTPHeaders(hearder);
     }
 
     const response = (
@@ -76,15 +69,33 @@ const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
           let article = null;
           try {
             if (isPupetFetch) {
-              // 访问一个网址
-              await page.goto(url);
-              const body = await page.evaluate(() => {
-                // return document.querySelector("body").innerHTML;
-                const bodyElement = document.querySelector('body');
-                return bodyElement ? bodyElement.innerHTML : '';
-              });
-              const { document } = new JSDOM(body).window;
-              article = new Readability(document).parse();
+              if (RENDER_CACHE.has(url) && ENABLE_RENDER_CACHE) {
+                article = RENDER_CACHE.get(url);
+              } else {
+                // 创建一个新页面
+                page = await browser.newPage();
+                await page.setExtraHTTPHeaders(hearder);
+                const start = Date.now();
+                // 访问页面地址直到页面网络状态为 idle
+                try {
+                  await page.goto(url, {
+                    waitUntil: 'networkidle0'
+                  });
+                } catch (error) {
+                  // console.warn('fetchContent> warning %o', error?.message);
+                }
+                const body = await page.evaluate(() => {
+                  // return document.querySelector("body").innerHTML;
+                  const bodyElement = document.querySelector('body');
+                  return bodyElement ? bodyElement.innerHTML : '';
+                });
+                const { document } = new JSDOM(body).window;
+                article = new Readability(document).parse();
+                // 进行缓存存储
+                ENABLE_RENDER_CACHE && RENDER_CACHE.set(url, article);
+                const ttRenderMs = Date.now() - start;
+                console.debug(`fetchContent> Headless rendered page in: ${ttRenderMs}ms`);
+              }
             } else {
               const fetchRes = await axios.get(url, {
                 timeout: 30000
@@ -102,7 +113,7 @@ const fetchContent = async (req: NextApiRequest, res: NextApiResponse) => {
               content: simpleText(`${article?.title}\n${content}`)
             };
           } catch (error) {
-            console.error('fetchContent > ERROR: %s', error?.message);
+            console.error('fetchContent > (%o)ERROR: %s', url, error?.message);
             return {
               url,
               content: ''
