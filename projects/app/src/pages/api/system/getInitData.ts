@@ -1,11 +1,11 @@
-import type { FeConfigsType, SystemEnvType } from '@fastgpt/global/common/system/types/index.d';
+import type { FeConfigsType, SystemEnvType } from '/common/global/common/system/types/index.d';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { readFileSync, readdirSync } from 'fs';
 import type { ConfigFileType, InitDateResponse } from '@/global/common/api/systemRes';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { getTikTokenEnc } from '@fastgpt/global/common/string/tiktoken';
-import { initHttpAgent } from '@fastgpt/service/common/middle/httpAgent';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { getTikTokenEnc } from '/common/global/common/string/tiktoken';
+import { initHttpAgent } from '/common/service/common/middle/httpAgent';
 import {
   defaultChatModels,
   defaultQAModels,
@@ -16,10 +16,10 @@ import {
   defaultAudioSpeechModels,
   defaultWhisperModel,
   defaultReRankModels
-} from '@fastgpt/global/core/ai/model';
+} from '/common/global/core/ai/model';
 import { SimpleModeTemplate_FastGPT_Universal } from '@/global/core/app/constants';
 import { getSimpleTemplatesFromPlus } from '@/service/core/app/utils';
-import { PluginTypeEnum } from '@fastgpt/global/core/plugin/constants';
+import { PluginTypeEnum } from '/common/global/core/plugin/constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await getInitConfig();
@@ -56,12 +56,12 @@ const defaultFeConfigs: FeConfigsType = {
   show_register: false,
   docUrl: 'https://doc.fastgpt.in',
   openAPIDocUrl: 'https://doc.fastgpt.in/docs/development/openapi',
-  systemTitle: 'FastGPT',
+  systemTitle: 'RAG-Tools',
   limit: {
     exportLimitMinutes: 0
   },
   scripts: [],
-  favicon: '/favicon.ico'
+  favicon: `${process.env.BASE_PATH}/favicon.ico`
 };
 
 export async function getInitConfig() {
@@ -70,7 +70,7 @@ export async function getInitConfig() {
     initGlobal();
 
     const filename =
-      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : '/app/data/config.json';
+      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : 'data/config.json'; // : '/app/data/config.json';
     const res = JSON.parse(readFileSync(filename, 'utf-8')) as ConfigFileType;
 
     setDefaultData(res);
@@ -126,19 +126,20 @@ export function setDefaultData(res?: ConfigFileType) {
 
   global.priceMd = '';
 
-  console.log(res);
+  // console.log('setDefaultData> res:%o', res);
 }
 
 export function getSystemVersion() {
   try {
-    if (process.env.NODE_ENV === 'development') {
-      global.systemVersion = process.env.npm_package_version || '0.0.0';
-    } else {
-      const packageJson = JSON.parse(readFileSync('/app/package.json', 'utf-8'));
+    // if (process.env.NODE_ENV === 'development') {
+    //   global.systemVersion = process.env.npm_package_version || '0.0.0';
+    // } else {
+    const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
 
-      global.systemVersion = packageJson?.version;
-    }
-    console.log(`System Version: ${global.systemVersion}`);
+    global.systemVersion = packageJson?.version;
+    global.feConfigs.systemTitle = packageJson?.name;
+    // }
+    console.log(`${global.feConfigs.systemTitle} Version: ${global.systemVersion}`);
   } catch (error) {
     console.log(error);
 
@@ -181,9 +182,7 @@ async function getSimpleModeTemplates() {
 
   try {
     const basePath =
-      process.env.NODE_ENV === 'development'
-        ? 'public/simpleTemplates'
-        : '/app/projects/app/public/simpleTemplates';
+      process.env.NODE_ENV === 'development' ? 'public/simpleTemplates' : 'public/simpleTemplates'; // : '/app/projects/app/public/simpleTemplates';
     // read data/simpleTemplates directory, get all json file
     const files = readdirSync(basePath);
     // filter json file
@@ -217,9 +216,7 @@ function getSystemPlugin() {
   if (global.communityPlugins && global.communityPlugins.length > 0) return;
 
   const basePath =
-    process.env.NODE_ENV === 'development'
-      ? 'public/pluginTemplates'
-      : '/app/projects/app/public/pluginTemplates';
+    process.env.NODE_ENV === 'development' ? 'public/pluginTemplates' : 'public/pluginTemplates'; // : '/app/projects/app/public/pluginTemplates';
   // read data/pluginTemplates directory, get all json file
   const files = readdirSync(basePath);
   // filter json file

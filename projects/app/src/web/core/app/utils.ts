@@ -1,10 +1,10 @@
-import { AppSimpleEditFormType } from '@fastgpt/global/core/app/type';
-import { ModuleItemType } from '@fastgpt/global/core/module/type';
+import { AppSimpleEditFormType } from '/common/global/core/app/type';
+import { ModuleItemType } from '/common/global/core/module/type';
 import { POST } from '@/web/common/api/request';
 import { chatModelList } from '@/web/common/system/staticData';
-import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import type { FormatForm2ModulesProps } from '@fastgpt/global/core/app/api.d';
+import { FlowNodeInputTypeEnum, FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import type { FormatForm2ModulesProps } from '/common/global/core/app/api.d';
 
 export async function postForm2Modules(
   data: AppSimpleEditFormType,

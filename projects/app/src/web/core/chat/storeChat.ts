@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
-import type { ChatHistoryItemType } from '@fastgpt/global/core/chat/type.d';
-import type { InitChatResponse } from '@fastgpt/global/core/chat/api';
+import type { ChatHistoryItemType } from '/common/global/core/chat/type.d';
+import type { InitChatResponse } from '/common/global/core/chat/api';
 import { delChatHistoryById, getChatHistory, clearChatHistoryByAppId } from '@/web/core/chat/api';
 
 type State = {
@@ -24,7 +24,7 @@ const defaultChatData: InitChatResponse = {
   appId: '',
   app: {
     name: 'Loading',
-    avatar: '/icon/logo.svg',
+    avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
     intro: '',
     canUse: false
   },

@@ -1,30 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { sseErrRes, jsonRes } from '@fastgpt/service/common/response';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import { withNextCors } from '@fastgpt/service/common/middle/cors';
-import { ChatRoleEnum, ChatSourceEnum } from '@fastgpt/global/core/chat/constants';
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
+import { authApp } from '/common/service/support/permission/auth/app';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { sseErrRes, jsonRes } from '/common/service/common/response';
+import { addLog } from '/common/service/common/mongo/controller';
+import { withNextCors } from '/common/service/common/middle/cors';
+import { ChatRoleEnum, ChatSourceEnum } from '/common/global/core/chat/constants';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
 import { dispatchModules } from '@/service/moduleDispatch';
-import type { ChatCompletionCreateParams } from '@fastgpt/global/core/ai/type.d';
-import type { ChatMessageItemType } from '@fastgpt/global/core/ai/type.d';
+import type { ChatCompletionCreateParams } from '/common/global/core/ai/type.d';
+import type { ChatMessageItemType } from '/common/global/core/ai/type.d';
 import { gptMessage2ChatType, textAdaptGptResponse } from '@/utils/adapt';
 import { getChatHistory } from './getHistory';
 import { saveChat } from '@/service/utils/chat/saveChat';
-import { responseWrite } from '@fastgpt/service/common/response';
+import { responseWrite } from '/common/service/common/response';
 import { pushChatBill } from '@/service/support/wallet/bill/push';
-import { BillSourceEnum } from '@fastgpt/global/support/wallet/bill/constants';
+import { BillSourceEnum } from '/common/global/support/wallet/bill/constants';
 import { authOutLinkChat } from '@/service/support/permission/auth/outLink';
-import { pushResult2Remote, updateOutLinkUsage } from '@fastgpt/service/support/outLink/tools';
+import { pushResult2Remote, updateOutLinkUsage } from '/common/service/support/outLink/tools';
 import requestIp from 'request-ip';
 
 import { selectShareResponse } from '@/utils/service/core/chat';
-import { updateApiKeyUsage } from '@fastgpt/service/support/openapi/tools';
+import { updateApiKeyUsage } from '/common/service/support/openapi/tools';
 import { connectToDatabase } from '@/service/mongo';
 import { getUserAndAuthBalance } from '@/service/support/permission/auth/user';
-import { AuthUserTypeEnum } from '@fastgpt/global/support/permission/constant';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
+import { AuthUserTypeEnum } from '/common/global/support/permission/constant';
+import { MongoApp } from '/common/service/core/app/schema';
 
 type FastGptWebChatProps = {
   chatId?: string; // undefined: nonuse history, '': new chat, 'xxxxx': use history

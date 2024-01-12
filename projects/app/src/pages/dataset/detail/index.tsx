@@ -4,8 +4,8 @@ import { Box, Flex, IconButton, useTheme } from '@chakra-ui/react';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
-import type { DatasetItemType } from '@fastgpt/global/core/dataset/type.d';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import type { DatasetItemType } from '/common/global/core/dataset/type.d';
+import { getErrText } from '/common/global/common/error/utils';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
 import { type ComponentRef } from './components/Info';
 import Tabs from '@/components/Tabs';
@@ -94,7 +94,7 @@ const Detail = ({ datasetId, currentTab }: { datasetId: string; currentTab: `${T
 
   return (
     <>
-      <Script src="/js/pdf.js" strategy="lazyOnload"></Script>
+      <Script src={`${process.env.BASE_PATH}/js/pdf.js`} strategy="lazyOnload"></Script>
       <PageContainer>
         <Flex flexDirection={['column', 'row']} h={'100%'} pt={[4, 0]}>
           {isPc ? (

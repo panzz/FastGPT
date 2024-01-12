@@ -27,8 +27,8 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { QuestionOutlineIcon, SmallAddIcon } from '@chakra-ui/icons';
-import { VariableInputEnum } from '@fastgpt/global/core/module/constants';
-import type { VariableItemType } from '@fastgpt/global/core/module/type.d';
+import { VariableInputEnum } from '/common/global/core/module/constants';
+import type { VariableItemType } from '/common/global/core/module/type.d';
 import MyIcon from '@/components/Icon';
 import { useForm } from 'react-hook-form';
 import { useFieldArray } from 'react-hook-form';
@@ -36,7 +36,7 @@ import { customAlphabet } from 'nanoid';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
 import MyModal from '@/components/MyModal';
 import MyTooltip from '@/components/MyTooltip';
-import { variableTip } from '@fastgpt/global/core/module/template/tip';
+import { variableTip } from '/common/global/core/module/template/tip';
 import { useTranslation } from 'next-i18next';
 import { useToast } from '@/web/common/hooks/useToast';
 
@@ -109,7 +109,12 @@ const VariableEdit = ({
   return (
     <Box>
       <Flex alignItems={'center'}>
-        <Image alt={''} src={'/imgs/module/variable.png'} objectFit={'contain'} w={'18px'} />
+        <Image
+          alt={''}
+          src={`${process.env.BASE_PATH}/imgs/module/variable.png`}
+          objectFit={'contain'}
+          w={'18px'}
+        />
         <Box ml={2} flex={1}>
           {t('core.module.Variable')}
           <MyTooltip label={variableTip} forceShow>
@@ -176,7 +181,7 @@ const VariableEdit = ({
         </Box>
       )}
       <MyModal
-        iconSrc="/imgs/module/variable.png"
+        iconSrc={`${process.env.BASE_PATH}/imgs/module/variable.png`}
         title={t('core.module.Variable Setting')}
         isOpen={isOpenEdit}
         onClose={onCloseEdit}

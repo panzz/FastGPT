@@ -1,9 +1,9 @@
-import { PushDatasetDataChunkProps } from '@fastgpt/global/core/dataset/api';
-import { DatasetSearchModeEnum, TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { PushDatasetDataChunkProps } from '/common/global/core/dataset/api';
+import { DatasetSearchModeEnum, TrainingModeEnum } from '/common/global/core/dataset/constant';
 import {
   DatasetDataIndexItemType,
   SearchDataResponseItemType
-} from '@fastgpt/global/core/dataset/type';
+} from '/common/global/core/dataset/type';
 
 /* ================= dataset ===================== */
 export type CreateDatasetParams = {

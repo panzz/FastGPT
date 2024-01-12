@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import { MongoUser } from '@fastgpt/service/support/user/schema';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
+import { jsonRes } from '/common/service/common/response';
+import { MongoUser } from '/common/service/support/user/schema';
+import { authCert } from '/common/service/support/permission/auth/common';
 import { UserUpdateParams } from '@/types/user';
-import { getAIApi, openaiBaseUrl } from '@fastgpt/service/core/ai/config';
+import { getAIApi, openaiBaseUrl } from '/common/service/core/ai/config';
 import { connectToDatabase } from '@/service/mongo';
 
 /* update user info */

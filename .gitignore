@@ -36,3 +36,9 @@ dist/
 docSite/public/
 docSite/resources/_gen/
 docSite/.vercel
+
+# custom
+.vscode/
+*.tar.gz
+package-lock.json
+*.env.*

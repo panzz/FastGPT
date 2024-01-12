@@ -15,9 +15,9 @@ import {
   Switch
 } from '@chakra-ui/react';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
-import { FlowModuleItemType, ModuleItemType } from '@fastgpt/global/core/module/type.d';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { welcomeTextTip, variableTip } from '@fastgpt/global/core/module/template/tip';
+import { FlowModuleItemType, ModuleItemType } from '/common/global/core/module/type.d';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import { welcomeTextTip, variableTip } from '/common/global/core/module/template/tip';
 import { onChangeNode } from '../../FlowProvider';
 
 import VariableEdit from '../modules/VariableEdit';
@@ -25,10 +25,10 @@ import MyIcon from '@/components/Icon';
 import MyTooltip from '@/components/MyTooltip';
 import Container from '../modules/Container';
 import NodeCard from '../modules/NodeCard';
-import type { VariableItemType } from '@fastgpt/global/core/module/type.d';
+import type { VariableItemType } from '/common/global/core/module/type.d';
 import QGSwitch from '@/components/core/module/Flow/components/modules/QGSwitch';
 import TTSSelect from '@/components/core/module/Flow/components/modules/TTSSelect';
-import { splitGuideModule } from '@fastgpt/global/core/module/utils';
+import { splitGuideModule } from '/common/global/core/module/utils';
 
 const NodeUserGuide = ({ data }: NodeProps<FlowModuleItemType>) => {
   const theme = useTheme();

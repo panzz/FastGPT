@@ -1,11 +1,11 @@
 import { GET, POST, DELETE, PUT } from '@/web/common/api/request';
-import { FlowModuleTemplateType } from '@fastgpt/global/core/module/type';
+import { FlowModuleTemplateType } from '/common/global/core/module/type';
 import {
   CreateOnePluginParams,
   PluginListItemType,
   UpdatePluginParams
-} from '@fastgpt/global/core/plugin/controller';
-import { PluginItemSchema } from '@fastgpt/global/core/plugin/type';
+} from '/common/global/core/plugin/controller';
+import { PluginItemSchema } from '/common/global/core/plugin/type';
 
 export const postCreatePlugin = (data: CreateOnePluginParams) =>
   POST<string>('/core/plugin/create', data);

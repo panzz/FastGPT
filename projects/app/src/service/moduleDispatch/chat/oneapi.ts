@@ -1,28 +1,28 @@
 import type { NextApiResponse } from 'next';
-import { ChatContextFilter } from '@fastgpt/service/core/chat/utils';
-import type { moduleDispatchResType, ChatItemType } from '@fastgpt/global/core/chat/type.d';
-import { ChatRoleEnum } from '@fastgpt/global/core/chat/constants';
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
+import { ChatContextFilter } from '/common/service/core/chat/utils';
+import type { moduleDispatchResType, ChatItemType } from '/common/global/core/chat/type.d';
+import { ChatRoleEnum } from '/common/global/core/chat/constants';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
 import { textAdaptGptResponse } from '@/utils/adapt';
-import { getAIApi } from '@fastgpt/service/core/ai/config';
-import type { ChatCompletion, StreamChatType } from '@fastgpt/global/core/ai/type.d';
+import { getAIApi } from '/common/service/core/ai/config';
+import type { ChatCompletion, StreamChatType } from '/common/global/core/ai/type.d';
 import { countModelPrice } from '@/service/support/wallet/bill/utils';
-import type { ChatModelItemType } from '@fastgpt/global/core/ai/model.d';
+import type { ChatModelItemType } from '/common/global/core/ai/model.d';
 import { postTextCensor } from '@/service/common/censor';
-import { ChatCompletionRequestMessageRoleEnum } from '@fastgpt/global/core/ai/constant';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type.d';
-import { countMessagesTokens, sliceMessagesTB } from '@fastgpt/global/common/string/tiktoken';
-import { adaptChat2GptMessages } from '@fastgpt/global/core/chat/adapt';
+import { ChatCompletionRequestMessageRoleEnum } from '/common/global/core/ai/constant';
+import type { ModuleItemType } from '/common/global/core/module/type.d';
+import { countMessagesTokens, sliceMessagesTB } from '/common/global/common/string/tiktoken';
+import { adaptChat2GptMessages } from '/common/global/core/chat/adapt';
 import { Prompt_QuotePromptList, Prompt_QuoteTemplateList } from '@/global/core/prompt/AIChat';
-import type { AIChatModuleProps } from '@fastgpt/global/core/module/node/type.d';
-import { replaceVariable } from '@fastgpt/global/common/string/tools';
+import type { AIChatModuleProps } from '/common/global/core/module/node/type.d';
+import { replaceVariable } from '/common/global/common/string/tools';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
-import { responseWrite, responseWriteController } from '@fastgpt/service/common/response';
+import { responseWrite, responseWriteController } from '/common/service/common/response';
 import { getChatModel, ModelTypeEnum } from '@/service/core/ai/model';
-import type { SearchDataResponseItemType } from '@fastgpt/global/core/dataset/type';
-import { formatStr2ChatContent } from '@fastgpt/service/core/chat/utils';
-import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { UserModelSchema } from '@fastgpt/global/support/user/type';
+import type { SearchDataResponseItemType } from '/common/global/core/dataset/type';
+import { formatStr2ChatContent } from '/common/service/core/chat/utils';
+import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '/common/global/core/module/constants';
+import { UserModelSchema } from '/common/global/support/user/type';
 
 export type ChatProps = ModuleDispatchProps<
   AIChatModuleProps & {

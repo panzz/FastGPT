@@ -6,10 +6,10 @@ import type {
   AudioSpeechModels,
   WhisperModelType,
   ReRankModelItemType
-} from '@fastgpt/global/core/ai/model.d';
+} from '/common/global/core/ai/model.d';
 
-import type { FeConfigsType } from '@fastgpt/global/common/system/types/index.d';
-import { AppSimpleEditConfigTemplateType } from '@fastgpt/global/core/app/type';
+import type { FeConfigsType } from '/common/global/common/system/types/index.d';
+import { AppSimpleEditConfigTemplateType } from '/common/global/core/app/type';
 
 export type ConfigFileType = {
   FeConfig: FeConfigsType;

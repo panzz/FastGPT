@@ -1,19 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import { delay } from '@/utils/tools';
-import { PgClient } from '@fastgpt/service/common/pg';
-import {
-  DatasetDataIndexTypeEnum,
-  PgDatasetTableName
-} from '@fastgpt/global/core/dataset/constant';
+import { PgClient } from '/common/service/common/pg';
+import { DatasetDataIndexTypeEnum, PgDatasetTableName } from '/common/global/core/dataset/constant';
 
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
-import { Types, connectionMongo } from '@fastgpt/service/common/mongo';
-import { TeamMemberCollectionName } from '@fastgpt/global/support/user/team/constant';
-import { getUserDefaultTeam } from '@fastgpt/service/support/user/team/controller';
-import { getGFSCollection } from '@fastgpt/service/common/file/gridfs/controller';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
+import { Types, connectionMongo } from '/common/service/common/mongo';
+import { TeamMemberCollectionName } from '/common/global/support/user/team/constant';
+import { getUserDefaultTeam } from '/common/service/support/user/team/controller';
+import { getGFSCollection } from '/common/service/common/file/gridfs/controller';
 
 let success = 0;
 /* pg 中的数据搬到 mongo dataset.datas 中，并做映射 */

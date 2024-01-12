@@ -7,12 +7,12 @@ import {
   UpdateInviteProps,
   UpdateTeamMemberProps,
   UpdateTeamProps
-} from '@fastgpt/global/support/user/team/controller.d';
+} from '/common/global/support/user/team/controller.d';
 import {
   TeamItemType,
   TeamMemberItemType,
   TeamMemberSchema
-} from '@fastgpt/global/support/user/team/type.d';
+} from '/common/global/support/user/team/type.d';
 
 /* --------------- team  ---------------- */
 export const getTeamList = (status: `${TeamMemberSchema['status']}`) =>

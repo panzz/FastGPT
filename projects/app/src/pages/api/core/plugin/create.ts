@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import type { CreateOnePluginParams } from '@fastgpt/global/core/plugin/controller';
-import { authUserNotVisitor } from '@fastgpt/service/support/permission/auth/user';
-import { MongoPlugin } from '@fastgpt/service/core/plugin/schema';
+import type { CreateOnePluginParams } from '/common/global/core/plugin/controller';
+import { authUserNotVisitor } from '/common/service/support/permission/auth/user';
+import { MongoPlugin } from '/common/service/core/plugin/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

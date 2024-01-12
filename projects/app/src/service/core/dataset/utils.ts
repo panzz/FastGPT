@@ -1,4 +1,4 @@
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
 import { cut } from '@node-rs/jieba';
 
 /**

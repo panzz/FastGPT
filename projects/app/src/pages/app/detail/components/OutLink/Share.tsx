@@ -34,10 +34,10 @@ import { formatTimeToChatTime } from '@/utils/tools';
 import { useCopyData } from '@/web/common/hooks/useCopyData';
 import { useForm } from 'react-hook-form';
 import { defaultOutLinkForm } from '@/constants/app';
-import type { OutLinkEditType } from '@fastgpt/global/support/outLink/type.d';
+import type { OutLinkEditType } from '/common/global/support/outLink/type.d';
 import { useRequest } from '@/web/common/hooks/useRequest';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { OutLinkTypeEnum } from '@fastgpt/global/support/outLink/constant';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { OutLinkTypeEnum } from '/common/global/support/outLink/constant';
 import { useTranslation } from 'next-i18next';
 import { useToast } from '@/web/common/hooks/useToast';
 import { feConfigs } from '@/web/common/system/staticData';
@@ -151,7 +151,7 @@ const Share = ({ appId }: { appId: string }) => {
                       </MenuItem>
                       <MenuItem
                         onClick={() => {
-                          const url = `${location.origin}/chat/share?shareId=${item.shareId}`;
+                          const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${item.shareId}`;
                           copyData(url, '已复制分享链接，可直接分享使用');
                         }}
                         py={[2, 3]}
@@ -161,8 +161,8 @@ const Share = ({ appId }: { appId: string }) => {
                       </MenuItem>
                       <MenuItem
                         onClick={() => {
-                          const url = `${location.origin}/chat/share?shareId=${item.shareId}`;
-                          const src = `${location.origin}/js/iframe.js`;
+                          const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${item.shareId}`;
+                          const src = `${location.origin}${process.env.BASE_PATH}/js/iframe.js`;
                           const script = `<script src="${src}" id="fastgpt-iframe" data-src="${url}" data-color="#4e83fd"></script>`;
                           copyData(script, '已复制嵌入 Script，可在应用 HTML 底部嵌入', 3000);
                         }}
@@ -210,7 +210,7 @@ const Share = ({ appId }: { appId: string }) => {
           type={'share'}
           defaultData={editLinkData}
           onCreate={(id) => {
-            const url = `${location.origin}/chat/share?shareId=${id}`;
+            const url = `${location.origin}${process.env.BASE_PATH}/chat/share?shareId=${id}`;
             copyData(url, '创建成功。已复制分享地址，可直接分享使用');
             refetchShareChatList();
             setEditLinkData(undefined);
@@ -279,7 +279,7 @@ function EditLinkModal({
   return (
     <MyModal
       isOpen={true}
-      iconSrc="/imgs/modal/shareLight.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/shareLight.svg`}
       title={isEdit ? t('outlink.Edit Link') : t('outlink.Create Link')}
     >
       <ModalBody>

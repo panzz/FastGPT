@@ -1,22 +1,22 @@
-import { UserGuideModule } from '@fastgpt/global/core/module/template/system/userGuide';
-import { UserInputModule } from '@fastgpt/global/core/module/template/system/userInput';
-import { HistoryModule } from '@fastgpt/global/core/module/template/system/history';
-import { AiChatModule } from '@fastgpt/global/core/module/template/system/aiChat';
-import { DatasetSearchModule } from '@fastgpt/global/core/module/template/system/datasetSearch';
-import { AssignedAnswerModule } from '@fastgpt/global/core/module/template/system/assignedAnswer';
-import { ClassifyQuestionModule } from '@fastgpt/global/core/module/template/system/classifyQuestion';
-import { ContextExtractModule } from '@fastgpt/global/core/module/template/system/contextExtract';
-import { HttpModule } from '@fastgpt/global/core/module/template/system/http';
-import { EmptyModule } from '@fastgpt/global/core/module/template/system/empty';
-import { RunAppModule } from '@fastgpt/global/core/module/template/system/runApp';
-import { PluginInputModule } from '@fastgpt/global/core/module/template/system/pluginInput';
-import { PluginOutputModule } from '@fastgpt/global/core/module/template/system/pluginOutput';
-import { RunPluginModule } from '@fastgpt/global/core/module/template/system/runPlugin';
+import { UserGuideModule } from '/common/global/core/module/template/system/userGuide';
+import { UserInputModule } from '/common/global/core/module/template/system/userInput';
+import { HistoryModule } from '/common/global/core/module/template/system/history';
+import { AiChatModule } from '/common/global/core/module/template/system/aiChat';
+import { DatasetSearchModule } from '/common/global/core/module/template/system/datasetSearch';
+import { AssignedAnswerModule } from '/common/global/core/module/template/system/assignedAnswer';
+import { ClassifyQuestionModule } from '/common/global/core/module/template/system/classifyQuestion';
+import { ContextExtractModule } from '/common/global/core/module/template/system/contextExtract';
+import { HttpModule } from '/common/global/core/module/template/system/http';
+import { EmptyModule } from '/common/global/core/module/template/system/empty';
+import { RunAppModule } from '/common/global/core/module/template/system/runApp';
+import { PluginInputModule } from '/common/global/core/module/template/system/pluginInput';
+import { PluginOutputModule } from '/common/global/core/module/template/system/pluginOutput';
+import { RunPluginModule } from '/common/global/core/module/template/system/runPlugin';
 import type {
   FlowModuleTemplateType,
   moduleTemplateListType
-} from '@fastgpt/global/core/module/type.d';
-import { ModuleTemplateTypeEnum } from '@fastgpt/global/core/module/constants';
+} from '/common/global/core/module/type.d';
+import { ModuleTemplateTypeEnum } from '/common/global/core/module/constants';
 
 export const appSystemModuleTemplates: FlowModuleTemplateType[] = [
   UserGuideModule,

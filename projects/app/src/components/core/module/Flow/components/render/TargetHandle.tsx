@@ -4,7 +4,7 @@ import { Handle, OnConnect, Position } from 'reactflow';
 import { FlowValueTypeStyle, FlowValueTypeMap } from '@/web/core/modules/constants/dataType';
 import MyTooltip from '@/components/MyTooltip';
 import { useTranslation } from 'next-i18next';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
 
 interface Props extends BoxProps {
   handleKey: string;

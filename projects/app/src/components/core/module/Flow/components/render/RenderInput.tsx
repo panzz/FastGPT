@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import type { SelectAppItemType } from '@fastgpt/global/core/module/type';
-import type { FlowNodeInputItemType } from '@fastgpt/global/core/module/node/type';
+import type { SelectAppItemType } from '/common/global/core/module/type';
+import type { FlowNodeInputItemType } from '/common/global/core/module/node/type';
 import {
   Box,
   Textarea,
@@ -17,7 +17,7 @@ import {
   Grid,
   Switch
 } from '@chakra-ui/react';
-import { FlowNodeInputTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeInputTypeEnum } from '/common/global/core/module/node/constant';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import dynamic from 'next/dynamic';
 import { onChangeNode, useFlowProviderStore } from '../../FlowProvider';
@@ -28,15 +28,15 @@ import MyTooltip from '@/components/MyTooltip';
 import TargetHandle from './TargetHandle';
 import MyIcon from '@/components/Icon';
 import { useTranslation } from 'next-i18next';
-import type { AIChatModuleProps } from '@fastgpt/global/core/module/node/type.d';
+import type { AIChatModuleProps } from '/common/global/core/module/node/type.d';
 import { chatModelList } from '@/web/common/system/staticData';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
 import { useDatasetStore } from '@/web/core/dataset/store/dataset';
-import type { SelectedDatasetType } from '@fastgpt/global/core/module/api.d';
+import type { SelectedDatasetType } from '/common/global/core/module/api.d';
 import { useQuery } from '@tanstack/react-query';
 import type { EditFieldModeType, EditFieldType } from '../modules/FieldEditModal';
 import { feConfigs } from '@/web/common/system/staticData';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
 
 const FieldEditModal = dynamic(() => import('../modules/FieldEditModal'));
 const SelectAppModal = dynamic(() => import('../../SelectAppModal'));

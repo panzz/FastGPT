@@ -11,7 +11,7 @@ import MyModal from '@/components/MyModal';
 import Provider from './Provider';
 import { useDatasetStore } from '@/web/core/dataset/store/dataset';
 import { qaModelList } from '@/web/common/system/staticData';
-import { TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { TrainingModeEnum } from '/common/global/core/dataset/constant';
 
 export enum ImportTypeEnum {
   chunk = 'chunk',
@@ -74,7 +74,7 @@ const ImportData = ({
 
   return (
     <MyModal
-      iconSrc="/imgs/modal/import.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/import.svg`}
       title={<Box {...TitleStyle}>{t('dataset.data.File import')}</Box>}
       isOpen
       isCentered

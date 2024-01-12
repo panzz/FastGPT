@@ -3,12 +3,12 @@ import { ModalBody, useTheme, ModalFooter, Button, Box, Card, Flex, Grid } from 
 import { useTranslation } from 'next-i18next';
 import Avatar from '../Avatar';
 import MyIcon from '@/components/Icon';
-import { DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetTypeEnum } from '/common/global/core/dataset/constant';
 import DatasetSelectModal, { useDatasetSelect } from '@/components/core/dataset/SelectModal';
 import dynamic from 'next/dynamic';
-import { AdminFbkType } from '@fastgpt/global/core/chat/type.d';
+import { AdminFbkType } from '/common/global/core/chat/type.d';
 import SelectCollections from '@/web/core/dataset/components/SelectCollections';
-import { getDefaultIndex } from '@fastgpt/global/core/dataset/utils';
+import { getDefaultIndex } from '/common/global/core/dataset/utils';
 
 const InputDataModal = dynamic(() => import('@/pages/dataset/detail/components/InputDataModal'));
 

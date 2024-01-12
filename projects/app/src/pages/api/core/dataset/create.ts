@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoDataset } from '@fastgpt/service/core/dataset/schema';
+import { MongoDataset } from '/common/service/core/dataset/schema';
 import type { CreateDatasetParams } from '@/global/core/dataset/api.d';
 import { createDefaultCollection } from './collection/create';
-import { authUserNotVisitor } from '@fastgpt/service/support/permission/auth/user';
+import { authUserNotVisitor } from '/common/service/support/permission/auth/user';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

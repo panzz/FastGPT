@@ -1,10 +1,10 @@
-import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { ChatSourceEnum } from '@fastgpt/global/core/chat/constants';
-import { MongoChatItem } from '@fastgpt/service/core/chat/chatItemSchema';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import { chatContentReplaceBlock } from '@fastgpt/global/core/chat/utils';
+import type { ChatItemType } from '/common/global/core/chat/type.d';
+import { MongoApp } from '/common/service/core/app/schema';
+import { ChatSourceEnum } from '/common/global/core/chat/constants';
+import { MongoChatItem } from '/common/service/core/chat/chatItemSchema';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import { addLog } from '/common/service/common/mongo/controller';
+import { chatContentReplaceBlock } from '/common/global/core/chat/utils';
 
 type Props = {
   chatId: string;

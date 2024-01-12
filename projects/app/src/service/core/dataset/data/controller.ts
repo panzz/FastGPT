@@ -1,13 +1,13 @@
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
 import {
   CreateDatasetDataProps,
   PatchIndexesProps,
   UpdateDatasetDataProps
-} from '@fastgpt/global/core/dataset/controller';
+} from '/common/global/core/dataset/controller';
 import { deletePgDataById, insertData2Pg, updatePgDataById } from './pg';
 import { Types } from 'mongoose';
-import { DatasetDataIndexTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import { getDefaultIndex } from '@fastgpt/global/core/dataset/utils';
+import { DatasetDataIndexTypeEnum } from '/common/global/core/dataset/constant';
+import { getDefaultIndex } from '/common/global/core/dataset/utils';
 import { jiebaSplit } from '../utils';
 
 /* insert data.

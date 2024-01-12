@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes, responseWriteController } from '@fastgpt/service/common/response';
+import { jsonRes, responseWriteController } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoUser } from '@fastgpt/service/support/user/schema';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import { authDataset } from '@fastgpt/service/support/permission/auth/dataset';
-import { MongoDatasetData } from '@fastgpt/service/core/dataset/data/schema';
-import { findDatasetIdTreeByTopDatasetId } from '@fastgpt/service/core/dataset/controller';
+import { MongoUser } from '/common/service/support/user/schema';
+import { addLog } from '/common/service/common/mongo/controller';
+import { authDataset } from '/common/service/support/permission/auth/dataset';
+import { MongoDatasetData } from '/common/service/core/dataset/data/schema';
+import { findDatasetIdTreeByTopDatasetId } from '/common/service/core/dataset/controller';
 import { Readable } from 'stream';
-import type { Cursor } from '@fastgpt/service/common/mongo';
+import type { Cursor } from '/common/service/common/mongo';
 import { limitCheck } from './checkExportLimit';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {

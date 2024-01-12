@@ -16,24 +16,24 @@ import { useQuery } from '@tanstack/react-query';
 import { QuestionOutlineIcon, SmallAddIcon } from '@chakra-ui/icons';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
-import { appModules2Form, getDefaultAppForm } from '@fastgpt/global/core/app/utils';
-import type { AppSimpleEditFormType } from '@fastgpt/global/core/app/type.d';
+import { appModules2Form, getDefaultAppForm } from '/common/global/core/app/utils';
+import type { AppSimpleEditFormType } from '/common/global/core/app/type.d';
 import { chatModelList, simpleModeTemplates } from '@/web/common/system/staticData';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { chatNodeSystemPromptTip, welcomeTextTip } from '@fastgpt/global/core/module/template/tip';
-import type { VariableItemType } from '@fastgpt/global/core/module/type.d';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { chatNodeSystemPromptTip, welcomeTextTip } from '/common/global/core/module/template/tip';
+import type { VariableItemType } from '/common/global/core/module/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 import { streamFetch } from '@/web/common/api/fetch';
 import { useRouter } from 'next/router';
 import { useToast } from '@/web/common/hooks/useToast';
-import { AppSchema } from '@fastgpt/global/core/app/type.d';
+import { AppSchema } from '/common/global/core/app/type.d';
 import { delModelById } from '@/web/core/app/api';
 import { useTranslation } from 'next-i18next';
-import { getGuideModule } from '@fastgpt/global/core/module/utils';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
+import { getGuideModule } from '/common/global/core/module/utils';
+import { AppTypeEnum } from '/common/global/core/app/constants';
 import { useDatasetStore } from '@/web/core/dataset/store/dataset';
 import { useAppStore } from '@/web/core/app/store/useAppStore';
 import PermissionIconText from '@/components/support/permission/IconText';
@@ -222,7 +222,7 @@ function ConfigForm({
         {/* simple mode select */}
         <Flex {...BoxStyles}>
           <Flex alignItems={'center'} flex={'1 0 0'}>
-            <Image alt={''} src={'/imgs/module/templates.png'} w={'18px'} />
+            <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/templates.png`} w={'18px'} />
             <Box mx={2}>{t('core.app.simple.mode template select')}</Box>
           </Flex>
           <MySelect
@@ -246,7 +246,11 @@ function ConfigForm({
         {selectSimpleTemplate?.systemForm?.userGuide?.welcomeText && (
           <Box {...BoxStyles} mt={2}>
             <Flex alignItems={'center'}>
-              <Image alt={''} src={'/imgs/module/userGuide.png'} w={'18px'} />
+              <Image
+                alt={''}
+                src={`${process.env.BASE_PATH}/imgs/module/userGuide.png`}
+                w={'18px'}
+              />
               <Box mx={2}>{t('core.app.Welcome Text')}</Box>
               <MyTooltip label={welcomeTextTip} forceShow>
                 <QuestionOutlineIcon />
@@ -279,7 +283,7 @@ function ConfigForm({
         {selectSimpleTemplate?.systemForm?.aiSettings && (
           <Box mt={5} {...BoxStyles}>
             <Flex alignItems={'center'}>
-              <Image alt={''} src={'/imgs/module/AI.png'} w={'18px'} />
+              <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/AI.png`} w={'18px'} />
               <Box ml={2} flex={1}>
                 {t('app.AI Settings')}
               </Box>
@@ -340,7 +344,7 @@ function ConfigForm({
           <Box mt={5} {...BoxStyles}>
             <Flex alignItems={'center'}>
               <Flex alignItems={'center'} flex={1}>
-                <Image alt={''} src={'/imgs/module/db.png'} w={'18px'} />
+                <Image alt={''} src={`${process.env.BASE_PATH}/imgs/module/db.png`} w={'18px'} />
                 <Box ml={2}>{t('core.dataset.Choose Dataset')}</Box>
               </Flex>
               {selectSimpleTemplate.systemForm.dataset.datasets && (
@@ -636,7 +640,7 @@ function ChatTest({ appId }: { appId: string }) {
 
       // 流请求，获取数据
       const { responseText, responseData } = await streamFetch({
-        url: '/api/core/chat/chatTest',
+        url: `${process.env.BASE_PATH}/api/core/chat/chatTest`,
         data: {
           history,
           prompt: chatList[chatList.length - 2].value,

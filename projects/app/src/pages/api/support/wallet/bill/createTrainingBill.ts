@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoBill } from '@fastgpt/service/support/wallet/bill/schema';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { BillSourceEnum } from '@fastgpt/global/support/wallet/bill/constants';
-import { CreateTrainingBillProps } from '@fastgpt/global/support/wallet/bill/api.d';
+import { MongoBill } from '/common/service/support/wallet/bill/schema';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { BillSourceEnum } from '/common/global/support/wallet/bill/constants';
+import { CreateTrainingBillProps } from '/common/global/support/wallet/bill/api.d';
 import { getQAModel, getVectorModel } from '@/service/core/ai/model';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

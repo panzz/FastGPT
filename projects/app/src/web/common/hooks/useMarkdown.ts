@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 export const getMd = async (url: string) => {
-  const response = await fetch(`/docs/${url}`);
+  const response = await fetch(`${process.env.BASE_PATH}/docs/${url}`);
   const textContent = await response.text();
   return textContent;
 };

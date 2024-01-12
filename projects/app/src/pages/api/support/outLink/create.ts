@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoOutLink } from '@fastgpt/service/support/outLink/schema';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
-import type { OutLinkEditType } from '@fastgpt/global/support/outLink/type.d';
+import { MongoOutLink } from '/common/service/support/outLink/schema';
+import { authApp } from '/common/service/support/permission/auth/app';
+import type { OutLinkEditType } from '/common/global/support/outLink/type.d';
 import { customAlphabet } from 'nanoid';
-import { OutLinkTypeEnum } from '@fastgpt/global/support/outLink/constant';
+import { OutLinkTypeEnum } from '/common/global/support/outLink/constant';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 24);
 
 /* create a shareChat */

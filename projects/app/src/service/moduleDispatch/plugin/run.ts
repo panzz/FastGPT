@@ -1,10 +1,10 @@
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
 import { dispatchModules } from '../index';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
-import type { moduleDispatchResType } from '@fastgpt/global/core/chat/type.d';
-import { getPluginRuntimeById } from '@fastgpt/service/core/plugin/controller';
-import { authPluginCanUse } from '@fastgpt/service/support/permission/auth/plugin';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '/common/global/core/module/constants';
+import type { moduleDispatchResType } from '/common/global/core/chat/type.d';
+import { getPluginRuntimeById } from '/common/service/core/plugin/controller';
+import { authPluginCanUse } from '/common/service/support/permission/auth/plugin';
 
 type RunPluginProps = ModuleDispatchProps<{
   [ModuleInputKeyEnum.pluginId]: string;

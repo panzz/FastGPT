@@ -6,7 +6,7 @@ import {
   defaultQAModels,
   defaultQGModels,
   defaultVectorModels
-} from '@fastgpt/global/core/ai/model';
+} from '/common/global/core/ai/model';
 
 export const getChatModel = (model?: string) => {
   return (

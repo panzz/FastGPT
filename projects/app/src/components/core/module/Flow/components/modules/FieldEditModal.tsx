@@ -11,11 +11,11 @@ import {
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import MyModal from '@/components/MyModal';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
 import { useTranslation } from 'next-i18next';
 import MySelect from '@/components/Select';
 import { FlowValueTypeMap } from '@/web/core/modules/constants/dataType';
-import { FlowNodeInputTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeInputTypeEnum } from '/common/global/core/module/node/constant';
 
 export type EditFieldModeType = 'input' | 'output' | 'pluginInput';
 export type EditFieldType = {
@@ -88,7 +88,12 @@ const FieldEditModal = ({
   }, [getValues, mode, refresh]);
 
   return (
-    <MyModal isOpen={true} iconSrc="/imgs/module/extract.png" title={title} onClose={onClose}>
+    <MyModal
+      isOpen={true}
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/extract.png`}
+      title={title}
+      onClose={onClose}
+    >
       <ModalBody minH={'260px'} overflow={'visible'}>
         {/* input type select: target, input, textarea.... */}
         {mode === 'pluginInput' && (

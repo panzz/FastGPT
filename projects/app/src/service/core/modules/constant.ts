@@ -1,4 +1,4 @@
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 
 export const initRunningModuleType: Record<string, boolean> = {
   [FlowNodeTypeEnum.historyNode]: true,

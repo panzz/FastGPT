@@ -1,6 +1,6 @@
-import type { moduleDispatchResType } from '@fastgpt/global/core/chat/type.d';
+import type { moduleDispatchResType } from '/common/global/core/chat/type.d';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
-import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 
 export type HttpRequestProps = ModuleDispatchProps<{
   [ModuleInputKeyEnum.httpUrl]: string;

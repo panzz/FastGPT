@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import { GetChatSpeechProps } from '@/global/core/chat/api.d';
-import { text2Speech } from '@fastgpt/service/core/ai/audio/speech';
+import { text2Speech } from '/common/service/core/ai/audio/speech';
 import { pushAudioSpeechBill } from '@/service/support/wallet/bill/push';
-import { authCertAndShareId } from '@fastgpt/service/support/permission/auth/common';
+import { authCertAndShareId } from '/common/service/support/permission/auth/common';
 import { authType2BillSource } from '@/service/support/wallet/bill/utils';
 import { getAudioSpeechModel } from '@/service/core/ai/model';
-import { MongoTTSBuffer } from '@fastgpt/service/common/buffer/tts/schema';
+import { MongoTTSBuffer } from '/common/service/common/buffer/tts/schema';
 
 /* 
 1. get tts from chatItem store

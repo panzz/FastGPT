@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import type { ChatHistoryItemType } from '@fastgpt/global/core/chat/type.d';
-import { ChatSourceEnum } from '@fastgpt/global/core/chat/constants';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import type { ChatHistoryItemType } from '/common/global/core/chat/type.d';
+import { ChatSourceEnum } from '/common/global/core/chat/constants';
+import { authApp } from '/common/service/support/permission/auth/app';
 
 /* 获取历史记录 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

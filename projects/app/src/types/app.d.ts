@@ -1,16 +1,16 @@
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleDataTypeEnum } from '@fastgpt/global/core/module/constants';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleDataTypeEnum } from '/common/global/core/module/constants';
 import { XYPosition } from 'reactflow';
 import { AppModuleItemTypeEnum, ModulesInputItemTypeEnum } from '../constants/app';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
+import { AppTypeEnum } from '/common/global/core/app/constants';
 import type {
   FlowNodeInputItemType,
   FlowNodeOutputItemType,
   FlowNodeOutputTargetItemType
-} from '@fastgpt/global/core/module/node/type.d';
-import type { FlowModuleTemplateType, ModuleItemType } from '@fastgpt/global/core/module/type.d';
-import type { ChatSchema } from '@fastgpt/global/core/chat/type';
-import type { AppSchema } from '@fastgpt/global/core/app/type';
+} from '/common/global/core/module/node/type.d';
+import type { FlowModuleTemplateType, ModuleItemType } from '/common/global/core/module/type.d';
+import type { ChatSchema } from '/common/global/core/chat/type';
+import type { AppSchema } from '/common/global/core/app/type';
 import { ChatModelType } from '@/constants/model';
 
 export interface ShareAppItem {

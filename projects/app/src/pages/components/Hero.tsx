@@ -57,7 +57,11 @@ const Hero = () => {
       <Box mt={['', '-50px']} position={'relative'}>
         <Image
           minH={['auto', '400px']}
-          src={isPc ? '/imgs/home/videobgpc.png' : '/imgs/home/videobgphone.png'}
+          src={
+            isPc
+              ? `${process.env.BASE_PATH}/imgs/home/videobgpc.png`
+              : `${process.env.BASE_PATH}/imgs/home/videobgphone.png`
+          }
           mx={['-10%', 'auto']}
           maxW={['120%', '1000px']}
           alt=""

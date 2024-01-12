@@ -1,5 +1,5 @@
-import { AppDetailType } from '@fastgpt/global/core/app/type.d';
-import type { OutLinkEditType } from '@fastgpt/global/support/outLink/type.d';
+import { AppDetailType } from '/common/global/core/app/type.d';
+import type { OutLinkEditType } from '/common/global/support/outLink/type.d';
 
 export const defaultApp: AppDetailType = {
   _id: '',
@@ -7,7 +7,7 @@ export const defaultApp: AppDetailType = {
   name: '模型加载中',
   type: 'simple',
   simpleTemplateId: 'fastgpt-universal',
-  avatar: '/icon/logo.svg',
+  avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
   intro: '',
   updateTime: Date.now(),
   modules: [],

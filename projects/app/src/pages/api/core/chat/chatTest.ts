@@ -1,13 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDatabase } from '@/service/mongo';
-import { sseErrRes } from '@fastgpt/service/common/response';
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
-import { responseWrite } from '@fastgpt/service/common/response';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type.d';
+import { sseErrRes } from '/common/service/common/response';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
+import { responseWrite } from '/common/service/common/response';
+import type { ModuleItemType } from '/common/global/core/module/type.d';
 import { pushChatBill } from '@/service/support/wallet/bill/push';
-import { BillSourceEnum } from '@fastgpt/global/support/wallet/bill/constants';
-import type { ChatItemType } from '@fastgpt/global/core/chat/type';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
+import { BillSourceEnum } from '/common/global/support/wallet/bill/constants';
+import type { ChatItemType } from '/common/global/core/chat/type';
+import { authApp } from '/common/service/support/permission/auth/app';
 import { authUser } from '@/service/support/permission/auth/user';
 import { dispatchModules } from '@/service/moduleDispatch';
 

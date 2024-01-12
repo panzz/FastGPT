@@ -1,14 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoChatItem } from '@fastgpt/service/core/chat/chatItemSchema';
-import type { InitChatResponse } from '@fastgpt/global/core/chat/api.d';
-import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
-import { authApp } from '@fastgpt/service/support/permission/auth/app';
-import { getGuideModule } from '@fastgpt/global/core/module/utils';
+import { MongoChatItem } from '/common/service/core/chat/chatItemSchema';
+import type { InitChatResponse } from '/common/global/core/chat/api.d';
+import type { ChatItemType } from '/common/global/core/chat/type.d';
+import { authApp } from '/common/service/support/permission/auth/app';
+import { getGuideModule } from '/common/global/core/module/utils';
 import { getChatModelNameListByModules } from '@/service/core/app/module';
-import { authChat } from '@fastgpt/service/support/permission/auth/chat';
-import { ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { authChat } from '/common/service/support/permission/auth/chat';
+import { ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 
 /* 初始化我的聊天框，需要身份验证 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -1,0 +1,23 @@
+{
+  "name": "@fastgpt/global",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://maven.xpaas.lenovo.com/nexus/repository/ddnpm/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "timezones-list": "^3.0.2",
+    "dayjs": "^1.11.7",
+    "encoding": "^0.1.13",
+    "openai": "^4.16.1",
+    "js-tiktoken": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.5"
+  }
+}

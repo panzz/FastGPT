@@ -16,20 +16,20 @@ import {
 import Avatar from '@/components/Avatar';
 import { useForm } from 'react-hook-form';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
-import type { SelectedDatasetType } from '@fastgpt/global/core/module/api.d';
+import type { SelectedDatasetType } from '/common/global/core/module/api.d';
 import { useToast } from '@/web/common/hooks/useToast';
 import MySlider from '@/components/Slider';
 import MyTooltip from '@/components/MyTooltip';
 import MyModal from '@/components/MyModal';
 import MyIcon from '@/components/Icon';
-import { DatasetSearchModeEnum, DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetSearchModeEnum, DatasetTypeEnum } from '/common/global/core/dataset/constant';
 import { useTranslation } from 'next-i18next';
 import { useDatasetStore } from '@/web/core/dataset/store/dataset';
 import { feConfigs } from '@/web/common/system/staticData';
 import DatasetSelectContainer, { useDatasetSelect } from '@/components/core/dataset/SelectModal';
 import { useLoading } from '@/web/common/hooks/useLoading';
 import EmptyTip from '@/components/EmptyTip';
-import { AppSimpleEditFormType } from '@fastgpt/global/core/app/type';
+import { AppSimpleEditFormType } from '/common/global/core/app/type';
 
 export const DatasetSelectModal = ({
   isOpen,

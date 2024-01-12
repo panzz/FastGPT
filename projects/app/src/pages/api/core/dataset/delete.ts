@@ -1,14 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoDatasetTraining } from '@fastgpt/service/core/dataset/training/schema';
-import { MongoDataset } from '@fastgpt/service/core/dataset/schema';
-import { delDatasetFiles } from '@fastgpt/service/core/dataset/file/controller';
-import { Types } from '@fastgpt/service/common/mongo';
-import { MongoDatasetCollection } from '@fastgpt/service/core/dataset/collection/schema';
-import { authDataset } from '@fastgpt/service/support/permission/auth/dataset';
+import { MongoDatasetTraining } from '/common/service/core/dataset/training/schema';
+import { MongoDataset } from '/common/service/core/dataset/schema';
+import { delDatasetFiles } from '/common/service/core/dataset/file/controller';
+import { Types } from '/common/service/common/mongo';
+import { MongoDatasetCollection } from '/common/service/core/dataset/collection/schema';
+import { authDataset } from '/common/service/support/permission/auth/dataset';
 import { delDataByDatasetId } from '@/service/core/dataset/data/controller';
-import { findDatasetIdTreeByTopDatasetId } from '@fastgpt/service/core/dataset/controller';
+import { findDatasetIdTreeByTopDatasetId } from '/common/service/core/dataset/controller';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

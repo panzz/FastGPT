@@ -1,16 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import { withNextCors } from '@fastgpt/service/common/middle/cors';
+import { jsonRes } from '/common/service/common/response';
+import { withNextCors } from '/common/service/common/middle/cors';
 import type { SearchTestProps, SearchTestResponse } from '@/global/core/dataset/api.d';
 import { connectToDatabase } from '@/service/mongo';
-import { authDataset } from '@fastgpt/service/support/permission/auth/dataset';
+import { authDataset } from '/common/service/support/permission/auth/dataset';
 import { authTeamBalance } from '@/service/support/permission/auth/bill';
 import { pushGenerateVectorBill } from '@/service/support/wallet/bill/push';
 import { countModelPrice } from '@/service/support/wallet/bill/utils';
 import { searchDatasetData } from '@/service/core/dataset/data/pg';
-import { updateApiKeyUsage } from '@fastgpt/service/support/openapi/tools';
+import { updateApiKeyUsage } from '/common/service/support/openapi/tools';
 import { ModelTypeEnum } from '@/service/core/ai/model';
-import { BillSourceEnum } from '@fastgpt/global/support/wallet/bill/constants';
+import { BillSourceEnum } from '/common/global/support/wallet/bill/constants';
 
 export default withNextCors(async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

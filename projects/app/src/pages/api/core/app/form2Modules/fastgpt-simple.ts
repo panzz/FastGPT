@@ -3,12 +3,12 @@
     @author: FastGpt Team
 */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import type { AppSimpleEditFormType } from '@fastgpt/global/core/app/type.d';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type';
-import { FlowNodeInputTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { FormatForm2ModulesProps } from '@fastgpt/global/core/app/api';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { jsonRes } from '/common/service/common/response';
+import type { AppSimpleEditFormType } from '/common/global/core/app/type.d';
+import type { ModuleItemType } from '/common/global/core/module/type';
+import { FlowNodeInputTypeEnum } from '/common/global/core/module/node/constant';
+import { FormatForm2ModulesProps } from '/common/global/core/app/api';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {
@@ -42,7 +42,7 @@ function simpleChatTemplate({
     {
       moduleId: 'userChatInput',
       name: '用户问题(对话入口)',
-      avatar: '/imgs/module/userChatInput.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/userChatInput.png`,
       flowType: 'questionInput',
       position: {
         x: 464.32198615344566,
@@ -74,7 +74,7 @@ function simpleChatTemplate({
     {
       moduleId: 'history',
       name: '聊天记录',
-      avatar: '/imgs/module/history.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/history.png`,
       flowType: 'historyNode',
       position: {
         x: 452.5466249541586,
@@ -115,7 +115,7 @@ function simpleChatTemplate({
     {
       moduleId: 'chatModule',
       name: 'AI 对话',
-      avatar: '/imgs/module/AI.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/AI.png`,
       flowType: 'chatNode',
       showStatus: true,
       position: {
@@ -285,7 +285,7 @@ function datasetTemplate({
     {
       moduleId: 'userChatInput',
       name: '用户问题(对话入口)',
-      avatar: '/imgs/module/userChatInput.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/userChatInput.png`,
       flowType: 'questionInput',
       position: {
         x: 464.32198615344566,
@@ -321,7 +321,7 @@ function datasetTemplate({
     {
       moduleId: 'history',
       name: '聊天记录',
-      avatar: '/imgs/module/history.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/history.png`,
       flowType: 'historyNode',
       position: {
         x: 452.5466249541586,
@@ -362,7 +362,7 @@ function datasetTemplate({
     {
       moduleId: 'datasetSearch',
       name: '知识库搜索',
-      avatar: '/imgs/module/db.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/db.png`,
       flowType: 'datasetSearchNode',
       showStatus: true,
       position: {
@@ -465,7 +465,7 @@ function datasetTemplate({
     {
       moduleId: 'chatModule',
       name: 'AI 对话',
-      avatar: '/imgs/module/AI.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/AI.png`,
       flowType: 'chatNode',
       showStatus: true,
       position: {

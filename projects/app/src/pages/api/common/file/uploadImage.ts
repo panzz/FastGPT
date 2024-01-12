@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
-import { uploadMongoImg } from '@fastgpt/service/common/file/image/controller';
+import { authCert } from '/common/service/support/permission/auth/common';
+import { uploadMongoImg } from '/common/service/common/file/image/controller';
 
 type Props = { base64Img: string; expiredTime?: Date };
 

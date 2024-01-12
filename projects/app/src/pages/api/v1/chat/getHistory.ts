@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import { authCert } from '@fastgpt/service/support/permission/auth/common';
+import { jsonRes } from '/common/service/common/response';
+import { authCert } from '/common/service/support/permission/auth/common';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoChatItem } from '@fastgpt/service/core/chat/chatItemSchema';
-import { Types } from '@fastgpt/service/common/mongo';
-import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
+import { MongoChatItem } from '/common/service/core/chat/chatItemSchema';
+import { Types } from '/common/service/common/mongo';
+import type { ChatItemType } from '/common/global/core/chat/type.d';
 
 export type Props = {
   appId?: string;

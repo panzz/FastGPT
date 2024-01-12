@@ -1,12 +1,12 @@
-import type { moduleDispatchResType } from '@fastgpt/global/core/chat/type.d';
+import type { moduleDispatchResType } from '/common/global/core/chat/type.d';
 import { countModelPrice } from '@/service/support/wallet/bill/utils';
-import type { SelectedDatasetType } from '@fastgpt/global/core/module/api.d';
-import type { SearchDataResponseItemType } from '@fastgpt/global/core/dataset/type';
+import type { SelectedDatasetType } from '/common/global/core/module/api.d';
+import type { SearchDataResponseItemType } from '/common/global/core/dataset/type';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
 import { ModelTypeEnum } from '@/service/core/ai/model';
 import { searchDatasetData } from '@/service/core/dataset/data/pg';
-import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { DatasetSearchModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '/common/global/core/module/constants';
+import { DatasetSearchModeEnum } from '/common/global/core/dataset/constant';
 
 type DatasetSearchProps = ModuleDispatchProps<{
   [ModuleInputKeyEnum.datasetSelectList]: SelectedDatasetType;

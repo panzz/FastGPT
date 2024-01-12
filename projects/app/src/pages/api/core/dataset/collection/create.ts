@@ -2,14 +2,14 @@
     Create one dataset collection
 */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import type { CreateDatasetCollectionParams } from '@/global/core/api/datasetReq.d';
-import { MongoDatasetCollection } from '@fastgpt/service/core/dataset/collection/schema';
-import { DatasetCollectionTypeEnum } from '@fastgpt/global/core/dataset/constant';
-import { getCollectionUpdateTime } from '@fastgpt/service/core/dataset/collection/utils';
-import { authUserNotVisitor } from '@fastgpt/service/support/permission/auth/user';
-import { authDataset } from '@fastgpt/service/support/permission/auth/dataset';
+import { MongoDatasetCollection } from '/common/service/core/dataset/collection/schema';
+import { DatasetCollectionTypeEnum } from '/common/global/core/dataset/constant';
+import { getCollectionUpdateTime } from '/common/service/core/dataset/collection/utils';
+import { authUserNotVisitor } from '/common/service/support/permission/auth/user';
+import { authDataset } from '/common/service/support/permission/auth/dataset';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

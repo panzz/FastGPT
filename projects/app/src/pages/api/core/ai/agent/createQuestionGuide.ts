@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
 import type { CreateQuestionGuideParams } from '@/global/core/ai/api.d';
 import { pushQuestionGuideBill } from '@/service/support/wallet/bill/push';
-import { createQuestionGuide } from '@fastgpt/service/core/ai/functions/createQuestionGuide';
-import { authCertAndShareId } from '@fastgpt/service/support/permission/auth/common';
+import { createQuestionGuide } from '/common/service/core/ai/functions/createQuestionGuide';
+import { authCertAndShareId } from '/common/service/support/permission/auth/common';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

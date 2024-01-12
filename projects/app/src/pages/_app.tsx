@@ -12,11 +12,12 @@ import { clientInitData, feConfigs } from '@/web/common/system/staticData';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
-import type { FeConfigsType } from '@fastgpt/global/common/system/types/index.d';
+import type { FeConfigsType } from '/common/global/common/system/types/index.d';
 import { change2DefaultLng, setLngStore } from '@/web/common/utils/i18n';
 
 import 'nprogress/nprogress.css';
 import '@/web/styles/reset.scss';
+import { showVersion } from '@/utils/tools';
 
 //Binding events.
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -52,12 +53,13 @@ function App({ Component, pageProps }: AppProps) {
       setTitle(systemTitle || 'FastGPT');
 
       // log fastgpt
-      !isPlus &&
-        console.log(
-          '%cWelcome to FastGPT',
-          'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;',
-          `GitHub：https://github.com/labring/FastGPT`
-        );
+      // !isPlus &&
+      //   console.log(
+      //     '%cWelcome to FastGPT',
+      //     'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;',
+      //     `GitHub：https://github.com/labring/FastGPT`
+      //   );
+      !isPlus && showVersion();
       setScripts(scripts || []);
     })();
 

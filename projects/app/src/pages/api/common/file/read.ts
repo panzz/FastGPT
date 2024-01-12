@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { authFileToken } from '@fastgpt/service/support/permission/controller';
+import { authFileToken } from '/common/service/support/permission/controller';
 import jschardet from 'jschardet';
-import { getDownloadBuf, getFileById } from '@fastgpt/service/common/file/gridfs/controller';
+import { getDownloadBuf, getFileById } from '/common/service/common/file/gridfs/controller';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

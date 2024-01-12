@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModalBody, Box, useTheme, Flex, Image } from '@chakra-ui/react';
-import { ChatItemType } from '@fastgpt/global/core/chat/type';
+import { ChatItemType } from '/common/global/core/chat/type';
 import MyModal from '../MyModal';
 
 const ContextModal = ({
@@ -16,7 +16,7 @@ const ContextModal = ({
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/chatHistory.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/chatHistory.svg`}
       title={`完整对话记录(${context.length}条)`}
       h={['90vh', '80vh']}
       minW={['90vw', '600px']}

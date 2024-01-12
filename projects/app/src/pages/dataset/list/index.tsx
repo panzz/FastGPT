@@ -28,7 +28,7 @@ import Avatar from '@/components/Avatar';
 import MyIcon from '@/components/Icon';
 import { serviceSideProps } from '@/web/common/utils/i18n';
 import dynamic from 'next/dynamic';
-import { FolderAvatarSrc, DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
+import { FolderAvatarSrc, DatasetTypeEnum } from '/common/global/core/dataset/constant';
 import Tag from '@/components/Tag';
 import MyMenu from '@/components/MyMenu';
 import { useRequest } from '@/web/common/hooks/useRequest';
@@ -38,8 +38,8 @@ import EditFolderModal, { useEditFolder } from '../component/EditFolderModal';
 import { useDrag } from '@/web/common/hooks/useDrag';
 import { useUserStore } from '@/web/support/user/useUserStore';
 import PermissionIconText from '@/components/support/permission/IconText';
-import { PermissionTypeEnum } from '@fastgpt/global/support/permission/constant';
-import { DatasetItemType } from '@fastgpt/global/core/dataset/type';
+import { PermissionTypeEnum } from '/common/global/support/permission/constant';
+import { DatasetItemType } from '/common/global/core/dataset/type';
 import ParentPaths from '@/components/common/ParentPaths';
 
 const CreateModal = dynamic(() => import('./component/CreateModal'), { ssr: false });
@@ -98,7 +98,7 @@ const Kb = () => {
       setLoading(true);
       await getCheckExportLimit(dataset._id);
       const a = document.createElement('a');
-      a.href = `/api/core/dataset/exportAll?datasetId=${dataset._id}`;
+      a.href = `${process.env.BASE_PATH}/api/core/dataset/exportAll?datasetId=${dataset._id}`;
       a.download = `${dataset.name}.csv`;
       document.body.appendChild(a);
       a.click();
@@ -127,7 +127,12 @@ const Kb = () => {
           }))}
           FirstPathDom={
             <Flex flex={1} alignItems={'center'}>
-              <Image src={'/imgs/module/db.png'} alt={''} mr={2} h={'24px'} />
+              <Image
+                src={`${process.env.BASE_PATH}/imgs/module/db.png`}
+                alt={''}
+                mr={2}
+                h={'24px'}
+              />
               <Box className="textlg" letterSpacing={1} fontSize={'24px'} fontWeight={'bold'}>
                 {t('dataset.My Dataset')}
               </Box>
@@ -178,7 +183,12 @@ const Kb = () => {
               {
                 child: (
                   <Flex>
-                    <Image src={'/imgs/module/db.png'} alt={''} w={'20px'} mr={1} />
+                    <Image
+                      src={`${process.env.BASE_PATH}/imgs/module/db.png`}
+                      alt={''}
+                      w={'20px'}
+                      mr={1}
+                    />
                     {t('Dataset')}
                   </Flex>
                 ),

@@ -1,5 +1,5 @@
 import { GET } from '@/web/common/api/request';
-import type { PaySchema } from '@fastgpt/global/support/wallet/pay/type.d';
+import type { PaySchema } from '/common/global/support/wallet/pay/type.d';
 import { delay } from '@/utils/tools';
 
 export const getPayOrders = () => GET<PaySchema[]>(`/plusApi/support/wallet/pay/getPayOrders`);

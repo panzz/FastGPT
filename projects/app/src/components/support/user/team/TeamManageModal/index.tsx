@@ -34,7 +34,7 @@ import {
   TeamMemberRoleMap,
   TeamMemberStatusEnum,
   TeamMemberStatusMap
-} from '@fastgpt/global/support/user/team/constant';
+} from '/common/global/support/user/team/constant';
 import dynamic from 'next/dynamic';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { setToken } from '@/web/support/user/auth';

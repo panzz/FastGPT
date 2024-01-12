@@ -1,10 +1,10 @@
-import { ERROR_ENUM } from '@fastgpt/global/common/error/errorCode';
-import { MongoUser } from '@fastgpt/service/support/user/schema';
-import { UserType } from '@fastgpt/global/support/user/type';
+import { ERROR_ENUM } from '/common/global/common/error/errorCode';
+import { MongoUser } from '/common/service/support/user/schema';
+import { UserType } from '/common/global/support/user/type';
 import {
   getTeamInfoByTmbId,
   getUserDefaultTeam
-} from '@fastgpt/service/support/user/team/controller';
+} from '/common/service/support/user/team/controller';
 
 export async function getUserDetail({
   tmbId,

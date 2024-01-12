@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { AppSchema } from '@fastgpt/global/core/app/type.d';
+import { AppSchema } from '/common/global/core/app/type.d';
 import Header from './Header';
 import Flow from '@/components/core/module/Flow';
 import FlowProvider, { useFlowProviderStore } from '@/components/core/module/Flow/FlowProvider';
-import type { FlowModuleTemplateType } from '@fastgpt/global/core/module/type.d';
+import type { FlowModuleTemplateType } from '/common/global/core/module/type.d';
 import { appSystemModuleTemplates } from '@/web/core/modules/template/system';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 import { usePluginStore } from '@/web/core/plugin/store/plugin';
 import { useQuery } from '@tanstack/react-query';
 

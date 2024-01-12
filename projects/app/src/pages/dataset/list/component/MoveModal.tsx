@@ -14,7 +14,7 @@ import Avatar from '@/components/Avatar';
 import MyTooltip from '@/components/MyTooltip';
 import MyModal from '@/components/MyModal';
 import MyIcon from '@/components/Icon';
-import { DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetTypeEnum } from '/common/global/core/dataset/constant';
 import { useTranslation } from 'next-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { getDatasets, putDatasetById, getDatasetPaths } from '@/web/core/dataset/api';
@@ -63,7 +63,7 @@ const MoveModal = ({
       isOpen={true}
       maxW={['90vw', '800px']}
       w={'800px'}
-      iconSrc="/imgs/modal/move.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/move.svg`}
       title={
         <>
           {!!parentId ? (

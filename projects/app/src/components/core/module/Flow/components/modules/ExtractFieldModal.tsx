@@ -9,7 +9,7 @@ import {
   Switch,
   Input
 } from '@chakra-ui/react';
-import type { ContextExtractAgentItemType } from '@fastgpt/global/core/module/type';
+import type { ContextExtractAgentItemType } from '/common/global/core/module/type';
 import { useForm } from 'react-hook-form';
 import { customAlphabet } from 'nanoid';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
@@ -37,7 +37,7 @@ const ExtractFieldModal = ({
   return (
     <MyModal
       isOpen={true}
-      iconSrc="/imgs/module/extract.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/extract.png`}
       title={'提取字段配置'}
       onClose={onClose}
     >

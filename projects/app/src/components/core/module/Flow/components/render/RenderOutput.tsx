@@ -1,14 +1,14 @@
 import React, { useMemo, useState } from 'react';
-import type { FlowNodeOutputItemType } from '@fastgpt/global/core/module/node/type';
+import type { FlowNodeOutputItemType } from '/common/global/core/module/node/type';
 import { Box, Flex } from '@chakra-ui/react';
-import { FlowNodeOutputTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeOutputTypeEnum } from '/common/global/core/module/node/constant';
 import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import MyTooltip from '@/components/MyTooltip';
 import SourceHandle from './SourceHandle';
 import MyIcon from '@/components/Icon';
 import dynamic from 'next/dynamic';
 import { onChangeNode } from '../../FlowProvider';
-import { ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 import { useTranslation } from 'next-i18next';
 
 import type { EditFieldType, EditFieldModeType } from '../modules/FieldEditModal';

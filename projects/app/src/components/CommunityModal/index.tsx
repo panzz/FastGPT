@@ -11,7 +11,7 @@ const CommunityModal = ({ onClose }: { onClose: () => void }) => {
     <MyModal
       isOpen={true}
       onClose={onClose}
-      iconSrc="/imgs/modal/concat.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/concat.svg`}
       title={t('home.Community')}
     >
       <ModalBody textAlign={'center'}>

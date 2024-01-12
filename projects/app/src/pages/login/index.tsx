@@ -54,7 +54,11 @@ const Login = () => {
 
   useEffect(() => {
     clearToken();
-    router.prefetch('/app/list');
+    router.replace({
+      pathname: '/signin/before',
+      query: { from: '' }
+    });
+    // router.prefetch('/app/list');
   }, []);
 
   return (
@@ -67,7 +71,7 @@ const Login = () => {
       <Flex
         alignItems={'center'}
         justifyContent={'center'}
-        bg={`url('/icon/login-bg.svg') no-repeat`}
+        bg={`url(${process.env.BASE_PATH}+'/icon/login-bg.svg') no-repeat`}
         backgroundSize={'cover'}
         userSelect={'none'}
         h={'100%'}
@@ -88,7 +92,7 @@ const Login = () => {
         >
           {isPc && (
             <Image
-              src={'/icon/loginLeft.svg'}
+              src={`${process.env.BASE_PATH}/icon/loginLeft.svg`}
               order={pageType === PageTypeEnum.login ? 0 : 2}
               flex={'1 0 0'}
               w="0"

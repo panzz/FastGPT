@@ -1,8 +1,8 @@
-import { defaultQAModels, defaultVectorModels } from '@fastgpt/global/core/ai/model';
+import { defaultQAModels, defaultVectorModels } from '/common/global/core/ai/model';
 import type {
   DatasetCollectionItemType,
   DatasetItemType
-} from '@fastgpt/global/core/dataset/type.d';
+} from '/common/global/core/dataset/type.d';
 
 export const defaultDatasetDetail: DatasetItemType = {
   _id: '',
@@ -12,7 +12,7 @@ export const defaultDatasetDetail: DatasetItemType = {
   tmbId: '',
   updateTime: new Date(),
   type: 'dataset',
-  avatar: '/icon/logo.svg',
+  avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
   name: '',
   tags: [],
   permission: 'private',
@@ -35,7 +35,7 @@ export const defaultCollectionDetail: DatasetCollectionItemType = {
     tmbId: '',
     updateTime: new Date(),
     type: 'dataset',
-    avatar: '/icon/logo.svg',
+    avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
     name: '',
     tags: [],
     permission: 'private',

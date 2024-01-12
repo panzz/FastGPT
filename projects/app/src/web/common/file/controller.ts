@@ -1,5 +1,5 @@
 import { postUploadImg, postUploadFiles } from '@/web/common/file/api';
-import { BucketNameEnum } from '@fastgpt/global/common/file/constants';
+import { BucketNameEnum } from '/common/global/common/file/constants';
 
 /**
  * upload file to mongo gridfs

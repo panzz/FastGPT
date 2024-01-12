@@ -12,7 +12,7 @@ import {
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { useForm } from 'react-hook-form';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
@@ -36,7 +36,7 @@ const CreateModal = ({ onClose, parentId }: { onClose: () => void; parentId?: st
   const { isPc } = useSystemStore();
   const { register, setValue, getValues, handleSubmit } = useForm<CreateDatasetParams>({
     defaultValues: {
-      avatar: '/icon/logo.svg',
+      avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
       name: '',
       tags: '',
       vectorModel: vectorModelList[0].model,
@@ -89,7 +89,7 @@ const CreateModal = ({ onClose, parentId }: { onClose: () => void; parentId?: st
 
   return (
     <MyModal
-      iconSrc="/imgs/module/db.png"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/db.png`}
       title={t('core.dataset.Create dataset')}
       isOpen
       onClose={onClose}

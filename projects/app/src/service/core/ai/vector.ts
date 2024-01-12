@@ -1,4 +1,4 @@
-import { getAIApi } from '@fastgpt/service/core/ai/config';
+import { getAIApi } from '/common/service/core/ai/config';
 
 export type GetVectorProps = {
   model: string;
@@ -30,13 +30,22 @@ export async function getVectorsByText({
     const targetModels = global.vectorModels.filter((modelObj: any) => modelObj.model === model);
     let targetUser = undefined;
     if (targetModels?.length) {
-      targetUser = {
-        // key: '',
-        baseUrl: `${process.env.AZURE_OPENAI_BASE_URL}${
-          targetModels[0].model || process.env.AZURE_CHAT_MODEL
-        }`,
-        location: targetModels[0].location
-      };
+      if (targetModels[0].location === 'azure') {
+        targetUser = {
+          // key: '',
+          baseUrl: `${process.env.AZURE_OPENAI_BASE_URL}${
+            targetModels[0].model || process.env.AZURE_CHAT_MODEL
+          }`,
+          location: targetModels[0].location
+        };
+      } else if (targetModels[0].location === 'ludp') {
+        targetUser = {
+          // key: '',
+          baseUrl: `${process.env.LUDP_API_URL}`,
+          key: `${process.env.LUDP_API_KEY}`,
+          location: targetModels[0].location
+        };
+      }
     }
 
     // 获取 chatAPI

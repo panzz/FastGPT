@@ -12,7 +12,7 @@ import {
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { useForm } from 'react-hook-form';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useToast } from '@/web/common/hooks/useToast';
 import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
@@ -24,20 +24,20 @@ import MyModal from '@/components/MyModal';
 import { useTranslation } from 'next-i18next';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
 import MyIcon from '@/components/Icon';
-import { CreateOnePluginParams } from '@fastgpt/global/core/plugin/controller';
+import { CreateOnePluginParams } from '/common/global/core/plugin/controller';
 
 export type FormType = CreateOnePluginParams & {
   id?: string;
 };
 export const defaultForm: FormType = {
-  avatar: '/icon/logo.svg',
+  avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
   name: '',
   intro: '',
   modules: [
     {
       moduleId: 'w90mfp',
       name: '定义插件输入',
-      avatar: '/imgs/module/input.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/input.png`,
       flowType: 'pluginInput',
       showStatus: false,
       position: {
@@ -69,7 +69,7 @@ export const defaultForm: FormType = {
     {
       moduleId: 'tze1ju',
       name: '定义插件输出',
-      avatar: '/imgs/module/output.png',
+      avatar: `${process.env.BASE_PATH}/imgs/module/output.png`,
       flowType: 'pluginOutput',
       showStatus: false,
       position: {
@@ -201,7 +201,7 @@ const CreateModal = ({
     <MyModal
       isOpen
       onClose={onClose}
-      iconSrc="/imgs/modal/edit.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/edit.svg`}
       title={defaultValue.id ? t('plugin.Update Your Plugin') : t('plugin.Create Your Plugin')}
       isCentered={!isPc}
     >

@@ -1,9 +1,9 @@
 import { GET, POST, DELETE, PUT } from '@/web/common/api/request';
-import type { ChatHistoryItemType } from '@fastgpt/global/core/chat/type.d';
-import type { InitChatResponse } from '@fastgpt/global/core/chat/api.d';
+import type { ChatHistoryItemType } from '/common/global/core/chat/type.d';
+import type { InitChatResponse } from '/common/global/core/chat/api.d';
 import type { RequestPaging } from '@/types';
-import { UpdateHistoryProps } from '@fastgpt/global/core/chat/api.d';
-import type { AdminUpdateFeedbackParams } from '@fastgpt/global/core/chat/api.d';
+import { UpdateHistoryProps } from '/common/global/core/chat/api.d';
+import type { AdminUpdateFeedbackParams } from '/common/global/core/chat/api.d';
 import { GetChatSpeechProps } from '@/global/core/chat/api.d';
 
 /**

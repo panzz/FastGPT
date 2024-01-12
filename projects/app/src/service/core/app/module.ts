@@ -1,5 +1,5 @@
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import type { ModuleItemType } from '@fastgpt/global/core/module/type.d';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import type { ModuleItemType } from '/common/global/core/module/type.d';
 
 export const getChatModelNameListByModules = (modules: ModuleItemType[]): string[] => {
   const chatModules = modules.filter((item) => item.flowType === FlowNodeTypeEnum.chatNode);

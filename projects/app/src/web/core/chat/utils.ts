@@ -1,6 +1,6 @@
 import { chatModelList } from '@/web/common/system/staticData';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleItemType } from '@fastgpt/global/core/module/type.d';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleItemType } from '/common/global/core/module/type.d';
 
 export function checkChatSupportSelectFileByChatModels(models: string[] = []) {
   for (const model of models) {

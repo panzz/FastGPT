@@ -1,19 +1,19 @@
 /* push data to training queue */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { MongoDatasetTraining } from '@fastgpt/service/core/dataset/training/schema';
-import { withNextCors } from '@fastgpt/service/common/middle/cors';
-import { TrainingModeEnum, TrainingTypeMap } from '@fastgpt/global/core/dataset/constant';
+import { MongoDatasetTraining } from '/common/service/core/dataset/training/schema';
+import { withNextCors } from '/common/service/common/middle/cors';
+import { TrainingModeEnum, TrainingTypeMap } from '/common/global/core/dataset/constant';
 import { startQueue } from '@/service/utils/tools';
-import { countPromptTokens } from '@fastgpt/global/common/string/tiktoken';
+import { countPromptTokens } from '/common/global/common/string/tiktoken';
 import type { PushDataResponse } from '@/global/core/api/datasetRes.d';
 import type { PushDatasetDataProps } from '@/global/core/dataset/api.d';
-import { PushDatasetDataChunkProps } from '@fastgpt/global/core/dataset/api';
+import { PushDatasetDataChunkProps } from '/common/global/core/dataset/api';
 import { getQAModel, getVectorModel } from '@/service/core/ai/model';
-import { authDatasetCollection } from '@fastgpt/service/support/permission/auth/dataset';
-import { getCollectionWithDataset } from '@fastgpt/service/core/dataset/controller';
-import { simpleText } from '@fastgpt/global/common/string/tools';
+import { authDatasetCollection } from '/common/service/support/permission/auth/dataset';
+import { getCollectionWithDataset } from '/common/service/core/dataset/controller';
+import { simpleText } from '/common/global/common/string/tools';
 
 export default withNextCors(async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

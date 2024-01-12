@@ -11,9 +11,9 @@ import {
   Box,
   Button
 } from '@chakra-ui/react';
-import { BillSourceMap } from '@fastgpt/global/support/wallet/bill/constants';
+import { BillSourceMap } from '/common/global/support/wallet/bill/constants';
 import { getUserBills } from '@/web/support/wallet/bill/api';
-import type { BillItemType } from '@fastgpt/global/support/wallet/bill/type';
+import type { BillItemType } from '/common/global/support/wallet/bill/type';
 import { usePagination } from '@/web/common/hooks/usePagination';
 import { useLoading } from '@/web/common/hooks/useLoading';
 import dayjs from 'dayjs';

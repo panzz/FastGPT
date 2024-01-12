@@ -22,7 +22,7 @@ import Tabs from '@/components/Tabs';
 import { useUserStore } from '@/web/support/user/useUserStore';
 import { useQuery } from '@tanstack/react-query';
 import { useAppStore } from '@/web/core/app/store/useAppStore';
-import { TeamMemberRoleEnum } from '@fastgpt/global/support/user/team/constant';
+import { TeamMemberRoleEnum } from '/common/global/support/user/team/constant';
 
 type HistoryItemType = {
   id: string;

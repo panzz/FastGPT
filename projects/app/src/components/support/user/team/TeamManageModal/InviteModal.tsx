@@ -4,11 +4,11 @@ import { useTranslation } from 'next-i18next';
 import { ModalCloseButton, ModalBody, Box, ModalFooter, Button } from '@chakra-ui/react';
 import TagTextarea from '@/components/common/Textarea/TagTextarea';
 import MySelect from '@/components/Select';
-import { TeamMemberRoleEnum } from '@fastgpt/global/support/user/team/constant';
+import { TeamMemberRoleEnum } from '/common/global/support/user/team/constant';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { postInviteTeamMember } from '@/web/support/user/team/api';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
-import type { InviteMemberResponse } from '@fastgpt/global/support/user/team/controller.d';
+import type { InviteMemberResponse } from '/common/global/support/user/team/controller.d';
 
 const InviteModal = ({
   teamId,
@@ -68,7 +68,7 @@ const InviteModal = ({
   return (
     <MyModal
       isOpen
-      iconSrc="/imgs/modal/team.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/team.svg`}
       title={
         <Box>
           <Box>{t('user.team.Invite Member')}</Box>

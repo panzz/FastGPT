@@ -1,5 +1,5 @@
-import { POST } from '@fastgpt/service/common/api/plusRequest';
-import { SendInformProps } from '@fastgpt/global/support/user/inform/type';
+import { POST } from '/common/service/common/api/plusRequest';
+import { SendInformProps } from '/common/global/support/user/inform/type';
 
 export function sendOneInform(data: SendInformProps) {
   if (!global.systemEnv.pluginBaseUrl) return;

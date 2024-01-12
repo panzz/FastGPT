@@ -14,7 +14,7 @@ import {
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { useForm } from 'react-hook-form';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useToast } from '@/web/common/hooks/useToast';
 import { postCreateApp } from '@/web/core/app/api';
 import { useRouter } from 'next/router';
@@ -42,7 +42,7 @@ const CreateModal = ({ onClose, onSuccess }: { onClose: () => void; onSuccess: (
   const { isPc } = useSystemStore();
   const { register, setValue, getValues, handleSubmit } = useForm<FormType>({
     defaultValues: {
-      avatar: '/icon/logo.svg',
+      avatar: `${process.env.BASE_PATH}/icon/logo.svg`,
       name: '',
       templateId: appTemplates[0].id
     }
@@ -99,7 +99,7 @@ const CreateModal = ({ onClose, onSuccess }: { onClose: () => void; onSuccess: (
 
   return (
     <MyModal
-      iconSrc="/imgs/module/ai.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/ai.svg`}
       title={t('core.app.create app')}
       isOpen
       onClose={onClose}

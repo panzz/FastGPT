@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
+import { jsonRes } from '/common/service/common/response';
 import { connectToDatabase } from '@/service/mongo';
-import { UpdateHistoryProps } from '@fastgpt/global/core/chat/api.d';
-import { MongoChat } from '@fastgpt/service/core/chat/chatSchema';
-import { authChat } from '@fastgpt/service/support/permission/auth/chat';
+import { UpdateHistoryProps } from '/common/global/core/chat/api.d';
+import { MongoChat } from '/common/service/core/chat/chatSchema';
+import { authChat } from '/common/service/support/permission/auth/chat';
 
 /* 更新聊天标题 */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

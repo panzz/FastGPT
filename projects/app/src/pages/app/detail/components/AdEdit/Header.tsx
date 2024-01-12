@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Box, Flex, IconButton, useTheme, useDisclosure } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
-import { ModuleItemType } from '@fastgpt/global/core/module/type';
+import { ModuleItemType } from '/common/global/core/module/type';
 import { useRequest } from '@/web/common/hooks/useRequest';
-import { AppSchema } from '@fastgpt/global/core/app/type.d';
+import { AppSchema } from '/common/global/core/app/type.d';
 import { useTranslation } from 'next-i18next';
 import { useCopyData } from '@/web/common/hooks/useCopyData';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
+import { AppTypeEnum } from '/common/global/core/app/constants';
 import dynamic from 'next/dynamic';
 
 import MyIcon from '@/components/Icon';

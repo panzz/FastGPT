@@ -44,7 +44,7 @@ const Tools = () => {
           {
             icon: 'common/courseLight',
             label: '使用文档',
-            link: `${feConfigs.docUrl}/docs/intro`
+            link: `${feConfigs.docUrl}${process.env.BASE_PATH}/docs/intro`
           }
         ]
       : [])

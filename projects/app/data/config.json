@@ -7,130 +7,69 @@
   },
   "ChatModels": [
     {
-      "model": "chatglm2-6b",
-      "name": "ChatGLM2-6B-32K",
+      "model": "chatglm3-6b",
+      "name": "ChatGLM3-6B-8K",
       "location": "ludp",
       "price": 0.0015,
-      "maxContext": 16000,
-      "maxResponse": 4000,
-      "quoteMaxToken": 16000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "vision": false,
-      "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "gpt-35-turbo-0301",
-      "name": "AGPT35-4k",
-      "location": "azure",
-      "price": 0.0015,
-      "maxContext": 16000,
-      "maxResponse": 4000,
-      "quoteMaxToken": 2000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "vision": false,
-      "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "gpt-35-turbo-16k-0920",
-      "name": "AGPT35-16k",
-      "location": "azure",
-      "maxContext": 16000,
-      "maxResponse": 16000,
-      "price": 0,
+      "maxContext": 8000,
+      "maxResponse": 8000,
       "quoteMaxToken": 8000,
       "maxTemperature": 1.2,
       "censor": false,
       "vision": false,
       "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "gpt-4-0920",
-      "name": "AGPT4-8k",
-      "location": "azure",
-      "maxContext": 8000,
-      "maxResponse": 8000,
-      "price": 0,
-      "quoteMaxToken": 4000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "vision": false,
-      "defaultSystemChatPrompt": ""
-    },
-    {
-      "model": "gpt-4-32k-0920",
-      "name": "AGPT4-32k",
-      "location": "azure",
-      "maxContext": 128000,
-      "maxResponse": 4000,
-      "price": 0,
-      "quoteMaxToken": 100000,
-      "maxTemperature": 1.2,
-      "censor": false,
-      "vision": true,
-      "defaultSystemChatPrompt": ""
     }
   ],
   "QAModels": [
     {
-      "model": "gpt-35-turbo-16k-0920",
-      "name": "AGPT35-16k",
-      "location": "azure",
+      "model": "chatglm3-6b",
+      "name": "ChatGLM3-6B-8K",
+      "location": "ludp",
       "maxContext": 16000,
       "maxResponse": 16000,
-      "price": 0
+      "price": 0.0015
     }
   ],
   "CQModels": [
     {
-      "model": "gpt-35-turbo-0301",
-      "name": "AGPT35-4K",
-      "location": "azure",
+      "model": "chatglm3-6b",
+      "name": "ChatGLM3-6B-8K",
+      "location": "ludp",
       "maxContext": 16000,
-      "maxResponse": 4000,
-      "price": 0,
-      "functionCall": true,
-      "functionPrompt": ""
-    },
-    {
-      "model": "gpt-4",
-      "name": "GPT4-8k",
-      "maxContext": 8000,
-      "maxResponse": 8000,
-      "price": 0,
+      "maxResponse": 16000,
+      "price": 0.0015,
       "functionCall": true,
       "functionPrompt": ""
     }
   ],
   "ExtractModels": [
     {
-      "model": "gpt-35-turbo-0301",
-      "name": "AGPT35-4K",
-      "location": "azure",
-      "maxContext": 16000,
-      "maxResponse": 4000,
-      "price": 0,
+      "model": "chatglm3-6b",
+      "name": "ChatGLM3-6B-8K",
+      "location": "ludp",
+      "maxContext": 8000,
+      "maxResponse": 8000,
+      "price": 0.0015,
       "functionCall": true,
       "functionPrompt": ""
     }
   ],
   "QGModels": [
     {
-      "model": "gpt-35-turbo-0301",
-      "name": "AGPT35-4K",
-      "location": "azure",
-      "maxContext": 1600,
-      "maxResponse": 4000,
-      "price": 0
+      "model": "chatglm3-6b",
+      "name": "ChatGLM3-6B-8K",
+      "location": "ludp",
+      "maxContext": 8000,
+      "maxResponse": 8000,
+      "price": 0.0015
     }
   ],
   "VectorModels": [
     {
-      "model": "text-embedding-ada-002-0606",
-      "name": "AGPT-Embedding-2",
-      "location": "azure",
-      "price": 0.2,
+      "model": "m3e-base",
+      "name": "m3e-base-Embedding",
+      "location": "ludp",
+      "price": 0.0001,
       "defaultToken": 700,
       "maxToken": 3000
     }

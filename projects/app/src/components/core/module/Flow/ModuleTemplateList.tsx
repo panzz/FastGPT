@@ -12,7 +12,7 @@ import {
 import type {
   FlowModuleTemplateType,
   moduleTemplateListType
-} from '@fastgpt/global/core/module/type.d';
+} from '/common/global/core/module/type.d';
 import { useViewport, XYPosition } from 'reactflow';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
 import Avatar from '@/components/Avatar';
@@ -24,12 +24,12 @@ import { useRouter } from 'next/router';
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
 import MyIcon from '@/components/Icon';
 import EmptyTip from '@/components/EmptyTip';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
 import { getPreviewPluginModule } from '@/web/core/plugin/api';
 import { useToast } from '@/web/common/hooks/useToast';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { moduleTemplatesList } from '@/web/core/modules/template/system';
-import { ModuleTemplateTypeEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleTemplateTypeEnum } from '/common/global/core/module/constants';
 
 enum TemplateTypeEnum {
   system = 'system',

@@ -6,7 +6,7 @@ import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'next-i18next';
 import MySelect from '@/components/Select';
 import { TTSTypeEnum } from '@/constants/app';
-import type { AppTTSConfigType } from '@fastgpt/global/core/module/type.d';
+import type { AppTTSConfigType } from '/common/global/core/module/type.d';
 import { useAudioPlay } from '@/web/common/utils/voice';
 import { audioSpeechModels } from '@/web/common/system/staticData';
 import MyModal from '@/components/MyModal';
@@ -130,7 +130,7 @@ const TTSSelect = ({
             <Flex mt={10} justifyContent={'end'}>
               {audioPlaying ? (
                 <Flex>
-                  <Image src="/icon/speaking.gif" w={'24px'} alt={''} />
+                  <Image src={`${process.env.BASE_PATH}/icon/speaking.gif`} w={'24px'} alt={''} />
                   <Button
                     ml={2}
                     variant={'gray'}

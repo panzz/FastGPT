@@ -30,7 +30,7 @@ const CreateFileModal = ({
   return (
     <MyModal
       title={t('file.Create File')}
-      iconSrc="/imgs/modal/txt.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/txt.svg`}
       isOpen
       w={'600px'}
       top={'15vh'}

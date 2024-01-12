@@ -10,7 +10,7 @@ import { DeleteIcon } from '@chakra-ui/icons';
 import { useQuery } from '@tanstack/react-query';
 import { useToast } from '@/web/common/hooks/useToast';
 import { debounce } from 'lodash';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -21,8 +21,8 @@ import InputDataModal, { RawSourceText, type InputDataType } from '../components
 import type { DatasetDataListItemType } from '@/global/core/dataset/type.d';
 import { TabEnum } from '..';
 import { useUserStore } from '@/web/support/user/useUserStore';
-import { TeamMemberRoleEnum } from '@fastgpt/global/support/user/team/constant';
-import { getDefaultIndex } from '@fastgpt/global/core/dataset/utils';
+import { TeamMemberRoleEnum } from '/common/global/support/user/team/constant';
+import { getDefaultIndex } from '/common/global/core/dataset/utils';
 
 const DataCard = () => {
   const BoxRef = useRef<HTMLDivElement>(null);

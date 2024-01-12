@@ -71,7 +71,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
   } = useQuery(['getOpenApiKeys', appId], () => getOpenApiKeys({ appId }));
 
   useEffect(() => {
-    setBaseUrl(`${location.origin}/api`);
+    setBaseUrl(`${location.origin}${process.env.BASE_PATH}/api`);
   }, []);
 
   return (
@@ -224,7 +224,7 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
       <MyModal
         isOpen={!!apiKey}
         w={['400px', '600px']}
-        iconSrc="/imgs/modal/key.svg"
+        iconSrc={`${process.env.BASE_PATH}/imgs/modal/key.svg`}
         title={
           <Box>
             <Box fontWeight={'bold'} fontSize={'xl'}>
@@ -304,7 +304,7 @@ function EditKeyModal({
   return (
     <MyModal
       isOpen={true}
-      iconSrc="/imgs/modal/key.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/key.svg`}
       title={isEdit ? t('outlink.Edit API Key') : t('outlink.Create API Key')}
     >
       <ModalBody>

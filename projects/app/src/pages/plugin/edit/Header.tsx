@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, IconButton, useTheme, useDisclosure } from '@chakra-ui/react';
-import { PluginItemSchema } from '@fastgpt/global/core/plugin/type';
+import { PluginItemSchema } from '/common/global/core/plugin/type';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { useTranslation } from 'next-i18next';
 import { useCopyData } from '@/web/common/hooks/useCopyData';
@@ -9,8 +9,8 @@ import MyIcon from '@/components/Icon';
 import MyTooltip from '@/components/MyTooltip';
 import { flowNode2Modules, useFlowProviderStore } from '@/components/core/module/Flow/FlowProvider';
 import { putUpdatePlugin } from '@/web/core/plugin/api';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleItemType } from '@fastgpt/global/core/module/type';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleItemType } from '/common/global/core/module/type';
 
 const ImportSettings = dynamic(() => import('@/components/core/module/Flow/ImportSettings'));
 const PreviewPlugin = dynamic(() => import('./Preview'));

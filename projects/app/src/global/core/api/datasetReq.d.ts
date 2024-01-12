@@ -1,11 +1,11 @@
-import { DatasetCollectionTypeEnum, DatasetTypeEnum } from '@fastgpt/global/core/dataset/constant';
+import { DatasetCollectionTypeEnum, DatasetTypeEnum } from '/common/global/core/dataset/constant';
 import type { RequestPaging } from '@/types';
-import { TrainingModeEnum } from '@fastgpt/global/core/dataset/constant';
+import { TrainingModeEnum } from '/common/global/core/dataset/constant';
 import type { SearchTestItemType } from '@/types/core/dataset';
-import { UploadChunkItemType } from '@fastgpt/global/core/dataset/type';
-import { DatasetCollectionSchemaType } from '@fastgpt/global/core/dataset/type';
-import { PermissionTypeEnum } from '@fastgpt/global/support/permission/constant';
-import type { LLMModelItemType } from '@fastgpt/global/core/ai/model.d';
+import { UploadChunkItemType } from '/common/global/core/dataset/type';
+import { DatasetCollectionSchemaType } from '/common/global/core/dataset/type';
+import { PermissionTypeEnum } from '/common/global/support/permission/constant';
+import type { LLMModelItemType } from '/common/global/core/ai/model.d';
 
 /* ===== dataset ===== */
 export type DatasetUpdateParams = {

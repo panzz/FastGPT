@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import { getTeamList, updateInviteResult } from '@/web/support/user/team/api';
-import { TeamMemberStatusEnum } from '@fastgpt/global/support/user/team/constant';
+import { TeamMemberStatusEnum } from '/common/global/support/user/team/constant';
 import Avatar from '@/components/Avatar';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import { useToast } from '@/web/common/hooks/useToast';
@@ -53,7 +53,7 @@ const UpdateInviteModal = () => {
   return (
     <MyModal
       isOpen={inviteList && inviteList.length > 0}
-      iconSrc="/imgs/modal/team.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/team.svg`}
       title={
         <Box>
           <Box>{t('user.team.Processing invitations')}</Box>

@@ -1,5 +1,5 @@
 import { AppItemType } from '@/types/app';
-import { AppTypeEnum } from '@fastgpt/global/core/app/constants';
+import { AppTypeEnum } from '/common/global/core/app/constants';
 
 // template
 export const appTemplates: (AppItemType & {
@@ -9,7 +9,7 @@ export const appTemplates: (AppItemType & {
 })[] = [
   {
     id: 'simpleChat',
-    avatar: '/imgs/module/AI.png',
+    avatar: `${process.env.BASE_PATH}/imgs/module/AI.png`,
     name: '简单的对话',
     intro: '一个极其简单的 AI 对话应用',
     type: AppTypeEnum.simple,
@@ -226,7 +226,7 @@ export const appTemplates: (AppItemType & {
   },
   {
     id: 'simpleDatasetChat',
-    avatar: '/imgs/module/db.png',
+    avatar: `${process.env.BASE_PATH}/imgs/module/db.png`,
     name: '知识库 + 对话引导',
     intro: '每次提问时进行一次知识库搜索，将搜索结果注入 LLM 模型进行参考回答',
     type: AppTypeEnum.simple,
@@ -592,7 +592,7 @@ export const appTemplates: (AppItemType & {
   },
   {
     id: 'chatGuide',
-    avatar: '/imgs/module/userGuide.png',
+    avatar: `${process.env.BASE_PATH}/imgs/module/userGuide.png`,
     name: '对话引导 + 变量',
     intro: '可以在对话开始发送一段提示，或者让用户填写一些内容，作为本次对话的变量',
     type: AppTypeEnum.simple,
@@ -879,7 +879,7 @@ export const appTemplates: (AppItemType & {
   },
   {
     id: 'CQ',
-    avatar: '/imgs/module/cq.png',
+    avatar: `${process.env.BASE_PATH}/imgs/module/cq.png`,
     name: '问题分类 + 知识库',
     intro: '先对用户的问题进行分类，再根据不同类型问题，执行不同的操作',
     type: AppTypeEnum.advanced,

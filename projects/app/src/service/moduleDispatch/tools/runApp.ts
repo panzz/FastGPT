@@ -1,13 +1,13 @@
-import type { moduleDispatchResType, ChatItemType } from '@fastgpt/global/core/chat/type.d';
+import type { moduleDispatchResType, ChatItemType } from '/common/global/core/chat/type.d';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
-import { SelectAppItemType } from '@fastgpt/global/core/module/type';
+import { SelectAppItemType } from '/common/global/core/module/type';
 import { dispatchModules } from '../index';
-import { MongoApp } from '@fastgpt/service/core/app/schema';
-import { responseWrite } from '@fastgpt/service/common/response';
-import { ChatRoleEnum } from '@fastgpt/global/core/chat/constants';
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
+import { MongoApp } from '/common/service/core/app/schema';
+import { responseWrite } from '/common/service/common/response';
+import { ChatRoleEnum } from '/common/global/core/chat/constants';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
 import { textAdaptGptResponse } from '@/utils/adapt';
-import { ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 
 type Props = ModuleDispatchProps<{
   userChatInput: string;

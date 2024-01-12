@@ -4,14 +4,14 @@ import { useTranslation } from 'next-i18next';
 import { useSelectFile } from '@/web/common/file/hooks/useSelectFile';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
 import { useToast } from '@/web/common/hooks/useToast';
-import { getErrText } from '@fastgpt/global/common/error/utils';
+import { getErrText } from '/common/global/common/error/utils';
 import { useRequest } from '@/web/common/hooks/useRequest';
 import MyModal from '@/components/MyModal';
 import { Box, Button, Flex, Input, ModalBody, ModalFooter } from '@chakra-ui/react';
 import MyTooltip from '@/components/MyTooltip';
 import Avatar from '@/components/Avatar';
 import { postCreateTeam, putUpdateTeam } from '@/web/support/user/team/api';
-import { CreateTeamProps } from '@fastgpt/global/support/user/team/controller.d';
+import { CreateTeamProps } from '/common/global/support/user/team/controller.d';
 
 export type FormDataType = CreateTeamProps & {
   id?: string;
@@ -19,7 +19,7 @@ export type FormDataType = CreateTeamProps & {
 
 export const defaultForm = {
   name: '',
-  avatar: '/icon/logo.svg'
+  avatar: `${process.env.BASE_PATH}/icon/logo.svg`
 };
 
 function EditModal({
@@ -98,7 +98,7 @@ function EditModal({
     <MyModal
       isOpen
       onClose={onClose}
-      iconSrc="/imgs/modal/team.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/modal/team.svg`}
       title={defaultData.id ? t('user.team.Update Team') : t('user.team.Create Team')}
     >
       <ModalBody>

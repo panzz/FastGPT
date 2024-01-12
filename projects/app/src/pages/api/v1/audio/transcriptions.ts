@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { jsonRes } from '@fastgpt/service/common/response';
-import { authCert, authCertAndShareId } from '@fastgpt/service/support/permission/auth/common';
-import { withNextCors } from '@fastgpt/service/common/middle/cors';
-import { getUploadModel } from '@fastgpt/service/common/file/upload/multer';
+import { jsonRes } from '/common/service/common/response';
+import { authCert, authCertAndShareId } from '/common/service/support/permission/auth/common';
+import { withNextCors } from '/common/service/common/middle/cors';
+import { getUploadModel } from '/common/service/common/file/upload/multer';
 import fs from 'fs';
-import { getAIApi } from '@fastgpt/service/core/ai/config';
+import { getAIApi } from '/common/service/core/ai/config';
 import { pushWhisperBill } from '@/service/support/wallet/bill/push';
 
 const upload = getUploadModel({

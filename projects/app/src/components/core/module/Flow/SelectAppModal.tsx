@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { ModalBody, Flex, Box, useTheme, ModalFooter, Button } from '@chakra-ui/react';
 import MyModal from '@/components/MyModal';
 import { useQuery } from '@tanstack/react-query';
-import type { SelectAppItemType } from '@fastgpt/global/core/module/type';
+import type { SelectAppItemType } from '/common/global/core/module/type';
 import Avatar from '@/components/Avatar';
 import { useTranslation } from 'next-i18next';
 import { useLoading } from '@/web/common/hooks/useLoading';
@@ -39,7 +39,7 @@ const SelectAppModal = ({
     <MyModal
       isOpen
       title={`选择应用${max > 1 ? `(${selectedApps.length}/${max})` : ''}`}
-      iconSrc="/imgs/module/ai.svg"
+      iconSrc={`${process.env.BASE_PATH}/imgs/module/ai.svg`}
       onClose={onClose}
       minW={'700px'}
       position={'relative'}

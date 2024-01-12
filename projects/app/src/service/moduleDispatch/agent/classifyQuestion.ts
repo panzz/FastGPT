@@ -1,14 +1,14 @@
-import { adaptChat2GptMessages } from '@fastgpt/global/core/chat/adapt';
-import { ChatContextFilter } from '@fastgpt/service/core/chat/utils';
-import type { moduleDispatchResType, ChatItemType } from '@fastgpt/global/core/chat/type.d';
-import { ChatRoleEnum } from '@fastgpt/global/core/chat/constants';
-import { getAIApi } from '@fastgpt/service/core/ai/config';
-import type { ClassifyQuestionAgentItemType } from '@fastgpt/global/core/module/type.d';
-import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { adaptChat2GptMessages } from '/common/global/core/chat/adapt';
+import { ChatContextFilter } from '/common/service/core/chat/utils';
+import type { moduleDispatchResType, ChatItemType } from '/common/global/core/chat/type.d';
+import { ChatRoleEnum } from '/common/global/core/chat/constants';
+import { getAIApi } from '/common/service/core/ai/config';
+import type { ClassifyQuestionAgentItemType } from '/common/global/core/module/type.d';
+import { ModuleInputKeyEnum, ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 import type { ModuleDispatchProps } from '@/types/core/chat/type';
-import { replaceVariable } from '@fastgpt/global/common/string/tools';
+import { replaceVariable } from '/common/global/common/string/tools';
 import { Prompt_CQJson } from '@/global/core/prompt/agent';
-import { FunctionModelItemType } from '@fastgpt/global/core/ai/model.d';
+import { FunctionModelItemType } from '/common/global/core/ai/model.d';
 import { getCQModel } from '@/service/core/ai/model';
 
 type Props = ModuleDispatchProps<{

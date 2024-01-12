@@ -1,11 +1,11 @@
-import { BillSourceEnum, PRICE_SCALE } from '@fastgpt/global/support/wallet/bill/constants';
+import { BillSourceEnum, PRICE_SCALE } from '/common/global/support/wallet/bill/constants';
 import { getAudioSpeechModel, getQAModel } from '@/service/core/ai/model';
-import type { ChatHistoryItemResType } from '@fastgpt/global/core/chat/api.d';
-import { formatPrice } from '@fastgpt/global/support/wallet/bill/tools';
-import { addLog } from '@fastgpt/service/common/mongo/controller';
-import type { ConcatBillProps, CreateBillProps } from '@fastgpt/global/support/wallet/bill/api.d';
-import { defaultQGModels } from '@fastgpt/global/core/ai/model';
-import { POST } from '@fastgpt/service/common/api/plusRequest';
+import type { ChatHistoryItemResType } from '/common/global/core/chat/api.d';
+import { formatPrice } from '/common/global/support/wallet/bill/tools';
+import { addLog } from '/common/service/common/mongo/controller';
+import type { ConcatBillProps, CreateBillProps } from '/common/global/support/wallet/bill/api.d';
+import { defaultQGModels } from '/common/global/core/ai/model';
+import { POST } from '/common/service/common/api/plusRequest';
 
 export function createBill(data: CreateBillProps) {
   if (!global.systemEnv.pluginBaseUrl) return;

@@ -1,16 +1,16 @@
 import { NextApiResponse } from 'next';
-import { ModuleInputKeyEnum } from '@fastgpt/global/core/module/constants';
-import { ModuleOutputKeyEnum } from '@fastgpt/global/core/module/constants';
+import { ModuleInputKeyEnum } from '/common/global/core/module/constants';
+import { ModuleOutputKeyEnum } from '/common/global/core/module/constants';
 import { RunningModuleItemType } from '@/types/app';
 import { ModuleDispatchProps } from '@/types/core/chat/type';
-import { ChatHistoryItemResType } from '@fastgpt/global/core/chat/api';
-import { FlowNodeTypeEnum } from '@fastgpt/global/core/module/node/constant';
-import { ModuleItemType } from '@fastgpt/global/core/module/type';
-import { UserType } from '@fastgpt/global/support/user/type';
-import { replaceVariable } from '@fastgpt/global/common/string/tools';
-import { responseWrite } from '@fastgpt/service/common/response';
-import { sseResponseEventEnum } from '@fastgpt/service/common/response/constant';
-import { getSystemTime } from '@fastgpt/global/common/time/timezone';
+import { ChatHistoryItemResType } from '/common/global/core/chat/api';
+import { FlowNodeTypeEnum } from '/common/global/core/module/node/constant';
+import { ModuleItemType } from '/common/global/core/module/type';
+import { UserType } from '/common/global/support/user/type';
+import { replaceVariable } from '/common/global/common/string/tools';
+import { responseWrite } from '/common/service/common/response';
+import { sseResponseEventEnum } from '/common/service/common/response/constant';
+import { getSystemTime } from '/common/global/common/time/timezone';
 import { initRunningModuleType } from '../core/modules/constant';
 
 import { dispatchHistory } from './init/history';

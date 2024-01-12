@@ -16,7 +16,7 @@ import { useDatasetStore } from '@/web/core/dataset/store/dataset';
 import { useConfirm } from '@/web/common/hooks/useConfirm';
 import { UseFormReturn } from 'react-hook-form';
 import { compressImgFileAndUpload } from '@/web/common/file/controller';
-import type { DatasetItemType } from '@fastgpt/global/core/dataset/type.d';
+import type { DatasetItemType } from '/common/global/core/dataset/type.d';
 import Avatar from '@/components/Avatar';
 import Tag from '@/components/Tag';
 import MyTooltip from '@/components/MyTooltip';
