@@ -33,16 +33,19 @@ async function embedChatbot() {
 
   const parentIframe = document.createElement("div");
   parentIframe.style.cssText = 'position: absolute; width: 100vw; height: 100vh; top: 0; left: 0; display:flex;align-items:center;justify-content:center';
+  parentIframe.style.visibility = defaultOpen ? 'unset' : 'hidden';
+  parentIframe.id = chatWindowId;
 
   const iframe = document.createElement('iframe');
   iframe.allow = 'fullscreen;microphone';
   iframe.title = 'FastGPT Chat Window';
-  iframe.id = chatWindowId;
+  // iframe.id = chatWindowId;
   iframe.src = botSrc;
   iframe.style.cssText =
     'border: none; position: fixed; flex-direction: column; justify-content: space-between; box-shadow: rgba(150, 150, 150, 0.2) 0px 10px 30px 0px, rgba(150, 150, 150, 0.2) 0px 0px 0px 1px; width: 56rem; height: 40rem; max-width: 90vw; max-height: 85vh; border-radius: 0.75rem; display: flex; z-index: 2147483647; overflow: hidden; left: unset; background-color: #F3F4F6;';
-  iframe.style.visibility = defaultOpen ? 'unset' : 'hidden'; 
- 
+  // iframe.style.visibility = defaultOpen ? 'unset' : 'hidden';
+  console.debug('iframe> iframe:%o', iframe);
+
   // document.body.appendChild(iframe);
   parentIframe.appendChild(iframe);
   document.body.appendChild(parentIframe);
@@ -60,11 +63,14 @@ async function embedChatbot() {
     const chatWindow = document.getElementById(chatWindowId);
     if (!chatWindow) return;
     const visibilityVal = chatWindow.style.visibility;
+    console.debug('iframe> visibilityVal:%o', visibilityVal);
     if (visibilityVal === 'hidden') {
       chatWindow.style.visibility = 'unset';
+      console.debug('iframe> 0 parentIframe:%o', parentIframe);
       ChatBtnDiv.innerHTML = CloseIcon;
     } else {
       chatWindow.style.visibility = 'hidden';
+      console.debug('iframe> 1 parentIframe:%o', parentIframe);
       ChatBtnDiv.innerHTML = MessageIcon;
     }
   });
