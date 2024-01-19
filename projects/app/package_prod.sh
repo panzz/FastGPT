@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -f nodejs.tar
-cp .env.dev .env.local
+cp .env.prod .env.local
 npm run build
 # tar -cf nodejs.tar --recursion --exclude package.sh --exclude .git *
 tar -czvf nodejs.tar.gz --exclude '*.sh' --exclude '*.tar*' --exclude .git * .next .npmrc .env.local
